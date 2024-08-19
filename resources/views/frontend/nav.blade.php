@@ -27,26 +27,35 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="{{ route('welcome') }}" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Committee</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Overview</a>
                         <div class="dropdown-menu m-0">
-                            <a href="service.html" class="dropdown-item">Service</a>
-                            <a href="donate.html" class="dropdown-item">Donate</a>
-                            <a href="team.html" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
+                            <a href="service.html" class="dropdown-item">Overview</a>
+                            <a href="donate.html" class="dropdown-item">Conference Scopes</a>
+                            <a href="team.html" class="dropdown-item">Conference Venue</a>
+                            <a href="testimonial.html" class="dropdown-item">Call for papers</a>
+                            <a href="404.html" class="dropdown-item">Submission Guideline</a>
+                            <a href="testimonial.html" class="dropdown-item">Committees</a>
+                            <a href="404.html" class="dropdown-item">Speakers</a>
                         </div>
                     </div>
-                    <a href="#ab" class="nav-item nav-link">Keynote</a>
+                    <a href="#ab" class="nav-item nav-link">Sponsors</a>
+                    <a href="#ab" class="nav-item nav-link">Best Student Paper Award</a>
+                    <a href="#ab" class="nav-item nav-link">Important Dates</a>
                     {{--  <a href="#cfp" class="nav-item nav-link">Call for Paper</a>  --}}
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Call for Paper</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Participant Resources</a>
                         <div class="dropdown-menu m-0">
-                            <a href="service.html" class="dropdown-item">Registration Details</a>
-                            <a href="{{ route('submissionguide') }}" class="dropdown-item">Submission Guideline</a>
+                            <a href="service.html" class="dropdown-item">Participant Resources</a>
+                            <a href="{{ route('submissionguide') }}" class="dropdown-item">FAQ</a>
+                            <a href="{{ route('submissionguide') }}" class="dropdown-item">Conference Flyers</a>
+                            <a href="{{ route('submissionguide') }}" class="dropdown-item">Full Paper Template</a>
+                            <a href="{{ route('submissionguide') }}" class="dropdown-item">Conference Poster</a>
+                            <a href="{{ route('submissionguide') }}" class="dropdown-item">Program Booklet</a>
+                            <a href="{{ route('submissionguide') }}" class="dropdown-item">Developing the Presentation</a>
 
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Venue</a>
+                    <a href="contact.html" class="nav-item nav-link">Registration</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
 

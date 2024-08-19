@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="shortcut icon" href="https://vu.edu.bd/img/ico/favicon.ico">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +33,18 @@
     <link href="{{ asset('public') }}/css/style.css" rel="stylesheet">
 
     <style>
+
+.navbar-nav .nav-item {
+        margin-right: 0.5rem; /* Adjust the spacing as needed */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.888rem; /* Adjust font size as needed */
+    }
+        .carousel-item img {
+        height: 600px; /* Set your desired height */
+        object-fit: cover;
+    }
         .countdown-container {
             display: flex;
         }

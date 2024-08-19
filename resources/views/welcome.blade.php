@@ -70,8 +70,49 @@
         </div>
     </div>
     <!-- Carousel End -->
+    <!-- some speach -->
 
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
+                        <img class="position-absolute w-100 h-100 pt-5 pe-5" src="public\img\vu5.jpg" alt="" style="object-fit: cover;">
+                        <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="public\img\team-1.jpg" alt="" style="width: 200px; height: 200px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        
+                        <h1 class="display-6">Welcome to UCICS-2025</h1>
+                        <p class="fs-5 text-dark-50 mb-5">Empowering Tomorrow&apos;s Innovators</p>
+                        {{-- <div class="border-bottom border-5 border-primary rounded p-4 mb-4">
+                            <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on Intelligent Computing and Systems (UCICS) is going to be a two day long conference, organized by the Department of Computer Science and Engineering, Varendra University, in order to encourage the undergraduate students of computer science discipline to gather hands-on experience on the state-of-the-art research applications by learning from the experts. The UCICS aims to be a platform of fantastic opportunity for the undergraduate students to build connections, gain knowledge and show excellence. We look forward to meeting you on this journey of learning, innovation and inspiration.Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                            <span class="text-primary text-end d-block">Prof. Dr.</span>
+                            <span class="text-primary text-end d-block">Conference Chair, UCICS-2025</span>
+                            <span class="text-primary text-end d-block">Department of Computer Science and Engineering</span>
+                            <span class="text-primary text-end d-block">Varendra University</span>
+                            <span class="text-primary text-end d-block">Chandrima, Paba, Rajshahi-6204</span>
+                            <span class="text-primary text-end d-block">Email: </span>
 
+                        </div> --}}
+                        <div class="border-bottom border-5 border-primary rounded p-4 mb-4">
+                            <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on Intelligent Computing and Systems (UCICS) is going to be a two-day-long conference, organized by the Department of Computer Science and Engineering, Varendra University, in order to encourage the undergraduate students of computer science discipline to gather hands-on experience on the state-of-the-art research applications by learning from the experts. The UCICS aims to be a platform of fantastic opportunity for the undergraduate students to build connections, gain knowledge, and show excellence. We look forward to meeting you on this journey of learning, innovation, and inspiration. Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                            <div class="d-flex flex-column align-items-end">
+                                <span class="text-primary text-center">Prof. Dr.</span>
+                                <span class="text-primary text-center">Conference Chair, UCICS-2025</span>
+                                <span class="text-primary text-center">Department of Computer Science and Engineering</span>
+                                
+                                <span class="text-primary text-center">Varendra University, Chandrima, Paba, Rajshahi-6204</span>
+                                <span class="text-primary text-center">Email: </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- some speach END-->
     <!-- About Start -->
     <div class="container-xxl py-5" id="ab">
         <div class="container">
@@ -201,182 +242,49 @@
         </div>
     </div>
     <!-- Causes End -->
-
-    {{--  <!-- Causes Start -->
-    <div class="container-xxl bg-light my-5 py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Feature Causes</div>
-                <h1 class="display-6 mb-5">Every Child Deserves The Opportunity To Learn</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div
-                        class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                                <small>Education</small>
-                            </div>
-                            <h5 class="mb-3">Education For African Children</h5>
-                            <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                            <div class="causes-progress bg-light p-3 pt-2">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-dark">$10,000 <small class="text-body">Goal</small></p>
-                                    <p class="text-dark">$9,542 <small class="text-body">Raised</small></p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                        aria-valuemax="100">
-                                        <span>90%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="{{asset('public')}}/img/courses-1.jpg" alt="">
-    <div class="causes-overlay">
-        <a class="btn btn-outline-primary" href="">
-            Read More
-            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                <i class="fa fa-arrow-right"></i>
-            </div>
-        </a>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div
-            class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
-            <div class="text-center p-4 pt-0">
-                <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                    <small>Pure Water</small>
-                </div>
-                <h5 class="mb-3">Ensure Pure Drinking Water</h5>
-                <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                <div class="causes-progress bg-light p-3 pt-2">
-                    <div class="d-flex justify-content-between">
-                        <p class="text-dark">$10,000 <small class="text-body">Goal</small></p>
-                        <p class="text-dark">$9,542 <small class="text-body">Raised</small></p>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
-                            <span>90%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="position-relative mt-auto">
-                <img class="img-fluid" src="{{asset('public')}}/img/courses-2.jpg" alt="">
-                <div class="causes-overlay">
-                    <a class="btn btn-outline-primary" href="">
-                        Read More
-                        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div
-            class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
-            <div class="text-center p-4 pt-0">
-                <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
-                    <small>Healthy Life</small>
-                </div>
-                <h5 class="mb-3">Ensure Medical Treatment</h5>
-                <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                <div class="causes-progress bg-light p-3 pt-2">
-                    <div class="d-flex justify-content-between">
-                        <p class="text-dark">$10,000 <small class="text-body">Goal</small></p>
-                        <p class="text-dark">$9,542 <small class="text-body">Raised</small></p>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
-                            <span>90%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="position-relative mt-auto">
-                <img class="img-fluid" src="{{asset('public')}}/img/courses-3.jpg" alt="">
-                <div class="causes-overlay">
-                    <a class="btn btn-outline-primary" href="">
-                        Read More
-                        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <!-- Causes End --> --}}
-
-
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-
-                <h1 class="display-6 mb-5">Learn More What We Do And Get Involved</h1>
+                <h1 class="display-6 mb-5">Scope of the Conference</h1>
             </div>
+            <p class="mb-5" style="text-align: justify;">The papers are invited on, but not limited to, the following topics:</p>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('public') }}/img/icon-1.png" alt="">
-                        <h4 class="mb-3">Child Education</h4>
-                        <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed
-                            vero
-                            dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
+                    <div class="service-item bg-white h-100 p-4 p-xl-5" style="min-height: 300px;">
+                        <p>Artificial Intelligence</p>
+                        <p>Big Data Analysis</p>
+                        <p>BioInformatics</p>
+                        <p>Biomedical Engineering</p>
+                        <p>Blockchain Technology</p>
+                        <p>Cybersecurity</p>
+                        <p>Cloud Computing</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('public') }}/img/icon-2.png" alt="">
-                        <h4 class="mb-3">Medical Treatment</h4>
-                        <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed
-                            vero
-                            dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
+                    <div class="service-item bg-white h-100 p-4 p-xl-5" style="min-height: 300px;">
+                        <p>Computer Vision</p>
+                        <p>Data Science</p>
+                        <p>Embedded Systems</p>
+                        <p>ICT for Sustainable Development</p>
+                        <p>Image Processing</p>
+                        <p>Internet of Things</p>
+                        <p>Machine Learning</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('public') }}/img/icon-3.png" alt="">
-                        <h4 class="mb-3">Pure Drinking Water</h4>
-                        <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed
-                            vero
-                            dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
+                    <div class="service-item bg-white h-100 p-4 p-xl-5" style="min-height: 300px;">
+                        <p>Mobile Communications</p>
+                        <p>Robotics</p>
+                        <p>Signal Processing</p>
+                        <p>Software Engineering</p>
+                        <p>Time Series Modelling</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Service End -->
 
 
