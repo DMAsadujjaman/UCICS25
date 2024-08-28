@@ -5,21 +5,21 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image">
+                    {{--  <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image">  --}}
+                    <img class="w-100" src="{{ asset('public').$allData->image }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 pt-5">
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Undergraduate Conference
-                                        on Intelligent Computing and Systems(UCICS 2024)</h1>
-                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">Empowering Tomorrow&apos;s
-                                        Innovators</p>
+                                    {{--  <h1 class="display-4 text-white mb-3 animated slideInDown">Undergraduate Conference
+                                        on Intelligent Computing and Systems(UCICS 2024)</h1>  --}}
+                                    <h1 class="display-4 text-white mb-3 animated slideInDown">{{$allData->title}}</h1>
+                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">{{$allData->subTitle}}</p>
 
                                     {{--  <p class="fs-5 text-white-50 mb-3 animated slideInDown">24 July, 2024</p>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">Varendra University, Rajshahi, Bangladesh</p>  --}}
-                                    <h4 class=" text-white mb-3 animated slideInDown">24 July, 2024</h4>
-                                    <h4 class=" text-white mb-3 animated slideInDown">Varendra University, Rajshahi,
-                                        Bangladesh</h4>
+                                    <h4 class=" text-white mb-3 animated slideInDown">{{$allData->date}}</h4>
+                                    <h4 class=" text-white mb-3 animated slideInDown">{{$allData->location}}</h4>
                                     <a class="btn btn-primary py-2 px-3 me-3" href="">
                                         Call for Paper
 
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
-                        
+
                         <h1 class="display-6">Welcome to UCICS-2025</h1>
                         <p class="fs-5 text-dark-50 mb-5">Empowering Tomorrow&apos;s Innovators</p>
                         {{-- <div class="border-bottom border-5 border-primary rounded p-4 mb-4">
@@ -102,7 +102,7 @@
                                 <span class="text-primary text-center">Prof. Dr.</span>
                                 <span class="text-primary text-center">Conference Chair, UCICS-2025</span>
                                 <span class="text-primary text-center">Department of Computer Science and Engineering</span>
-                                
+
                                 <span class="text-primary text-center">Varendra University, Chandrima, Paba, Rajshahi-6204</span>
                                 <span class="text-primary text-center">Email: </span>
                             </div>

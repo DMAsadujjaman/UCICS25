@@ -12,7 +12,9 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $data['allData']=Welcome::first();
+        #dd($data);
+        return view('welcome',$data);
     }
     public function submissionGuideline()
     {

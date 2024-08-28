@@ -1,3 +1,10 @@
+
+     @php
+         $prefix = Request::route()->getPrefix();
+         $route = Route::current()->getName();
+     @endphp
+
+
 <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -29,7 +36,36 @@
 
                         <li class="nav-header">Site Control</li>
 
-                        <li class="nav-item">
+
+<li class="nav-item {{ request()->routeIs('main_page.top') ? 'menu-open' : '' }}">
+    <a href="#" class="nav-link {{ request()->routeIs('main_page.top') ? 'active' : '' }}">
+        <i class="nav-icon far fa-envelope"></i>
+        <p>
+            Main Page
+            <i class="fas fa-angle-left right"></i>
+        </p>
+    </a>
+
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="{{ route('main_page.top') }}" class="nav-link {{ request()->routeIs('main_page.top') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Slider_section</p>
+            </a>
+        </li>
+        <!-- Other menu items -->
+    </ul>
+    {{--  <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="{{ route('main_page.top') }}" class="nav-link {{ request()->routeIs('main_page.top') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Slider_section</p>
+            </a>
+        </li>
+        <!-- Other menu items -->
+    </ul>  --}}
+</li>
+                        {{--  <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
@@ -37,13 +73,45 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                <li class="nav-item {{ $route == 'main_page.top' ? 'active' : '' }}">
                                     <a href="{{ route('main_page.top') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Image_section</p>
+                                        <p>Slider_section</p>
                                     </a>
                                 </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 <li class="nav-item">
                                     <a href="pages/mailbox/compose.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -57,7 +125,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>  --}}
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>

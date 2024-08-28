@@ -31,7 +31,7 @@
                                 <i class="fas fa-chart-pie mr-1"></i>
                                 Image Section
                             </h3>
-                           
+
                         </div><!-- /.card-header -->
                         <div class="card-body">
                             <div class="tab-content p-0">
@@ -55,8 +55,11 @@
 
 <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3>Sliders<a class="btn btn-success float-right btn-sm"
+                                        href=""><i class="fa fa-plus-circle"></i> Add Slider</a></h3>
               </div>
+
+
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover">
@@ -67,6 +70,7 @@
                     <th>Sub Title</th>
                     <th>Date</th>
                     <th>Location</th>
+                    <th>Image</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -77,14 +81,17 @@
                     <td>{{$welcome->title}}</td>
                     <td>{{$welcome->subTitle}}</td>
                     <td>{{$welcome->date}}</td>
-                    <td>{{$welcome->location}}</td> 
+                    <td>{{$welcome->location}}</td>
+                    {{--  <td>{{$welcome->image}}</td>  --}}
+                    <td><img src="{{(!empty($welcome->image))? url(asset('public').$welcome->image):url('public/img/carousel-1.jpg')}}"
+                                                width="300px" height="100px" alt=""></td>
                     <td>
                       <a class="btn btn-sm btn-primary" herf=""><i class="fa fa-edit"></i></a>
-                    </td>   
+                    </td>
                   </tr>
                   @endforeach
                   </tbody>
-                  
+
                 </table>
               </div>
               <!-- /.card-body -->

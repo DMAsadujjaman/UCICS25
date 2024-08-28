@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('subTitle');
             $table->string('date');
             $table->string('location');
+            $table->string('image');
             $table->timestamps();
         });
     }
