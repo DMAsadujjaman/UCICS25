@@ -1,60 +1,49 @@
 @extends('frontend.master')
 @section('content')
+    @php
+        $count = 0;
+    @endphp
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    {{--  <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image">  --}}
-                    <img class="w-100" src="{{ asset('public').$allData->image }}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12 pt-5">
-                                    {{--  <h1 class="display-4 text-white mb-3 animated slideInDown">Undergraduate Conference
+                @foreach ($sliders as $slider)
+                    <div class="carousel-item @if ($count == 0) { active } @endif">
+                        {{--  <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image">  --}}
+
+                        <img class="w-100" src="{{ asset('public/img/') . $slider->image }}" alt="Image">
+                        <div class="carousel-caption">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-12 pt-5">
+                                        {{--  <h1 class="display-4 text-white mb-3 animated slideInDown">Undergraduate Conference
                                         on Intelligent Computing and Systems(UCICS 2024)</h1>  --}}
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">{{$allData->title}}</h1>
-                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">{{$allData->subTitle}}</p>
+                                        <h1 class="display-4 text-white mb-3 animated slideInDown">{{ $slider->title }}
+                                        </h1>
+                                        <p class="fs-5 text-white-50 mb-5 animated slideInDown">{{ $slider->subTitle }}</p>
 
-                                    {{--  <p class="fs-5 text-white-50 mb-3 animated slideInDown">24 July, 2024</p>
+                                        {{--  <p class="fs-5 text-white-50 mb-3 animated slideInDown">24 July, 2024</p>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">Varendra University, Rajshahi, Bangladesh</p>  --}}
-                                    <h4 class=" text-white mb-3 animated slideInDown">{{$allData->date}}</h4>
-                                    <h4 class=" text-white mb-3 animated slideInDown">{{$allData->location}}</h4>
-                                    <a class="btn btn-primary py-2 px-3 me-3" href="">
-                                        Call for Paper
-
-                                    </a>
-                                    <a class="btn btn-outline-primary py-2 px-3" href="">
-                                        Submit Paper
-
-                                    </a>
+                                        <h4 class=" text-white mb-3 animated slideInDown">{{ $slider->date }}</h4>
+                                        <h4 class=" text-white mb-3 animated slideInDown">{{ $slider->location }}</h4>
+                                        @if ($count == 0)
+                                            <a class="btn btn-primary py-2 px-3 me-3" href="">
+                                                Call for Paper
+                                            </a>
+                                            <a class="btn btn-outline-primary py-2 px-3" href="">
+                                                Submit Paper
+                                            </a>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="{{ asset('public') }}/img/vu22.jpg" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 pt-5">
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Let&apos;s Save More Lifes
-                                        With
-                                        Our Helping Hand</h1>
-                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">Aliqu diam amet diam et eos.
-                                        Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
-                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
-                                        Learn More
-                                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @php
+                        $count++;
+                    @endphp
+                @endforeach
+
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -77,8 +66,10 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
-                        <img class="position-absolute w-100 h-100 pt-5 pe-5" src="public\img\vu5.jpg" alt="" style="object-fit: cover;">
-                        <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="public\img\team-1.jpg" alt="" style="width: 200px; height: 200px;">
+                        <img class="position-absolute w-100 h-100 pt-5 pe-5" src="public\img\vu5.jpg" alt=""
+                            style="object-fit: cover;">
+                        <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="public\img\team-1.jpg"
+                            alt="" style="width: 200px; height: 200px;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -86,24 +77,23 @@
 
                         <h1 class="display-6">Welcome to UCICS-2025</h1>
                         <p class="fs-5 text-dark-50 mb-5">Empowering Tomorrow&apos;s Innovators</p>
-                        {{-- <div class="border-bottom border-5 border-primary rounded p-4 mb-4">
-                            <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on Intelligent Computing and Systems (UCICS) is going to be a two day long conference, organized by the Department of Computer Science and Engineering, Varendra University, in order to encourage the undergraduate students of computer science discipline to gather hands-on experience on the state-of-the-art research applications by learning from the experts. The UCICS aims to be a platform of fantastic opportunity for the undergraduate students to build connections, gain knowledge and show excellence. We look forward to meeting you on this journey of learning, innovation and inspiration.Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
-                            <span class="text-primary text-end d-block">Prof. Dr.</span>
-                            <span class="text-primary text-end d-block">Conference Chair, UCICS-2025</span>
-                            <span class="text-primary text-end d-block">Department of Computer Science and Engineering</span>
-                            <span class="text-primary text-end d-block">Varendra University</span>
-                            <span class="text-primary text-end d-block">Chandrima, Paba, Rajshahi-6204</span>
-                            <span class="text-primary text-end d-block">Email: </span>
-
-                        </div> --}}
                         <div class="border-bottom border-5 border-primary rounded p-4 mb-4">
-                            <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on Intelligent Computing and Systems (UCICS) is going to be a two-day-long conference, organized by the Department of Computer Science and Engineering, Varendra University, in order to encourage the undergraduate students of computer science discipline to gather hands-on experience on the state-of-the-art research applications by learning from the experts. The UCICS aims to be a platform of fantastic opportunity for the undergraduate students to build connections, gain knowledge, and show excellence. We look forward to meeting you on this journey of learning, innovation, and inspiration. Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                            <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on
+                                Intelligent Computing and Systems (UCICS) is going to be a two-day-long conference,
+                                organized by the Department of Computer Science and Engineering, Varendra University, in
+                                order to encourage the undergraduate students of computer science discipline to gather
+                                hands-on experience on the state-of-the-art research applications by learning from the
+                                experts. The UCICS aims to be a platform of fantastic opportunity for the undergraduate
+                                students to build connections, gain knowledge, and show excellence. We look forward to
+                                meeting you on this journey of learning, innovation, and inspiration. Aliqu diam amet diam
+                                et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
                             <div class="d-flex flex-column align-items-end">
                                 <span class="text-primary text-center">Prof. Dr.</span>
                                 <span class="text-primary text-center">Conference Chair, UCICS-2025</span>
                                 <span class="text-primary text-center">Department of Computer Science and Engineering</span>
 
-                                <span class="text-primary text-center">Varendra University, Chandrima, Paba, Rajshahi-6204</span>
+                                <span class="text-primary text-center">Varendra University, Chandrima, Paba,
+                                    Rajshahi-6204</span>
                                 <span class="text-primary text-center">Email: </span>
                             </div>
                         </div>
@@ -248,7 +238,8 @@
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-6 mb-5">Scope of the Conference</h1>
             </div>
-            <p class="mb-5" style="text-align: justify;">The papers are invited on, but not limited to, the following topics:</p>
+            <p class="mb-5" style="text-align: justify;">The papers are invited on, but not limited to, the following
+                topics:</p>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-white h-100 p-4 p-xl-5" style="min-height: 300px;">

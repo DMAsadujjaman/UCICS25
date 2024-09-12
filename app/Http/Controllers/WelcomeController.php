@@ -12,7 +12,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $data['allData']=Welcome::first();
+        $data['sliders']=Welcome::all();
         #dd($data);
         return view('welcome',$data);
     }

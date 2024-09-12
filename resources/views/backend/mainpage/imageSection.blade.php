@@ -83,10 +83,11 @@
                     <td>{{$welcome->date}}</td>
                     <td>{{$welcome->location}}</td>
                     {{--  <td>{{$welcome->image}}</td>  --}}
-                    <td><img src="{{(!empty($welcome->image))? url(asset('public').$welcome->image):url('public/img/carousel-1.jpg')}}"
+                    <td><img src="{{(!empty($welcome->image))? url(asset('public/img/').$welcome->image):url('public/img/carousel-1.jpg')}}"
                                                 width="300px" height="100px" alt=""></td>
                     <td>
-                      <a class="btn btn-sm btn-primary" herf=""><i class="fa fa-edit"></i></a>
+                      <a class="btn btn-primary btn-sm"
+                                        href="{{ route('slider.edit',$welcome->id) }}"><i class="fa fa-edit"></i> Edit</a>
                     </td>
                   </tr>
                   @endforeach
