@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('welcomes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('subTitle');
+            $table->string('subTitle')->nullable();
             $table->string('date')->nullable();
             $table->string('location')->nullable();
             $table->string('image');

@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Manage Slides</h1>
+                        <h1 class="m-0">Manage About</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -27,26 +27,26 @@
                             <div class="card-header">
                                 <h3>
                                     @if (isset($editData))
-                                        Edit slider
+                                        Edit about
                                     @else
-                                        Add slider
+                                        Add about
                                     @endif
-                                    <a class="btn btn-success float-right btn-sm" href="{{ route('slider') }}"><i
-                                            class="fa fa-list"></i> slider
+                                    <a class="btn btn-success float-right btn-sm" href="{{ route('about.view') }}"><i
+                                            class="fa fa-list"></i> about
                                         List</a>
                                 </h3>
                             </div><!-- /.card-header -->
 
                             <div class="card-body">
                                 <form method="POST"
-                                    action="{{ @$editData ? route('slider.update', $editData->id) : route('') }}"
+                                    action="{{ @$editData ? route('about.update', $editData->id) : route('about.store') }}"
                                     id="myForm" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <input type="hidden" name="id" value="{{ @$editData->id }}">
 
                                     <div class="card-body">
-                                        <h2 style="padding-bottom: 40px;">Slider Info</h2>
+                                        <h2 style="padding-bottom: 40px;">About Info</h2>
 
                                         <div class="form-row">
 
@@ -60,51 +60,13 @@
                                                         </font> -->
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <label for="subtitle">Subtitle <font style="color: red;">*</font></label>
-                                                <input type="text" class="form-control form-control-sm" name="subtitle"
-                                                    value="{{ @$editData['subTitle'] }}" placeholder="Enter Subtitle">
-                                                <!-- <font style="color: red;">{{ $errors->has('subtitle') ? $errors->first('subtitle') : '' }}
+                                                <label for="about">About <font style="color: red;">*</font></label>
+                                                {{-- <textarea type="description" rows="6" class="form-control form-control-sm" name="about"
+                                                    value="{{ @$editData['about'] }}" placeholder="Enter About"></textarea> --}}
+                                                    <textarea rows="6" class="form-control form-control-sm" name="about" placeholder="Enter About">{{ @$editData['about'] }}</textarea>
+                                                <!-- <font style="color: red;">{{ $errors->has('about') ? $errors->first('about') : '' }}
                                                         </font> -->
                                             </div>
-                                            <div class="form-group col-md-12">
-                                                <label for="date">Date</label>
-                                                <input type="text" class="form-control form-control-sm" name="date"
-                                                    value="{{ @$editData['date'] }}" placeholder="Enter Date">
-                                                <font style="color: red;">
-                                                    {{ $errors->has('date') ? $errors->first('date') : '' }}
-                                                </font>
-
-                                            </div>
-
-                                            <div class="form-group col-md-12">
-                                                <label for="address">Address</label>
-                                                <input type="text" class="form-control form-control-sm" name="address"
-                                                    value="{{ @$editData['location'] }}" placeholder="Enter Address">
-                                            </div>
-
-
-
-
-
-
-                                        </div>
-
-
-                                        <div class="form-row">
-                                            <div class="form-group col-md-5">
-                                                <label for="image">Image <font style="color: red;">*</font></label>
-                                                <input type="file" class="form-control form-control-sm" name="image"
-                                                    id="image" placeholder="Upload Image" value="{{ @$editData['image'] }}">
-
-                                            </div>
-                                            <!-- {{ url('public/upload/no_image.png') }} -->
-                                            <div class="form-group col-md-5">
-
-                                                <img src="{{ !empty(@$editData['image']) ? url(asset('public/img/') . @$editData['image']) : url('public/img/carousel-1.jpg') }}"
-                                                    id="showImage" alt="profile picture"
-                                                    style="height: 200px; width: 500px; border: 1px solid #000;">
-                                            </div>
-
                                         </div>
                                     </div>
                                     <!-- /.card-body -->

@@ -24,39 +24,12 @@
         <section class="content">
             <div class="row">
                 <section class="col-lg-12">
-                    <!-- Custom tabs (Charts with tabs)-->
-                    {{--  <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-chart-pie mr-1"></i>
-                                Image Section
-                            </h3>
-
-                        </div><!-- /.card-header -->
-                        <div class="card-body">
-                            <div class="tab-content p-0">
-                                <!-- Morris chart - Sales -->
-                                <div class="chart tab-pane active" id="revenue-chart"
-                                    style="position: relative; height: 300px;">
-                                    <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                                </div>
-                                <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-                                </div>
-                            </div>
-                        </div><!-- /.card-body -->
-                    </div>  --}}
-                    <!-- /.card -->
-
-
-
-
 
 
 <div class="card">
               <div class="card-header">
                 <h3>Sliders<a class="btn btn-success float-right btn-sm"
-                                        href=""><i class="fa fa-plus-circle"></i> Add Slider</a></h3>
+                                        href="{{ route('slider.add') }}"><i class="fa fa-plus-circle"></i> Add Slider</a></h3>
               </div>
 
 
@@ -85,9 +58,11 @@
                     {{--  <td>{{$welcome->image}}</td>  --}}
                     <td><img src="{{(!empty($welcome->image))? url(asset('public/img/').$welcome->image):url('public/img/carousel-1.jpg')}}"
                                                 width="300px" height="100px" alt=""></td>
-                    <td>
+                    <td >
                       <a class="btn btn-primary btn-sm"
-                                        href="{{ route('slider.edit',$welcome->id) }}"><i class="fa fa-edit"></i> Edit</a>
+                                        href="{{ route('slider.edit',$welcome->id) }}"><i class="fa fa-edit"></i> </a>
+                      <a class="btn btn-danger btn-sm"
+                                        href="{{ route('slider.delete',$welcome->id) }}"><i class="fa fa-trash"></i> </a>
                     </td>
                   </tr>
                   @endforeach

@@ -111,49 +111,168 @@
                     <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
 
 
-                        <h1 class="display-6 mb-5">About the Conference</h1>
-                        <p class="mb-5" style="text-align: justify;">Tempor erat elitr rebum at clita. Diam dolor
-                            diam
-                            ipsum sit. Aliqu diam amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                            amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                            amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                            amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet</p>
+                        <h1 class="display-6 mb-5">{{$abouts->title}}</h1>
+                        <div class="mb-5" style="text-align: justify;">{!!$abouts->about!!}</div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
 
                         <h1 class="display-6 mb-5">Important Dates</h1>
+                        {{-- <div class="mt-5">
+                            <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
+                                <div class="col-12 d-flex">
+                                    <div class="flex-fill text-left" style="width: 70%;">Paper Submission:</div>
+                                    <div class="text-right" style="width: 30%;">
+                                        <span style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">20 December, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center" style="padding: 10px 0;">
+                                <div class="col-12 d-flex">
+                                    <div class="flex-fill text-left" style="width: 70%;">&nbsp;</div> <!-- Empty space to mimic merged effect -->
+                                    <div class="text-right" style="width: 30%;">20 December, 2024</div>
+                                </div>
+                            </div>
+                        </div> --}}
+                    
 
-                        <div class=" mt-5">
+                        <div class="mt-5"> 
+
                             <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
                                 <div class="col-7 text-left">Paper Submission:</div>
-                                <div class="col-5 text-right">20 December, 2024</div>
+                                <div class="col-5 text-right">
+                                    <span style="position: relative; display: inline-block;">
+                                        <!-- Conditionally apply strikethrough -->
+                                        @if($abouts->submission_date_final)
+                                            <span style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
+                                                {{ $abouts->submission_date }}
+                                            </span>
+                                        @else
+                                            {{ $abouts->submission_date }}
+                                        @endif
+                                    </span>
+                                </div>
+                                <div class="col-7 text-left"></div>
+                                <div class="col-5 text-right">
+                                    <!-- Display submission_date_final if it's not null -->
+                                    {{ $abouts->submission_date_final ?: '' }}
+                                </div>
                             </div>
+
+
+
+
                             <div class="row align-items-center" style="padding: 10px 0;">
                                 <div class="col-7 text-left">Notification of Acceptance:</div>
-                                <div class="col-5 text-right">20 December, 2024</div>
+                                <div class="col-5 text-right">
+                                    <span style="position: relative; display: inline-block;">
+                                        <!-- Conditionally apply strikethrough -->
+                                        @if($abouts->acceptance_date_final)
+                                            <span style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
+                                                {{ $abouts->acceptance_date }}
+                                            </span>
+                                        @else
+                                            {{ $abouts->acceptance_date }}
+                                        @endif
+                                    </span>
+                                </div>
+                                <div class="col-7 text-left"></div>
+                                <div class="col-5 text-right">
+                                    <!-- Display acceptance_date_final if it's not null -->
+                                    {{ $abouts->acceptance_date_final ?: '' }}
+                                </div>
                             </div>
+
+
+
+
+
+
+
+
+
                             <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
                                 <div class="col-7 text-left">Camera-Ready Paper Submission:</div>
-                                <div class="col-5 text-right">20 December, 2024</div>
+                                <div class="col-5 text-right">
+                                    <span style="position: relative; display: inline-block;">
+                                        <!-- Conditionally apply strikethrough -->
+                                        @if($abouts->cam_submission_date_final)
+                                            <span style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
+                                                {{ $abouts->cam_submission_date }}
+                                            </span>
+                                        @else
+                                            {{ $abouts->cam_submission_date }}
+                                        @endif
+                                    </span>
+                                </div>
+                                <div class="col-7 text-left"></div>
+                                <div class="col-5 text-right">
+                                    <!-- Display cam_submission_date_final if it's not null -->
+                                    {{ $abouts->cam_submission_date_final ?: '' }}
+                                </div>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <div class="row align-items-center" style="padding: 10px 0;">
                                 <div class="col-7 text-left">Registration:</div>
-                                <div class="col-5 text-right">20 December, 2024</div>
+                                <div class="col-5 text-right">
+                                    <span style="position: relative; display: inline-block;">
+                                        <!-- Conditionally apply strikethrough -->
+                                        @if($abouts->registration_date_final)
+                                            <span style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
+                                                {{ $abouts->registration_date }}
+                                            </span>
+                                        @else
+                                            {{ $abouts->registration_date }}
+                                        @endif
+                                    </span>
+                                </div>
+                                <div class="col-7 text-left"></div>
+                                <div class="col-5 text-right">
+                                    <!-- Display registration_date_final if it's not null -->
+                                    {{ $abouts->registration_date_final ?: '' }}
+                                </div>
                             </div>
+
+
+
+
                             <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
                                 <div class="col-7 text-left">Conference Date:</div>
-                                <div class="col-5 text-right">20 December, 2024</div>
+                                <div class="col-5 text-right">
+                                    <span style="position: relative; display: inline-block;">
+                                        <!-- Conditionally apply strikethrough -->
+                                        @if($abouts->conference_date_final)
+                                            <span style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
+                                                {{ $abouts->conference_date }}
+                                            </span>
+                                        @else
+                                            {{ $abouts->conference_date }}
+                                        @endif
+                                    </span>
+                                </div>
+                                <div class="col-7 text-left"></div>
+                                <div class="col-5 text-right">
+                                    <!-- Display conference_date_final if it's not null -->
+                                    {{ $abouts->conference_date_final ?: '' }}
+                                </div>
                             </div>
+
+                            
+                           
                             <div class="row align-items-center" style="padding: 10px 0;">
 
                             </div>

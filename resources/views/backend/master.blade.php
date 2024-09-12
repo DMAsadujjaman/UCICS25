@@ -23,6 +23,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UCICS24</title>
+    <link rel="shortcut icon" href="https://vu.edu.bd/img/ico/favicon.ico">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

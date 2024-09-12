@@ -48,9 +48,15 @@
 
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="{{ route('slider') }}" class="nav-link {{ request()->routeIs('slider') ? 'active' : '' }}">
+            <a href="{{ route('slider.view') }}" class="nav-link {{ request()->routeIs('slider.view') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Slider_section</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('about.view') }}" class="nav-link {{ request()->routeIs('about.view') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>About_section</p>
             </a>
         </li>
         <!-- Other menu items -->
