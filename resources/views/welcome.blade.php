@@ -64,19 +64,23 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                {{-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
                         <img class="position-absolute w-100 h-100 pt-5 pe-5" src="public\img\vu5.jpg" alt=""
                             style="object-fit: cover;">
                         <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="public\img\team-1.jpg"
                             alt="" style="width: 200px; height: 200px;">
                     </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                </div> --}}
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
+                        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                            <h1 class="display-6">Welcome to UCICS-2025</h1>
+                            <p class="fs-5 text-dark-50 mb-5">Empowering Tomorrow&apos;s Innovators</p>
+                        </div>
 
-                        <h1 class="display-6">Welcome to UCICS-2025</h1>
-                        <p class="fs-5 text-dark-50 mb-5">Empowering Tomorrow&apos;s Innovators</p>
+                        {{-- <h1 class="display-6 mb-5">Welcome to UCICS-2025</h1> --}}
+                        
                         <div class="border-bottom border-5 border-primary rounded p-4 mb-4">
                             <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on
                                 Intelligent Computing and Systems (UCICS) is going to be a two-day-long conference,
@@ -119,24 +123,6 @@
                     <div class="h-100">
 
                         <h1 class="display-6 mb-5">Important Dates</h1>
-                        {{-- <div class="mt-5">
-                            <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
-                                <div class="col-12 d-flex">
-                                    <div class="flex-fill text-left" style="width: 70%;">Paper Submission:</div>
-                                    <div class="text-right" style="width: 30%;">
-                                        <span style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">20 December, 2024</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row align-items-center" style="padding: 10px 0;">
-                                <div class="col-12 d-flex">
-                                    <div class="flex-fill text-left" style="width: 70%;">&nbsp;</div> <!-- Empty space to mimic merged effect -->
-                                    <div class="text-right" style="width: 30%;">20 December, 2024</div>
-                                </div>
-                            </div>
-                        </div> --}}
-                    
-
                         <div class="mt-5"> 
 
                             <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
@@ -159,10 +145,6 @@
                                     {{ $abouts->submission_date_final ?: '' }}
                                 </div>
                             </div>
-
-
-
-
                             <div class="row align-items-center" style="padding: 10px 0;">
                                 <div class="col-7 text-left">Notification of Acceptance:</div>
                                 <div class="col-5 text-right">
@@ -183,15 +165,6 @@
                                     {{ $abouts->acceptance_date_final ?: '' }}
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
                             <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
                                 <div class="col-7 text-left">Camera-Ready Paper Submission:</div>
                                 <div class="col-5 text-right">
@@ -212,19 +185,6 @@
                                     {{ $abouts->cam_submission_date_final ?: '' }}
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                             <div class="row align-items-center" style="padding: 10px 0;">
                                 <div class="col-7 text-left">Registration:</div>
