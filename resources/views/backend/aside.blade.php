@@ -59,6 +59,12 @@
                 <p>About_section</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('call_fp.view') }}" class="nav-link {{ request()->routeIs('call_fp.view') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Call For paper</p>
+            </a>
+        </li>
         <!-- Other menu items -->
     </ul>
     {{--  <ul class="nav nav-treeview">

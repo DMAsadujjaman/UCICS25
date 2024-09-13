@@ -33,18 +33,22 @@
     <link href="{{ asset('public') }}/css/style.css" rel="stylesheet">
 
     <style>
+        .navbar-nav .nav-item {
+            margin-right: 0.5rem;
+            /* Adjust the spacing as needed */
+        }
 
-.navbar-nav .nav-item {
-        margin-right: 0.5rem; /* Adjust the spacing as needed */
-    }
+        .navbar-nav .nav-link {
+            font-size: 0.888rem;
+            /* Adjust font size as needed */
+        }
 
-    .navbar-nav .nav-link {
-        font-size: 0.888rem; /* Adjust font size as needed */
-    }
         .carousel-item img {
-        height: 600px; /* Set your desired height */
-        object-fit: cover;
-    }
+            height: 600px;
+            /* Set your desired height */
+            object-fit: cover;
+        }
+
         .countdown-container {
             display: flex;
         }
@@ -132,7 +136,44 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('public') }}/js/main.js"></script>
-    <script src="{{ asset('public') }}/js/countdown.js"></script>
+    {{-- <script src="{{ asset('public') }}/js/countdown.js"></script> --}}
+ <script>
+
+        let daysItem = document.querySelector("#days");
+        let hoursItem = document.querySelector("#hours");
+        let minItem = document.querySelector("#min");
+        let secItem = document.querySelector("#sec");
+
+        let formatNumber = (number) => {
+            return number < 10 ? `0${number}` : `${number}`;
+        };
+
+        // Use a section to pass the future date from the child view
+        let futureDate = new Date("{{ isset($futureDate) ? $futureDate : '' }}");
+
+        if (futureDate) {
+            let countdown = () => {
+                let currentDate = new Date();
+                let myDate = futureDate - currentDate;
+
+                let days = Math.floor(myDate / 1000 / 60 / 60 / 24);
+                let hours = Math.floor(myDate / 1000 / 60 / 60 ) % 24;
+                let min = Math.floor(myDate / 1000 / 60 ) % 60;
+                let sec = Math.floor(myDate / 1000) % 60;
+
+                daysItem.innerHTML = formatNumber(days);
+                hoursItem.innerHTML = formatNumber(hours);
+                minItem.innerHTML = formatNumber(min);
+                secItem.innerHTML = formatNumber(sec);
+            }
+
+            countdown();
+            setInterval(countdown, 1000);
+        } else {
+            console.error("Future date is not set");
+        }
+    </script>
+
 </body>
 
 </html>

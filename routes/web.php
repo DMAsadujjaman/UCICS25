@@ -4,6 +4,7 @@ use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CallFpController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -38,6 +39,11 @@ Route::middleware('auth','verified')->group(function(){
     Route::get('/date/{id}', [AboutController::class, 'editdate'])->name('date.edit');
     // Route::get('/delete/{id}', [AboutController::class, 'delete'])->name('about.delete');
     Route::patch('/date/{id}', [AboutController::class,'updatedate'])->name('date.update');
+    });
+    Route::prefix('call_fp')->group(function(){
+    Route::get('/view', [CallFpController::class, 'index'])->name('call_fp.view');
+    Route::get('/edit/{id}', [CallFpController::class, 'edit'])->name('call_fp.edit');
+    Route::patch('/about/{id}', [CallFpController::class,'update'])->name('call_fp.update');
     });
     
 
