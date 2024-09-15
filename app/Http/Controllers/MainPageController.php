@@ -64,8 +64,6 @@ class MainPageController extends Controller
             }
 
             $data->save();
-
-
         });
 
         return redirect()->route('slider')->with('success', ' Slider Info Updated Successfully');
