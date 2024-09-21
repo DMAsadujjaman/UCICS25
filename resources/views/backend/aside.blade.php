@@ -53,6 +53,14 @@
                 <p>Slider_section</p>
             </a>
         </li>
+        
+        <li class="nav-item">
+            <a href="{{ route('chair.view') }}" class="nav-link {{ request()->routeIs('chair.view') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Chair Person @ welcome</p>
+            </a>
+        </li>
+
         <li class="nav-item">
             <a href="{{ route('about.view') }}" class="nav-link {{ request()->routeIs('about.view') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
@@ -71,6 +79,7 @@
                 <p>Scopes</p>
             </a>
         </li>
+
         <!-- Other menu items -->
     </ul>
     {{--  <ul class="nav nav-treeview">

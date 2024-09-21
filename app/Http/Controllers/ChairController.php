@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chair;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChairController extends Controller
 {
@@ -12,9 +13,9 @@ class ChairController extends Controller
      */
     public function index()
     {
-               $data['call_fp']=Chair::first();
-        // dd($data);
-        return view('backend.mainpage.call_for_paper.view',$data);
+        $data['chair']=Chair::first();
+        //dd($data);
+        return view('backend.mainpage.chair.view',$data);
     }
 
     /**

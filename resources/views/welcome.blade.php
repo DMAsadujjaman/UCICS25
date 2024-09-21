@@ -75,30 +75,21 @@ $count = 0;
             <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="h-100">
                     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                        <h1 class="display-6">Welcome to UCICS-2025</h1>
-                        <p class="fs-5 text-dark-50 mb-5">Empowering Tomorrow&apos;s Innovators</p>
+                        <h1 class="display-6">{!! $chair->title!!}</h1>
+                        <p class="fs-5 text-dark-50 mb-5">{!! $chair->subtitle!!}</p>
                     </div>
 
                     {{-- <h1 class="display-6 mb-5">Welcome to UCICS-2025</h1> --}}
 
-                    <div class="border-bottom border-5 border-primary rounded  mb-4">
-                        <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on
-                            Intelligent Computing and Systems (UCICS) is going to be a two-day-long conference,
-                            organized by the Department of Computer Science and Engineering, Varendra University, in
-                            order to encourage the undergraduate students of computer science discipline to gather
-                            hands-on experience on the state-of-the-art research applications by learning from the
-                            experts. The UCICS aims to be a platform of fantastic opportunity for the undergraduate
-                            students to build connections, gain knowledge, and show excellence. We look forward to
-                            meeting you on this journey of learning, innovation, and inspiration. Aliqu diam amet diam
-                            et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                    <div class="border-bottom border-3 border-primary rounded  mb-4">
+                        <p class="text-dark mb-2" style="text-align: justify;">{!! $chair->details!!}</p>
                         <div class="d-flex flex-column align-items-end">
-                            <span class="text-primary text-center">Prof. Dr.</span>
-                            <span class="text-primary text-center">Conference Chair, UCICS-2025</span>
-                            <span class="text-primary text-center">Department of Computer Science and Engineering</span>
+                            <span class="text-primary text-center">{!! $chair->name!!}</span>
+                            <span class="text-primary text-center">{!! $chair->position!!}</span>
+                            <span class="text-primary text-center">{!! $chair->dept!!}</span>
 
-                            <span class="text-primary text-center">Varendra University, Chandrima, Paba,
-                                Rajshahi-6204</span>
-                            <span class="text-primary text-center">Email: </span>
+                            <span class="text-primary text-center">{!! $chair->address!!}</span>
+                            <span class="text-primary text-center">{!! $chair->email!!}</span>
                         </div>
                     </div>
                 </div>
@@ -241,7 +232,7 @@ $count = 0;
                         <div class="row align-items-center" style="padding: 10px 0;">
 
                         </div>
-                        <div class="row align-items-center" style="background-color: #000000; padding: 1px 0;">
+                        <div class="row align-items-center" style="background-color: #FF6F0F !important; padding: 1px 0;">
 
                         </div>
                     </div>

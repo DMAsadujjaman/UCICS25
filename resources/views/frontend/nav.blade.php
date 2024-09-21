@@ -2,8 +2,13 @@
 <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
         <div class="col-lg-6 px-5 text-start">
-            <small><i class="fa fa-map-marker-alt me-2"></i>Varendra University, Chandrima, Paba,
-                Rajshahi-6204</small>
+            {{-- <small><i class="fa fa-map-marker-alt me-2"></i>Varendra University, Chandrima, Paba,
+                Rajshahi-6204</small> --}}
+                <small>
+                    <img src="https://vu.edu.bd/img/ico/favicon.ico" alt="Location Icon" style="width: 16px; height: 16px; margin-right: 8px;">
+                    Varendra University, Chandrima, Paba, Rajshahi-6204
+                </small>
+                
             <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@example.com</small>
         </div>
         <div class="col-lg-6 px-5 text-end">
@@ -37,7 +42,7 @@
                     </div>
                 </div>
                 <a href="#ab" class="nav-item nav-link">Sponsors</a>
-                <a href="#ab" class="nav-item nav-link">Best Student Paper Award</a>
+                <a href="#ab" class="nav-item nav-link">Student Paper Award</a>
                 <a href="#ab" class="nav-item nav-link">Important Dates</a>
                 {{--  <a href="#cfp" class="nav-item nav-link">Call for Paper</a>  --}}
                 <div class="nav-item dropdown">

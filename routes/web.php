@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ScopesController;
 use App\Http\Controllers\CallFpController;
+use App\Http\Controllers\ChairController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -53,6 +54,15 @@ Route::middleware('auth','verified')->group(function(){
     Route::get('/edit/{id}', [ScopesController::class, 'edit'])->name('scopes.edit');
     Route::patch('/about/{id}', [ScopesController::class,'update'])->name('scopes.update');
     Route::get('/delete/{id}', [ScopesController::class, 'destroy'])->name('scopes.delete');
+    });
+    
+    Route::prefix('chair')->group(function(){
+    Route::get('/view', [ChairController::class, 'index'])->name('chair.view');
+    Route::get('/create', [ChairController::class, 'create'])->name('chair.create');
+    Route::patch('/store', [ChairController::class, 'store'])->name('chair.store');
+    Route::get('/edit/{id}', [ChairController::class, 'edit'])->name('chair.edit');
+    Route::patch('/about/{id}', [ChairController::class,'update'])->name('chair.update');
+    Route::get('/delete/{id}', [ChairController::class, 'destroy'])->name('chair.delete');
     });
     
 

@@ -66,7 +66,7 @@ class MainPageController extends Controller
             $data->save();
         });
 
-        return redirect()->route('slider')->with('success', ' Slider Info Updated Successfully');
+        return redirect()->route('slider.view')->with('success', ' Slider Info Updated Successfully');
     }
     public function update(Request $request, $id)
     {
@@ -90,7 +90,7 @@ class MainPageController extends Controller
 
         });
 
-        return redirect()->route('slider')->with('success', ' Slider Info Updated Successfully');
+        return redirect()->route('slider.view')->with('success', ' Slider Info Updated Successfully');
     }
 
 }

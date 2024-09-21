@@ -92,18 +92,7 @@
             box-sizing: border-box;
         }
 
-        main {
-            padding: 2em;
-            float: left;
-            width: 100%;
-        }
 
-        a {
-            color: #222;
-            font-weight: bold;
-            text-decoration: none;
-            border-bottom: 2px solid #222;
-        }
 
         a:hover {
             color: #FF6F0F;
