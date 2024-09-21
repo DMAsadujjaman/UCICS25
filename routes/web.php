@@ -4,6 +4,7 @@ use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ScopesController;
 use App\Http\Controllers\CallFpController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,14 @@ Route::middleware('auth','verified')->group(function(){
     Route::get('/view', [CallFpController::class, 'index'])->name('call_fp.view');
     Route::get('/edit/{id}', [CallFpController::class, 'edit'])->name('call_fp.edit');
     Route::patch('/about/{id}', [CallFpController::class,'update'])->name('call_fp.update');
+    });
+    Route::prefix('scopes')->group(function(){
+    Route::get('/view', [ScopesController::class, 'index'])->name('scopes.view');
+    Route::get('/create', [ScopesController::class, 'create'])->name('scopes.create');
+    Route::patch('/store', [ScopesController::class, 'store'])->name('scopes.store');
+    Route::get('/edit/{id}', [ScopesController::class, 'edit'])->name('scopes.edit');
+    Route::patch('/about/{id}', [ScopesController::class,'update'])->name('scopes.update');
+    Route::get('/delete/{id}', [ScopesController::class, 'destroy'])->name('scopes.delete');
     });
     
 

@@ -83,6 +83,288 @@
             min-width: 180px;
         }
 
+        /* Include CSS Normalize */
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        main {
+            padding: 2em;
+            float: left;
+            width: 100%;
+        }
+
+        a {
+            color: #222;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #222;
+        }
+
+        a:hover {
+            color: #FF6F0F;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            float: left;
+            margin: 0 0 2em;
+        }
+
+        table thead {
+            border-bottom: 3px solid #FF6F0F;
+        }
+
+        table thead th {
+            padding: 0.35em 0 0.35em;
+            font-weight: 400;
+            text-align: left;
+
+            font-size: 1.25em;
+        }
+
+        table tbody {
+            border-bottom: 3px solid #FF6F0F;
+        }
+
+        table tbody tr {
+            border-bottom: 2px solid #ddd;
+        }
+
+        table tbody tr td {
+            padding: 0.75em 0;
+        }
+
+        table tbody tr td a {
+            color: #FF6F0F;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 0.5em 0 0;
+        }
+
+        table tbody tr td a:hover,
+        table tbody tr td a:active,
+        table tbody tr td a:focus {
+            color: #006687;
+            border: none;
+        }
+
+        table tfoot td {
+            padding: 0.35em 0 0.35em;
+            text-align: left;
+
+            font-size: 1.25em;
+        }
+
+        @media screen and (min-width: 1000px) {
+            table {
+                width: 100%;
+            }
+
+            table thead {
+                border-bottom: 3px solid #FF6F0F;
+            }
+
+            table tbody tr {
+                border-bottom: 1px solid #ddd;
+            }
+        }
+
+        #rwd-table {
+            display: block;
+        }
+
+        #rwd-table tbody {
+            border: none;
+        }
+
+        #rwd-table tbody,
+        #rwd-table th,
+        #rwd-table td,
+        #rwd-table tr,
+        #rwd-table tfoot {
+            display: block;
+        }
+
+        #rwd-table thead {
+            display: none;
+        }
+
+        #rwd-table tr {
+            float: left;
+            width: 100%;
+            margin: 0 0 1em;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 5px 0px #ddd;
+            border-radius: 4px;
+            border-top: 5px solid #FF6F0F;
+        }
+
+        #rwd-table tr td {
+            padding: 0.5em 0.5em 0.5em 50%;
+            float: left;
+            width: 100%;
+        }
+
+        #rwd-table tr td:before {
+            width: 100%;
+            display: block;
+            float: left;
+            padding: 0.5em 0.5em 0.5em 0;
+            clear: both;
+            margin: -0.5em 0 0 -100%;
+
+            font-size: 1.125em;
+        }
+
+        @media screen and (min-width: 600px) {
+            #rwd-table {
+                display: table;
+                border: none;
+            }
+
+            #rwd-table tbody {
+                border-bottom: 3px solid #FF6F0F;
+            }
+
+            #rwd-table th,
+            #rwd-table td {
+                display: table-cell;
+            }
+
+            #rwd-table tr {
+                display: table-row;
+                border: none;
+                border-bottom: 1px solid #eee;
+                float: none;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            #rwd-table tr td {
+                padding: 0.75em 0 0.75em 0.25em;
+                float: none;
+                width: auto;
+            }
+
+            #rwd-table tr td:before {
+                padding: 0 !important;
+            }
+
+            #rwd-table thead {
+                display: table-header-group;
+            }
+
+            #rwd-table tbody,
+            #rwd-table tfoot {
+                display: table-row-group;
+            }
+
+            #rwd-table tr:nth-of-type(odd) {
+                background: #f8f9fa;
+            }
+        }
+
+        #rwd-table-large {
+            display: block;
+        }
+
+        #rwd-table-large tbody {
+            border: none;
+        }
+
+        #rwd-table-large tbody,
+        #rwd-table-large th,
+        #rwd-table-large td,
+        #rwd-table-large tr,
+        #rwd-table-large tfoot {
+            display: block;
+        }
+
+        #rwd-table-large thead {
+            display: none;
+        }
+
+        #rwd-table-large tr {
+            float: left;
+            width: 100%;
+            margin: 0 0 1em;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 5px 0px #ddd;
+            border-radius: 4px;
+            border-top: 5px solid #FF6F0F;
+        }
+
+        #rwd-table-large tr td {
+            padding: 0.5em 0.5em 0.5em 50%;
+            float: left;
+            width: 100%;
+        }
+
+        #rwd-table-large tr td:before {
+            width: 100%;
+            display: block;
+            float: left;
+            padding: 0.5em 0.5em 0.5em 0;
+            clear: both;
+            margin: -0.5em 0 0 -100%;
+
+            font-size: 1.125em;
+        }
+
+        @media screen and (min-width: 1000px) {
+            #rwd-table-large {
+                display: table;
+                border: none;
+            }
+
+            #rwd-table-large tbody {
+                border-bottom: 3px solid #FF6F0F;
+            }
+
+            #rwd-table-large th,
+            #rwd-table-large td {
+                display: table-cell;
+            }
+
+            #rwd-table-large tr {
+                display: table-row;
+                border: none;
+                border-bottom: 1px solid #eee;
+                float: none;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            #rwd-table-large tr td {
+                padding: 0.75em 0 0.75em 0.25em;
+                float: none;
+                width: auto;
+            }
+
+            #rwd-table-large tr td:before {
+                padding: 0 !important;
+            }
+
+            #rwd-table-large thead {
+                display: table-header-group;
+            }
+
+            #rwd-table-large tbody,
+            #rwd-table-large tfoot {
+                display: table-row-group;
+            }
+
+            #rwd-table-large tr:nth-of-type(even) {
+                background: #AE1700;
+            }
+        }
+
         @media(max-width:992px) {
             .countdown-container>div {
                 margin: 0 1rem;
@@ -137,8 +419,7 @@
     <!-- Template Javascript -->
     <script src="{{ asset('public') }}/js/main.js"></script>
     {{-- <script src="{{ asset('public') }}/js/countdown.js"></script> --}}
- <script>
-
+    <script>
         let daysItem = document.querySelector("#days");
         let hoursItem = document.querySelector("#hours");
         let minItem = document.querySelector("#min");
@@ -173,6 +454,8 @@
             console.error("Future date is not set");
         }
     </script>
+
+
 
 </body>
 

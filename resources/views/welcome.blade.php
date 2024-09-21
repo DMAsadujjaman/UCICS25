@@ -81,7 +81,7 @@ $count = 0;
 
                     {{-- <h1 class="display-6 mb-5">Welcome to UCICS-2025</h1> --}}
 
-                    <div class="border-bottom border-5 border-primary rounded p-4 mb-4">
+                    <div class="border-bottom border-5 border-primary rounded  mb-4">
                         <p class="text-dark mb-2" style="text-align: justify;">The Undergraduate Conference on
                             Intelligent Computing and Systems (UCICS) is going to be a two-day-long conference,
                             organized by the Department of Computer Science and Engineering, Varendra University, in
@@ -308,12 +308,16 @@ $count = 0;
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h1 class="display-6 mb-5">Scope of the Conference</h1>
+            @foreach ($scopes as $scope)
+            @if(!empty($scope->title))
+            <h1 class="display-6 mb-5">{{$scope->title}}</h1>
+            @endif
+            @endforeach
         </div>
         <p class="mb-5" style="text-align: justify;">The papers are invited on, but not limited to, the following
             topics:</p>
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item bg-white h-100 p-4 p-xl-5" style="min-height: 300px;">
                     <p>Artificial Intelligence</p>
                     <p>Big Data Analysis</p>
@@ -343,14 +347,32 @@ $count = 0;
                     <p>Software Engineering</p>
                     <p>Time Series Modelling</p>
                 </div>
-            </div>
+            </div> --}}
+
+            <table id="rwd-table">
+
+                <tbody>
+                    @foreach ($scopes as $scope)
+                    <tr>
+                        <td>{{ $scope->col_1 }}</td>
+                        <td>{{ $scope->col_2 }}</td>
+                        <td>{{ $scope->col_3 }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+
+
+
+
+
+
         </div>
     </div>
 </div>
 
 <!-- Service End -->
-
-
 <!-- Donate Start -->
 <div class="container-fluid donate my-5 py-5" data-parallax="scroll"
     data-image-src="{{ asset('public') }}/img/carousel-2.jpg">
@@ -363,9 +385,9 @@ $count = 0;
                     diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo
                     magna dolore erat amet</p>
             </div>
-           
-          
-        </div> 
+
+
+        </div>
     </div>
 </div>
 <!-- Donate End -->
@@ -448,8 +470,11 @@ $count = 0;
 </div>
 <!-- Team End -->
 
+
 @endsection
 
 @php
-{$futureDate = $abouts->submission_date;}
+// {$futureDate = $abouts->submission_date;}
+{$abouts->submission_date_final ? $abouts->submission_date_final : $abouts->submission_date; $futureDate =
+(!empty($abouts->submission_date_final)) ? $abouts->submission_date_final : $abouts->submission_date;}
 @endphp
