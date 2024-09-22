@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Manage About</h1>
+                        <h1 class="m-0">Manage Keynote Speakers</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -27,36 +27,42 @@
                             <div class="card-header">
                                 <h3>
                                     @if (isset($editData))
-                                        Edit about
+                                        Edit Keynote Speaker
                                     @else
-                                        Add about
+                                        Add Keynote Speaker
                                     @endif
-                                    <a class="btn btn-success float-right btn-sm" href="{{ route('about.view') }}"><i
-                                            class="fa fa-list"></i> about
+                                    <a class="btn btn-success float-right btn-sm" href="{{ route('kns.view') }}"><i
+                                            class="fa fa-list"></i> Keynote Speaker
                                         List</a>
                                 </h3>
                             </div><!-- /.card-header -->
 
                             <div class="card-body">
                                 <form method="POST"
-                                    action="{{ @$editData ? route('about.update', $editData->id) : route('about.store') }}"
+                                    action="{{ @$editData ? route('kns.update', $editData->id) : route('kns.store') }}"
                                     id="myForm" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
-                                    <input type="hidden" name="id" value="{{ @$editData->id }}">
 
                                     <div class="card-body">
-                                        <h2 style="padding-bottom: 40px;">About Info</h2>
+                                        <h2 style="padding-bottom: 40px;">Speakers Info</h2>
 
                                         <div class="form-row">
 
 
                                             <div class="form-group col-md-12">
-                                                <label for="name">Title <font style="color: red;">*</font>
+                                                <label for="name">Name <font style="color: red;">*</font>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm" name="title"
-                                                    value="{{ @$editData['title'] }}" placeholder="Enter Title">
+                                                <input type="text" class="form-control form-control-sm" name="name"
+                                                    value="{{ @$editData['name'] }}" placeholder="Enter name">
                                                 <!-- <font style="color: red;">{{ $errors->has('title') ? $errors->first('title') : '' }}
+                                                        </font> -->
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="designation">Designation <font style="color: red;">*</font></label>
+                                                <input type="text" class="form-control form-control-sm" name="designation"
+                                                    value="{{ @$editData['designation'] }}" placeholder="Enter designation">
+                                                <!-- <font style="color: red;">{{ $errors->has('designation') ? $errors->first('designation') : '' }}
                                                         </font> -->
                                             </div>
                                             <div class="form-group col-md-12">
@@ -67,6 +73,22 @@
                                                 <!-- <font style="color: red;">{{ $errors->has('about') ? $errors->first('about') : '' }}
                                                         </font> -->
                                             </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5">
+                                                <label for="image">Image <font style="color: red;">*</font></label>
+                                                <input type="file" class="form-control form-control-sm" name="image"
+                                                    id="image" placeholder="Upload Image" value="{{ @$editData['image'] }}">
+
+                                            </div>
+                                            <!-- {{ url('public/upload/no_image.png') }} -->
+                                            <div class="form-group col-md-5">
+
+                                                <img src="{{ !empty(@$editData['image']) ? url(asset('public/img/') . @$editData['image']) : url('public/img/carousel-1.jpg') }}"
+                                                    id="showImage" alt="profile picture"
+                                                    style="height: 200px; width: 500px; border: 1px solid #000;">
+                                            </div>
+
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
@@ -96,30 +118,15 @@
         $('#myForm').validate({
             rules: {
 
-                title: {
+                name: {
                     required: true,
                 },
-                subtitle: {
-                    required: true,
 
-                },
-                date: {
-                    required: true,
-
-                },
-                address: {
-                    required: true,
-
-                },
 
             },
             messages: {
 
-                title: {
-                    required: "Please enter Title",
-                    unique: "Title Already Exists",
-
-                },
+               
 
             },
             errorElement: 'span',

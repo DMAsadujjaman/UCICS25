@@ -33,15 +33,15 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Overview</a>
                     <div class="dropdown-menu m-0">
-                        <a href="donate.html" class="dropdown-item">Conference Scopes</a>
-                        <a href="team.html" class="dropdown-item">Conference Venue</a>
-                        <a href="testimonial.html" class="dropdown-item">Call for papers</a>
+                        <a href="{{route('welcome')}}#scp" class="dropdown-item">Conference Scopes</a>
+                        <a href="#ftr" class="dropdown-item">Conference Venue</a>
+                        <a href="{{route('welcome')}}#cfp" class="dropdown-item">Call for papers</a>
                         <a href="404.html" class="dropdown-item">Submission Guideline</a>
                         <a href="testimonial.html" class="dropdown-item">Committees</a>
-                        <a href="404.html" class="dropdown-item">Speakers</a>
+                        <a href="{{route('welcome')}}#spk" class="dropdown-item">Speakers</a>
                     </div>
                 </div>
-                <a href="#ab" class="nav-item nav-link">Sponsors</a>
+                <a href="{{route('welcome')}}#spn" class="nav-item nav-link">Sponsors</a>
                 <a href="#ab" class="nav-item nav-link">Student Paper Award</a>
                 <a href="#ab" class="nav-item nav-link">Important Dates</a>
                 {{--  <a href="#cfp" class="nav-item nav-link">Call for Paper</a>  --}}

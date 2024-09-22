@@ -31,10 +31,132 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('public') }}/css/style.css" rel="stylesheet">
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
     <style>
+        .partners {
+            padding: 10px;
+        }
+
+        @-webkit-keyframes slideleft {
+            0% {
+                background-position: 385000px;
+            }
+
+            100% {
+                background-position: 0;
+            }
+        }
+
+        @keyframes slideleft {
+            0% {
+                background-position: 385000px;
+            }
+
+            100% {
+                background-position: 0;
+            }
+        }
+
+        .partners-img-container {
+            height: 100px;
+            width: 100%;
+            overflow: auto;
+        }
+
+        .partners-img-container::-webkit-scrollbar {
+            width: 0 !important;
+        }
+
+        /* hide scrollbar in Chrome */
+        .partners-img-container {
+            scrollbar-width: none;
+        }
+
+        /* hide scrollbar in mozilla */
+        .partners-img-container {
+            -ms-overflow-style: none;
+        }
+
+        /* hide scrollbar in IE */
+
+        .partners-img-container .partners-img {
+            height: 100%;
+            width: 200%;
+            background: transparent url(https://squeeze-pics.s3-us-west-2.amazonaws.com/v2/assets/Web+Assets/heroes/Auto-insurance/insurancelogos.jpg) repeat-x 50% 0;
+            -webkit-animation: slideleft 5000s linear infinite;
+            animation: slideleft 5000s linear infinite;
+            cursor: grab;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .container-fluid-carousel {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .owl-carousel .item {
+            width: 100%;
+            margin-top: 20px;
+            /* Add margin to the top */
+            margin-bottom: 20px;
+            /* Add margin to the bottom */
+        }
+
         .cardcontainer {
             width: 280px;
-            height: 400px;
+            height: 422px;
             display: flexbox;
             flex-direction: row;
             perspective: 800px;
@@ -493,6 +615,32 @@
             console.error("Future date is not set");
         }
     </script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:80, // Adjust the gap between cards
+                nav:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:2
+                    },
+                    1000:{
+                        items:4
+                    }
+                },
+                slideBy: 1, // Slide one card at a time
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true
+            });
+        });
+    </script>
+
+
 
 
 </body>

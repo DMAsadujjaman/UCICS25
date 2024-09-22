@@ -79,6 +79,12 @@
                 <p>Scopes</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('kns.view') }}" class="nav-link {{ request()->routeIs('kns.view') ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Keynote Speaker</p>
+            </a>
+        </li>
 
         <!-- Other menu items -->
     </ul>

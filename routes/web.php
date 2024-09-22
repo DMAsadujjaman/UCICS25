@@ -72,11 +72,11 @@ Route::middleware('auth','verified')->group(function(){
     });
 
     Route::prefix('keynote')->group(function(){
-    Route::get('/view', [KNSpeakerController::class, 'slider'])->name('kns.view');
-    Route::get('/add', [KNSpeakerController::class, 'add'])->name('kns.add');
+    Route::get('/view', [KNSpeakerController::class, 'index'])->name('kns.view');
+    Route::get('/add', [KNSpeakerController::class, 'create'])->name('kns.add');
     Route::patch('/store', [KNSpeakerController::class, 'store'])->name('kns.store');
     Route::get('/edit/{id}', [KNSpeakerController::class, 'edit'])->name('kns.edit');
-    Route::get('/delete/{id}', [KNSpeakerController::class, 'delete'])->name('kns.delete');
+    Route::get('/delete/{id}', [KNSpeakerController::class, 'destroy'])->name('kns.delete');
     Route::patch('/kns/{id}', [KNSpeakerController::class,'update'])->name('kns.update');
     });
 
