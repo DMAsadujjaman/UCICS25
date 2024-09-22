@@ -7,6 +7,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ScopesController;
 use App\Http\Controllers\CallFpController;
 use App\Http\Controllers\ChairController;
+use App\Http\Controllers\KNSpeakerController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -68,6 +69,15 @@ Route::middleware('auth','verified')->group(function(){
 
     Route::get('/welcome/{id}', [ChairController::class, 'editwelcome'])->name('welcome.edit');
     Route::patch('/welcome/{id}', [ChairController::class,'updatewelcome'])->name('welcome.update');
+    });
+
+    Route::prefix('keynote')->group(function(){
+    Route::get('/view', [KNSpeakerController::class, 'slider'])->name('kns.view');
+    Route::get('/add', [KNSpeakerController::class, 'add'])->name('kns.add');
+    Route::patch('/store', [KNSpeakerController::class, 'store'])->name('kns.store');
+    Route::get('/edit/{id}', [KNSpeakerController::class, 'edit'])->name('kns.edit');
+    Route::get('/delete/{id}', [KNSpeakerController::class, 'delete'])->name('kns.delete');
+    Route::patch('/kns/{id}', [KNSpeakerController::class,'update'])->name('kns.update');
     });
 
 

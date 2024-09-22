@@ -12,7 +12,8 @@ class KNSpeakerController extends Controller
      */
     public function index()
     {
-        //
+       $data['allData']=KNSpeaker::all();
+        return view('backend.mainpage.keynote.view',$data);
     }
 
     /**
