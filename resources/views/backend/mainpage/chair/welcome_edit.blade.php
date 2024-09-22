@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Manage About</h1>
+                        <h1 class="m-0">Manage Welcome</h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -27,26 +27,26 @@
                             <div class="card-header">
                                 <h3>
                                     @if (isset($editData))
-                                        Edit about
+                                        Edit welcome
                                     @else
-                                        Add about
+                                        Add welcome
                                     @endif
-                                    <a class="btn btn-success float-right btn-sm" href="{{ route('about.view') }}"><i
-                                            class="fa fa-list"></i> about
-                                        List</a>
+                                    <a class="btn btn-success float-right btn-sm" href="{{ route('chair.view') }}"><i
+                                            class="fa fa-list"></i> Welcome
+                                    </a>
                                 </h3>
                             </div><!-- /.card-header -->
 
                             <div class="card-body">
                                 <form method="POST"
-                                    action="{{ @$editData ? route('about.update', $editData->id) : route('about.store') }}"
+                                    action="{{ @$editData ? route('welcome.update', $editData->id) : route('welcome.store') }}"
                                     id="myForm" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <input type="hidden" name="id" value="{{ @$editData->id }}">
 
                                     <div class="card-body">
-                                        <h2 style="padding-bottom: 40px;">About Info</h2>
+                                        <h2 style="padding-bottom: 40px;">Welcome Info</h2>
 
                                         <div class="form-row">
 
@@ -57,15 +57,23 @@
                                                 <input type="text" class="form-control form-control-sm" name="title"
                                                     value="{{ @$editData['title'] }}" placeholder="Enter Title">
                                                 <!-- <font style="color: red;">{{ $errors->has('title') ? $errors->first('title') : '' }}
-                                                        </font> -->
+                                                                </font> -->
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <label for="about">About <font style="color: red;">*</font></label>
+                                                <label for="name">Sub_Title <font style="color: red;">*</font>
+                                                </label>
+                                                <input type="text" class="form-control form-control-sm" name="subtitle"
+                                                    value="{{ @$editData['subtitle'] }}" placeholder="Enter Sub Title">
+                                                <!-- <font style="color: red;">{{ $errors->has('subtitle') ? $errors->first('subtitle') : '' }}
+                                                                </font> -->
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="about">Details <font style="color: red;">*</font></label>
                                                 {{-- <textarea type="description" rows="6" class="form-control form-control-sm" name="about"
                                                     value="{{ @$editData['about'] }}" placeholder="Enter About"></textarea> --}}
-                                                    <textarea rows="6" class="form-control form-control-sm" name="about" placeholder="Enter About">{{ @$editData['about'] }}</textarea>
+                                                <textarea rows="6" class="form-control form-control-sm" name="about" placeholder="Enter Details">{{ @$editData['details'] }}</textarea>
                                                 <!-- <font style="color: red;">{{ $errors->has('about') ? $errors->first('about') : '' }}
-                                                        </font> -->
+                                                                </font> -->
                                             </div>
                                         </div>
                                     </div>
@@ -103,14 +111,7 @@
                     required: true,
 
                 },
-                date: {
-                    required: true,
 
-                },
-                address: {
-                    required: true,
-
-                },
 
             },
             messages: {

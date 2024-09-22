@@ -31,6 +31,56 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('public') }}/css/style.css" rel="stylesheet">
+    <style>
+        .cardcontainer {
+            width: 280px;
+            height: 400px;
+            display: flexbox;
+            flex-direction: row;
+            perspective: 800px;
+        }
+
+        .cardcontainer:hover>.card {
+            cursor: pointer;
+            transform: rotateY(180deg);
+        }
+
+        .card {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            transition: transform 1500ms;
+            transform-style: preserve-3d;
+            border: none;
+        }
+
+        .front,
+        .back {
+            height: 100%;
+            width: 100%;
+            border-radius: 13px;
+            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+
+
+        .back {
+            background-color: whitesmoke;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            padding: 16px;
+            gap: 5rem;
+        }
+
+        .back p {
+            margin-top: 1px;
+            text-align: justify;
+        }
+    </style>
 
     <style>
         .navbar-nav .nav-item {
@@ -427,8 +477,8 @@
                 let myDate = futureDate - currentDate;
 
                 let days = Math.floor(myDate / 1000 / 60 / 60 / 24);
-                let hours = Math.floor(myDate / 1000 / 60 / 60 ) % 24;
-                let min = Math.floor(myDate / 1000 / 60 ) % 60;
+                let hours = Math.floor(myDate / 1000 / 60 / 60) % 24;
+                let min = Math.floor(myDate / 1000 / 60) % 60;
                 let sec = Math.floor(myDate / 1000) % 60;
 
                 daysItem.innerHTML = formatNumber(days);

@@ -37,7 +37,7 @@
                           {{-- <th>SL</th> --}}
                           <th>Title</th>
                           <th>SubTitle</th>
-                          <th>About</th>
+                          <th>Details</th>
                           <th>Action</th>
                         </tr>
                         </thead>
@@ -51,7 +51,7 @@
 
                           <td >
                             <a class="btn btn-primary btn-sm"
-                                              href="{{ route('chair.edit',$chair->id) }}"><i class="fa fa-edit"></i> </a>
+                                              href="{{ route('welcome.edit',$chair->id) }}"><i class="fa fa-edit"></i> </a>
                             {{-- <a class="btn btn-danger btn-sm"
                                               href="{{ route('slider.delete',$about->id) }}"><i class="fa fa-trash"></i> </a> --}}
                           </td>
@@ -71,7 +71,7 @@
 
 
 
-                      
+
                     </div>
                   <!-- /.card-body -->
                 </div>
@@ -119,11 +119,11 @@
                         <td>{{$chair->email}}</td>
 
 
-                        
+
 
                         <td >
                           <a class="btn btn-primary btn-sm"
-                                            href="{{ route('date.edit',$chair->id) }}"><i class="fa fa-edit"></i> </a>
+                                            href="{{ route('chair.edit',$chair->id) }}"><i class="fa fa-edit"></i> </a>
                           {{-- <a class="btn btn-danger btn-sm"
                                             href="{{ route('slider.delete',$about->id) }}"><i class="fa fa-trash"></i> </a> --}}
                         </td>
@@ -143,7 +143,7 @@
 
 
 
-                    
+
                   </div>
                 <!-- /.card-body -->
               </div>
@@ -153,7 +153,7 @@
       <!-- /.content -->
 
 
-        
+
       </div>
     <!-- /.content-wrapper -->
 @endsection

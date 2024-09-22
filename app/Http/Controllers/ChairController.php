@@ -45,17 +45,55 @@ class ChairController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Chair $chair)
+    public function edit($id)
     {
-        //
+        $data['editData']=Chair::where('id',$id)->first();
+
+        // dd($data['allData']->toArray());
+        return view('backend.mainpage.chair.chair_edit', $data);
+    }
+    public function editwelcome($id)
+    {
+        $data['editData']=Chair::where('id',$id)->first();
+
+        // dd($data['allData']->toArray());
+        return view('backend.mainpage.chair.welcome_edit', $data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Chair $chair)
+    public function update(Request $request, $id)
     {
-        //
+        DB::transaction(function () use ($request, $id) {
+            $data = Chair::where('id', $id)->first();
+            $data->name = $request->name;
+            $data->position = $request->position;
+            $data->dept = $request->dept;
+            $data->address = $request->address;
+            $data->email = $request->email;
+            $data->extra = $request->extra;
+            $data->save();
+
+
+        });
+        return redirect()->route('chair.view')->with('success', ' chair Info Updated Successfully');
+    }
+    public function updatewelcome(Request $request, $id)
+    {
+
+        DB::transaction(function () use ($request, $id) {
+            $data = Chair::where('id', $id)->first();
+            $data->title = $request->title;
+            $data->subtitle = $request->subtitle;
+            $data->details = $request->about;
+            $data->save();
+
+
+        });
+
+
+        return redirect()->route('chair.view')->with('success', ' chair Info Updated Successfully');
     }
 
     /**

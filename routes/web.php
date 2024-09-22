@@ -22,7 +22,7 @@ Route::get('submission_guideline', [WelcomeController::class, 'submissionGuideli
 
 Route::middleware('auth','verified')->group(function(){
     Route::get('/dashboard',[MainPageController::class,'index'])->name('dashboard');
-    
+
     Route::prefix('slider')->group(function(){
     Route::get('/view', [MainPageController::class, 'slider'])->name('slider.view');
     Route::get('/add', [MainPageController::class, 'add'])->name('slider.add');
@@ -35,9 +35,11 @@ Route::middleware('auth','verified')->group(function(){
     Route::get('/view', [AboutController::class, 'index'])->name('about.view');
     Route::get('/add', [AboutController::class, 'add'])->name('about.add');
     Route::patch('/store', [AboutController::class, 'store'])->name('about.store');
+
     Route::get('/edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
     // Route::get('/delete/{id}', [AboutController::class, 'delete'])->name('about.delete');
     Route::patch('/about/{id}', [AboutController::class,'update'])->name('about.update');
+
     Route::get('/date/{id}', [AboutController::class, 'editdate'])->name('date.edit');
     // Route::get('/delete/{id}', [AboutController::class, 'delete'])->name('about.delete');
     Route::patch('/date/{id}', [AboutController::class,'updatedate'])->name('date.update');
@@ -55,16 +57,19 @@ Route::middleware('auth','verified')->group(function(){
     Route::patch('/about/{id}', [ScopesController::class,'update'])->name('scopes.update');
     Route::get('/delete/{id}', [ScopesController::class, 'destroy'])->name('scopes.delete');
     });
-    
+
     Route::prefix('chair')->group(function(){
     Route::get('/view', [ChairController::class, 'index'])->name('chair.view');
     Route::get('/create', [ChairController::class, 'create'])->name('chair.create');
     Route::patch('/store', [ChairController::class, 'store'])->name('chair.store');
+
     Route::get('/edit/{id}', [ChairController::class, 'edit'])->name('chair.edit');
-    Route::patch('/about/{id}', [ChairController::class,'update'])->name('chair.update');
-    Route::get('/delete/{id}', [ChairController::class, 'destroy'])->name('chair.delete');
+    Route::patch('/chair/{id}', [ChairController::class,'update'])->name('chair.update');
+
+    Route::get('/welcome/{id}', [ChairController::class, 'editwelcome'])->name('welcome.edit');
+    Route::patch('/welcome/{id}', [ChairController::class,'updatewelcome'])->name('welcome.update');
     });
-    
+
 
 });
 
