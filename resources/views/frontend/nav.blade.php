@@ -8,7 +8,7 @@
                     <img src="https://vu.edu.bd/img/ico/favicon.ico" alt="Location Icon" style="width: 16px; height: 16px; margin-right: 8px;">
                     Varendra University, Chandrima, Paba, Rajshahi-6204
                 </small>
-                
+
             <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@example.com</small>
         </div>
         <div class="col-lg-6 px-5 text-end">
@@ -36,8 +36,8 @@
                         <a href="{{route('welcome')}}#scp" class="dropdown-item">Conference Scopes</a>
                         <a href="#ftr" class="dropdown-item">Conference Venue</a>
                         <a href="{{route('welcome')}}#cfp" class="dropdown-item">Call for papers</a>
-                        <a href="404.html" class="dropdown-item">Submission Guideline</a>
-                        <a href="testimonial.html" class="dropdown-item">Committees</a>
+                        <a href="{{route('submissionguide')}}" class="dropdown-item">Submission Guideline</a>
+                        <a href="{{route('committee')}}" class="dropdown-item">Committees</a>
                         <a href="{{route('welcome')}}#spk" class="dropdown-item">Speakers</a>
                     </div>
                 </div>
@@ -49,12 +49,12 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Participant
                         Resources</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{{ route('submissionguide') }}" class="dropdown-item">FAQ</a>
-                        <a href="{{ route('submissionguide') }}" class="dropdown-item">Conference Flyers</a>
-                        <a href="{{ route('submissionguide') }}" class="dropdown-item">Full Paper Template</a>
-                        <a href="{{ route('submissionguide') }}" class="dropdown-item">Conference Poster</a>
-                        <a href="{{ route('submissionguide') }}" class="dropdown-item">Program Booklet</a>
-                        <a href="{{ route('submissionguide') }}" class="dropdown-item">Developing the Presentation</a>
+                        <a href="{{ route('faq') }}" class="dropdown-item">FAQ</a>
+                        <a href="#" class="dropdown-item">Conference Flyers</a>
+                        <a href="#" class="dropdown-item">Full Paper Template</a>
+                        <a href="#" class="dropdown-item">Conference Poster</a>
+                        <a href="#" class="dropdown-item">Program Booklet</a>
+                        <a href="#" class="dropdown-item">Developing the Presentation</a>
 
                     </div>
                 </div>

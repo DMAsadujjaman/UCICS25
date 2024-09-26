@@ -355,17 +355,17 @@ $count = 0;
 
 
 <div class="container-xxl py-5" id="spk">
-    <div class="container">
+    <div class="">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <h1 class="display-6 mb-5">Keynote Speakers</h1>
         </div>
 
         @if(count($kns) > 4)
         <!-- Owl Carousel Start -->
-        <div class="container-fluid-carousel">
+        <div class="container-fluid-carousel d-flex justify-content-center">
             <div class="owl-carousel owl-theme">
                 @foreach ($kns as $keynote)
-                <div class="item">
+                <div class="item d-flex justify-content-center">
                     <div class="cardcontainer">
                         <div class="card">
                             <div class="front">
@@ -426,7 +426,7 @@ $count = 0;
 </div>
 
 <div class="container-xxl py-5" id="spn">
-    <div class="container">
+    <div class="">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <h1 class="display-6 mb-5">Sponsors</h1>
         </div>

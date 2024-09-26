@@ -109,6 +109,82 @@
 
 
 
+        .faq-header {
+            font-size: 42px;
+            border-bottom: 1px dotted #ccc;
+            padding: 24px;
+        }
+
+        .faq-content {
+            margin: 0 auto;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            border-bottom: 1px dotted #FF6F0F;
+        }
+
+        .panel-title {
+            font-size: 24px;
+            width: 100%;
+            position: relative;
+            margin: 0;
+            margin-left: 10px;
+            padding: 10px 10px 0 48px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .panel-content {
+            font-size: 20px;
+            padding: 0px 14px;
+            margin: 0 40px;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+            position: relative;
+            opacity: 0;
+            -webkit-transition: .4s ease;
+            -moz-transition: .4s ease;
+            -o-transition: .4s ease;
+            transition: .4s ease;
+        }
+
+        .panel:checked~.panel-content {
+            height: auto;
+            opacity: 1;
+            padding: 14px;
+        }
+
+        .plus {
+            position: absolute;
+            color: #FF6F0F;
+            margin-left: 20px;
+            margin-top: 4px;
+            z-index: 5;
+            font-size: 42px;
+            line-height: 100%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+            -webkit-transition: .2s ease;
+            -moz-transition: .2s ease;
+            -o-transition: .2s ease;
+            transition: .2s ease;
+        }
+
+        .panel:checked~.plus {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .panel {
+            display: none;
+        }
 
 
 
@@ -616,26 +692,26 @@
         }
     </script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('.owl-carousel').owlCarousel({
-                loop:true,
-                margin:80, // Adjust the gap between cards
-                nav:true,
-                responsive:{
-                    0:{
-                        items:1
+                loop: true,
+                margin: 20, // Adjust the gap between cards
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
                     },
-                    600:{
-                        items:2
+                    600: {
+                        items: 2
                     },
-                    1000:{
-                        items:4
+                    1000: {
+                        items: 4
                     }
                 },
                 slideBy: 1, // Slide one card at a time
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoplayHoverPause:true
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
             });
         });
     </script>

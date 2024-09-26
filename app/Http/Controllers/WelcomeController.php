@@ -27,7 +27,18 @@ class WelcomeController extends Controller
     }
     public function submissionGuideline()
     {
-        return view('frontend.submissionguide');
+        return view('frontend.single_page.submissionguide');
+
+    }
+    public function faq()
+    {
+        return view('frontend.single_page.faq');
+
+    }
+    public function committee()
+    {
+        $data['kns']=KNSpeaker::all();
+        return view('frontend.single_page.committee',$data);
 
     }
 }
