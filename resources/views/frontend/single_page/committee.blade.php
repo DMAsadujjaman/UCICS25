@@ -47,301 +47,79 @@
             </div>
             <div class="row g-4 justify-content-center">
                 <h3>Organizing Committee</h3>
-                <div class="container-xxl py-5" id="spk">
-                    <div class="">
-                        
 
-                        @if (count($kns) > 4)
-                            <!-- Owl Carousel Start -->
-                            <div class="container-fluid-carousel d-flex justify-content-center">
-                                <div class="owl-carousel owl-theme">
-                                    @foreach ($kns as $keynote)
-                                        <div class="item d-flex justify-content-center">
-                                            <div class="cardcontainer">
-                                                <div class="card">
-                                                    <div class="front">
-                                                        <div class="overflow-hidden"
-                                                            style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                            <img class="img-fluid"
-                                                                src="{{ asset('public/img/' . $keynote->image) }}"
-                                                                width="100%" alt="">
-                                                        </div>
-                                                        <div class="team-text text-center p-4">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p class="text-primary">{{ $keynote->designation }}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back">
-                                                        <div class="team-text text-center">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p>{{ $keynote->about }}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
+                <div class="row g-4 justify-content-center">
 
-                            <!-- Owl Carousel End -->
-                        @else
-                            <!-- Static grid for 4 or fewer speakers -->
-                            <div class="row g-4">
-                                @foreach ($kns as $keynote)
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="cardcontainer">
-                                            <div class="card">
-                                                <div class="front">
-                                                    <div class="overflow-hidden"
-                                                        style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                        <img class="img-fluid"
-                                                            src="{{ asset('public/img/' . $keynote->image) }}"
-                                                            width="280px" alt="">
-                                                    </div>
-                                                    <div class="team-text text-center p-4">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p class="text-primary">{{ $keynote->designation }}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="back">
-                                                    <div class="team-text text-center">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p>{{ $keynote->about }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
+
+                    <table id="rwd-table">
+
+                        <thead>
+                            <tr>
+                                <td style="color: #FF6F0F; font-weight: 700">Name</td>
+                                <td style="color: #FF6F0F; font-weight: 700">Affiliation</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach ($scopes as $scope)
+                                <tr>
+                                    <td>{{ $scope->col_1 }}</td>
+                                    <td>{{ $scope->col_2 }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
-
                 <h3>Advisory Committee</h3>
-                <div class="container-xxl py-5" id="spk">
-                    <div class="">
-                        
+                <div class="row g-4 justify-content-center">
 
-                        @if (count($kns) > 4)
-                            <!-- Owl Carousel Start -->
-                            <div class="container-fluid-carousel d-flex justify-content-center">
-                                <div class="owl-carousel owl-theme">
-                                    @foreach ($kns as $keynote)
-                                        <div class="item d-flex justify-content-center">
-                                            <div class="cardcontainer">
-                                                <div class="card">
-                                                    <div class="front">
-                                                        <div class="overflow-hidden"
-                                                            style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                            <img class="img-fluid"
-                                                                src="{{ asset('public/img/' . $keynote->image) }}"
-                                                                width="100%" alt="">
-                                                        </div>
-                                                        <div class="team-text text-center p-4">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p class="text-primary">{{ $keynote->designation }}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back">
-                                                        <div class="team-text text-center">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p>{{ $keynote->about }}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
 
-                            <!-- Owl Carousel End -->
-                        @else
-                            <!-- Static grid for 4 or fewer speakers -->
-                            <div class="row g-4">
-                                @foreach ($kns as $keynote)
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="cardcontainer">
-                                            <div class="card">
-                                                <div class="front">
-                                                    <div class="overflow-hidden"
-                                                        style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                        <img class="img-fluid"
-                                                            src="{{ asset('public/img/' . $keynote->image) }}"
-                                                            width="280px" alt="">
-                                                    </div>
-                                                    <div class="team-text text-center p-4">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p class="text-primary">{{ $keynote->designation }}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="back">
-                                                    <div class="team-text text-center">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p>{{ $keynote->about }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
+                    <table id="rwd-table">
+
+                        <tbody>
+                            @foreach ($scopes as $scope)
+                                <tr>
+                                    <td>{{ $scope->col_1 }}</td>
+                                    <td>{{ $scope->col_2 }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
+
                 <h3>Technical Committee</h3>
-                <div class="container-xxl py-5" id="spk">
-                    <div class="">
-                        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
-                            style="max-width: 500px;">
+                <div class="row g-4 justify-content-center">
 
-                        </div>
 
-                        @if (count($kns) > 4)
-                            <!-- Owl Carousel Start -->
-                            <div class="container-fluid-carousel d-flex justify-content-center">
-                                <div class="owl-carousel owl-theme">
-                                    @foreach ($kns as $keynote)
-                                        <div class="item d-flex justify-content-center">
-                                            <div class="cardcontainer">
-                                                <div class="card">
-                                                    <div class="front">
-                                                        <div class="overflow-hidden"
-                                                            style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                            <img class="img-fluid"
-                                                                src="{{ asset('public/img/' . $keynote->image) }}"
-                                                                width="100%" alt="">
-                                                        </div>
-                                                        <div class="team-text text-center p-4">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p class="text-primary">{{ $keynote->designation }}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back">
-                                                        <div class="team-text text-center">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p>{{ $keynote->about }}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
+                    <table id="rwd-table">
 
-                            <!-- Owl Carousel End -->
-                        @else
-                            <!-- Static grid for 4 or fewer speakers -->
-                            <div class="row g-4">
-                                @foreach ($kns as $keynote)
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="cardcontainer">
-                                            <div class="card">
-                                                <div class="front">
-                                                    <div class="overflow-hidden"
-                                                        style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                        <img class="img-fluid"
-                                                            src="{{ asset('public/img/' . $keynote->image) }}"
-                                                            width="280px" alt="">
-                                                    </div>
-                                                    <div class="team-text text-center p-4">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p class="text-primary">{{ $keynote->designation }}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="back">
-                                                    <div class="team-text text-center">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p>{{ $keynote->about }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
+                        <tbody>
+                            @foreach ($scopes as $scope)
+                                <tr>
+                                    <td>{{ $scope->col_1 }}</td>
+                                    <td>{{ $scope->col_2 }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
                 <h3>Registration Committee</h3>
-                <div class="container-xxl py-5" id="spk">
-                    <div class="">
-                        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
-                            style="max-width: 500px;">
 
-                        </div>
+                <div class="row g-4 justify-content-center">
 
-                        @if (count($kns) > 4)
-                            <!-- Owl Carousel Start -->
-                            <div class="container-fluid-carousel d-flex justify-content-center">
-                                <div class="owl-carousel owl-theme">
-                                    @foreach ($kns as $keynote)
-                                        <div class="item d-flex justify-content-center">
-                                            <div class="cardcontainer">
-                                                <div class="card">
-                                                    <div class="front">
-                                                        <div class="overflow-hidden"
-                                                            style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                            <img class="img-fluid"
-                                                                src="{{ asset('public/img/' . $keynote->image) }}"
-                                                                width="100%" alt="">
-                                                        </div>
-                                                        <div class="team-text text-center p-4">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p class="text-primary">{{ $keynote->designation }}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back">
-                                                        <div class="team-text text-center">
-                                                            <h5>{{ $keynote->name }}</h5>
-                                                            <p>{{ $keynote->about }}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
 
-                            <!-- Owl Carousel End -->
-                        @else
-                            <!-- Static grid for 4 or fewer speakers -->
-                            <div class="row g-4">
-                                @foreach ($kns as $keynote)
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="cardcontainer">
-                                            <div class="card">
-                                                <div class="front">
-                                                    <div class="overflow-hidden"
-                                                        style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                                        <img class="img-fluid"
-                                                            src="{{ asset('public/img/' . $keynote->image) }}"
-                                                            width="280px" alt="">
-                                                    </div>
-                                                    <div class="team-text text-center p-4">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p class="text-primary">{{ $keynote->designation }}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="back">
-                                                    <div class="team-text text-center">
-                                                        <h5>{{ $keynote->name }}</h5>
-                                                        <p>{{ $keynote->about }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
+                    <table id="rwd-table">
+
+                        <tbody>
+                            @foreach ($scopes as $scope)
+                                <tr>
+                                    <td>{{ $scope->col_1 }}</td>
+                                    <td>{{ $scope->col_2 }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
-
 
             </div>
         </div>

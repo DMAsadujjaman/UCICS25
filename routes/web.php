@@ -8,6 +8,7 @@ use App\Http\Controllers\ScopesController;
 use App\Http\Controllers\CallFpController;
 use App\Http\Controllers\ChairController;
 use App\Http\Controllers\KNSpeakerController;
+use App\Http\Controllers\CommitteesController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -80,6 +81,15 @@ Route::middleware('auth','verified')->group(function(){
     Route::get('/edit/{id}', [KNSpeakerController::class, 'edit'])->name('kns.edit');
     Route::get('/delete/{id}', [KNSpeakerController::class, 'destroy'])->name('kns.delete');
     Route::patch('/kns/{id}', [KNSpeakerController::class,'update'])->name('kns.update');
+    });
+
+    Route::prefix('committees')->group(function(){
+    Route::get('/view', [CommitteesController::class, 'index'])->name('committees.view');
+    Route::get('/add', [CommitteesController::class, 'create'])->name('committees.add');
+    Route::patch('/store', [CommitteesController::class, 'store'])->name('committees.store');
+    Route::get('/edit/{id}', [CommitteesController::class, 'edit'])->name('committees.edit');
+    Route::get('/delete/{id}', [CommitteesController::class, 'destroy'])->name('committees.delete');
+    Route::patch('/kns/{id}', [CommitteesController::class,'update'])->name('committees.update');
     });
 
 

@@ -37,7 +37,7 @@ class WelcomeController extends Controller
     }
     public function committee()
     {
-        $data['kns']=KNSpeaker::all();
+        $data['scopes']=Scopes::all();
         return view('frontend.single_page.committee',$data);
 
     }
