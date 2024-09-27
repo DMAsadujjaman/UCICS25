@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('name');
             $table->string('affil')->nullable();
-            $table->string('committee')->nullable();
+            $table->string('committee');
             $table->timestamps();
         });
     }

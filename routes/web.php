@@ -19,6 +19,7 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('submission_guideline', [WelcomeController::class, 'submissionGuideline'])->name('submissionguide');
 Route::get('faq', [WelcomeController::class, 'faq'])->name('faq');
 Route::get('committee', [WelcomeController::class, 'committee'])->name('committee');
+Route::get('swaward', [WelcomeController::class, 'swaward'])->name('swaward');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
