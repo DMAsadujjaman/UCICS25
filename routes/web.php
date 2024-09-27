@@ -9,6 +9,7 @@ use App\Http\Controllers\CallFpController;
 use App\Http\Controllers\ChairController;
 use App\Http\Controllers\KNSpeakerController;
 use App\Http\Controllers\CommitteesController;
+use App\Http\Controllers\SubmissionGLsController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -93,6 +94,16 @@ Route::middleware('auth','verified')->group(function(){
     Route::patch('/kns/{id}', [CommitteesController::class,'update'])->name('committees.update');
     });
 
+    Route::prefix('submission')->group(function(){
+    Route::get('/view', [SubmissionGLsController::class, 'index'])->name('submission.view');
+    Route::get('/edit/{id}', [SubmissionGLsController::class, 'edit'])->name('submission.edit');
+    Route::patch('/submission/{id}', [SubmissionGLsController::class,'update'])->name('submission.update');
+    });
+    Route::prefix('award')->group(function(){
+    Route::get('/view', [SubmissionGLsController::class, 'index_spa'])->name('award.view');
+    Route::get('/edit/{id}', [SubmissionGLsController::class, 'edit'])->name('award.edit');
+    Route::patch('/award/{id}', [SubmissionGLsController::class,'update'])->name('award.update');
+    });
 
 });
 

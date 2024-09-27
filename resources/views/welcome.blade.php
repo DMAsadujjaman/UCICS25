@@ -353,7 +353,7 @@ $count = 0;
 </div>
 <!-- Donate End -->
 
-
+{{-- key note speaker --}}
 <div class="container-xxl py-5" id="spk">
     <div class="">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
@@ -425,6 +425,7 @@ $count = 0;
     </div>
 </div>
 
+{{-- sponsors --}}
 <div class="container-xxl py-5" id="spn">
     <div class="">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">

@@ -10,6 +10,7 @@ use App\Models\call_fp;
 use App\Models\Chair;
 use App\Models\KNSpeaker;
 use App\Models\Committees;
+use App\Models\SubmissionGLs;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Support\Facades\DB;
@@ -29,7 +30,8 @@ class WelcomeController extends Controller
     }
     public function submissionGuideline()
     {
-        return view('frontend.single_page.submissionguide');
+        $data['submissionGL']=SubmissionGLs::where('page','SGL')->first();
+        return view('frontend.single_page.submissionguide', $data);
 
     }
     public function faq()
@@ -49,7 +51,7 @@ class WelcomeController extends Controller
     }
     public function swaward()
     {
-        $data['scopes']=Scopes::all();
+        $data['submissionGL']=SubmissionGLs::where('page','SPA')->first();
         return view('frontend.single_page.award',$data);
 
     }
