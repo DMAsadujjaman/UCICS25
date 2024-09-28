@@ -46,6 +46,21 @@
 
 
     <style>
+        /* To position the second-level dropdown */
+        /* Align the submenu correctly to the right */
+        .dropdown-submenu .submenu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+        }
+
+        .dropdown-submenu:hover .submenu {
+            display: block;
+        }
+
+
         .partners {
             padding: 10px;
         }
@@ -715,6 +730,7 @@
             });
         });
     </script>
+
 
 
 

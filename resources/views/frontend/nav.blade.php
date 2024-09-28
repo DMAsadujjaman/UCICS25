@@ -43,9 +43,9 @@
                 </div>
                 <a href="{{route('welcome')}}#spn" class="nav-item nav-link">Sponsors</a>
                 <a href="{{route('swaward')}}" class="nav-item nav-link">Student Paper Award</a>
-                <a href="#ab" class="nav-item nav-link">Important Dates</a>
+                <a href="{{route('welcome')}}#ab" class="nav-item nav-link">Important Dates</a>
                 {{--  <a href="#cfp" class="nav-item nav-link">Call for Paper</a>  --}}
-                <div class="nav-item dropdown">
+                {{-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Participant
                         Resources</a>
                     <div class="dropdown-menu m-0">
@@ -57,7 +57,30 @@
                         <a href="#" class="dropdown-item">Developing the Presentation</a>
 
                     </div>
+                </div> --}}
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Participant Resources</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="{{ route('faq') }}" class="dropdown-item">FAQ</a>
+                        <a href="{{ route('download.down_cf') }}" class="dropdown-item">Conference Flyers</a>
+                
+                        <!-- Full Paper Template with 2nd level dropdown -->
+                        <div class="dropdown-submenu position-relative">
+                            <a href="#" class="dropdown-item dropdown-toggle">Full Paper Template</a>
+                            <div class="dropdown-menu submenu">
+                                <a href="{{ route('download.down_wt') }}" class="dropdown-item">Word Template</a>
+                                <a href="{{ route('download.down_latx') }}" class="dropdown-item">LaTeX Template</a>
+                            </div>
+                        </div>
+                
+                        <a href="{{ route('download.down_cp') }}" class="dropdown-item">Conference Poster</a>
+                        <a href="{{ route('download.down_bl') }}" class="dropdown-item">Program Booklet</a>
+                        <a href="{{ route('download.down_dtp') }}" class="dropdown-item">Developing the Presentation</a>
+                    </div>
                 </div>
+                
+                
+                
                 <a href="contact.html" class="nav-item nav-link">Registration</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>

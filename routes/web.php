@@ -10,6 +10,8 @@ use App\Http\Controllers\ChairController;
 use App\Http\Controllers\KNSpeakerController;
 use App\Http\Controllers\CommitteesController;
 use App\Http\Controllers\SubmissionGLsController;
+use App\Http\Controllers\DownloadsController;
+use App\Http\Controllers\FaqsController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -20,7 +22,7 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('submission_guideline', [WelcomeController::class, 'submissionGuideline'])->name('submissionguide');
 Route::get('faq', [WelcomeController::class, 'faq'])->name('faq');
 Route::get('committee', [WelcomeController::class, 'committee'])->name('committee');
-Route::get('swaward', [WelcomeController::class, 'swaward'])->name('swaward');
+Route::get('student_award', [WelcomeController::class, 'swaward'])->name('swaward');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -104,6 +106,33 @@ Route::middleware('auth','verified')->group(function(){
     Route::get('/edit/{id}', [SubmissionGLsController::class, 'edit'])->name('award.edit');
     Route::patch('/award/{id}', [SubmissionGLsController::class,'update'])->name('award.update');
     });
+    Route::prefix('download')->group(function(){
+    Route::get('/view', [DownloadsController::class, 'index'])->name('download.view');
+    Route::get('/add', [DownloadsController::class, 'create'])->name('download.add');
+    Route::patch('/store', [DownloadsController::class, 'store'])->name('download.store');
+
+
+    Route::get('/conference_flyers', [DownloadsController::class, 'down_cf'])->name('download.down_cf');
+    Route::get('/word_template', [DownloadsController::class, 'down_wt'])->name('download.down_wt');
+    Route::get('/latex_template', [DownloadsController::class, 'down_latx'])->name('download.down_latx');
+    Route::get('/Conference_Poster', [DownloadsController::class, 'down_cp'])->name('download.down_cp');
+    Route::get('/Program_Booklet', [DownloadsController::class, 'down_bl'])->name('download.down_bl');
+    Route::get('/Developing_the_Presentation', [DownloadsController::class, 'down_dtp'])->name('download.down_dtp');
+    
+    
+    Route::get('/edit/{id}', [DownloadsController::class, 'edit'])->name('download.edit');
+    Route::patch('/download/{id}', [DownloadsController::class,'update'])->name('download.update');
+    Route::get('/delete/{id}', [DownloadsController::class, 'destroy'])->name('download.delete');
+    });
+
+    Route::prefix('faqs')->group(function(){
+        Route::get('/view', [FaqsController::class, 'index'])->name('faq.view');
+        Route::get('/add', [FaqsController::class, 'create'])->name('faq.add');
+        Route::patch('/store', [FaqsController::class, 'store'])->name('faq.store');
+        Route::get('/edit/{id}', [FaqsController::class, 'edit'])->name('faq.edit');
+        Route::patch('/faq/{id}', [FaqsController::class,'update'])->name('faq.update');
+        Route::get('/delete/{id}', [FaqsController::class, 'destroy'])->name('faq.delete');
+        });
 
 });
 

@@ -303,6 +303,7 @@ $count = 0;
             @foreach ($scopes as $scope)
             @if (!empty($scope->title))
             <h1 class="display-6 mb-5">{{ $scope->title }}</h1>
+            @break
             @endif
             @endforeach
         </div>

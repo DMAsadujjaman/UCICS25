@@ -11,6 +11,7 @@ use App\Models\Chair;
 use App\Models\KNSpeaker;
 use App\Models\Committees;
 use App\Models\SubmissionGLs;
+use App\Models\Faqs;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Support\Facades\DB;
@@ -36,7 +37,8 @@ class WelcomeController extends Controller
     }
     public function faq()
     {
-        return view('frontend.single_page.faq');
+        $data['faqs']=Faqs::all();
+        return view('frontend.single_page.faq',$data);
 
     }
     public function committee()
