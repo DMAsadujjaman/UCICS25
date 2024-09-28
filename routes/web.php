@@ -12,6 +12,7 @@ use App\Http\Controllers\CommitteesController;
 use App\Http\Controllers\SubmissionGLsController;
 use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\SponsorsController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -23,6 +24,15 @@ Route::get('submission_guideline', [WelcomeController::class, 'submissionGuideli
 Route::get('faq', [WelcomeController::class, 'faq'])->name('faq');
 Route::get('committee', [WelcomeController::class, 'committee'])->name('committee');
 Route::get('student_award', [WelcomeController::class, 'swaward'])->name('swaward');
+Route::get('registration', [WelcomeController::class, 'registration'])->name('reg');
+
+Route::get('/conference_flyers', [DownloadsController::class, 'down_cf'])->name('download.down_cf');
+    Route::get('/word_template', [DownloadsController::class, 'down_wt'])->name('download.down_wt');
+    Route::get('/latex_template', [DownloadsController::class, 'down_latx'])->name('download.down_latx');
+    Route::get('/Conference_Poster', [DownloadsController::class, 'down_cp'])->name('download.down_cp');
+    Route::get('/Program_Booklet', [DownloadsController::class, 'down_bl'])->name('download.down_bl');
+    Route::get('/Developing_the_Presentation', [DownloadsController::class, 'down_dtp'])->name('download.down_dtp');
+    
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -112,12 +122,6 @@ Route::middleware('auth','verified')->group(function(){
     Route::patch('/store', [DownloadsController::class, 'store'])->name('download.store');
 
 
-    Route::get('/conference_flyers', [DownloadsController::class, 'down_cf'])->name('download.down_cf');
-    Route::get('/word_template', [DownloadsController::class, 'down_wt'])->name('download.down_wt');
-    Route::get('/latex_template', [DownloadsController::class, 'down_latx'])->name('download.down_latx');
-    Route::get('/Conference_Poster', [DownloadsController::class, 'down_cp'])->name('download.down_cp');
-    Route::get('/Program_Booklet', [DownloadsController::class, 'down_bl'])->name('download.down_bl');
-    Route::get('/Developing_the_Presentation', [DownloadsController::class, 'down_dtp'])->name('download.down_dtp');
     
     
     Route::get('/edit/{id}', [DownloadsController::class, 'edit'])->name('download.edit');
@@ -132,6 +136,14 @@ Route::middleware('auth','verified')->group(function(){
         Route::get('/edit/{id}', [FaqsController::class, 'edit'])->name('faq.edit');
         Route::patch('/faq/{id}', [FaqsController::class,'update'])->name('faq.update');
         Route::get('/delete/{id}', [FaqsController::class, 'destroy'])->name('faq.delete');
+        });
+    Route::prefix('sponsors')->group(function(){
+        Route::get('/view', [SponsorsController::class, 'index'])->name('sponsor.view');
+        Route::get('/add', [SponsorsController::class, 'create'])->name('sponsor.add');
+        Route::patch('/store', [SponsorsController::class, 'store'])->name('sponsor.store');
+        Route::get('/edit/{id}', [SponsorsController::class, 'edit'])->name('sponsor.edit');
+        Route::patch('/sponsor/{id}', [SponsorsController::class,'update'])->name('sponsor.update');
+        Route::get('/delete/{id}', [SponsorsController::class, 'destroy'])->name('sponsor.delete');
         });
 
 });

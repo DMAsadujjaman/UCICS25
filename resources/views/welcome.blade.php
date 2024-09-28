@@ -337,21 +337,31 @@ $count = 0;
 
 <!-- Service End -->
 <!-- Donate Start -->
+@foreach ($sponsors as $sponsor)
+@if (!empty($sponsor->title))
 <div class="container-fluid donate my-5 py-5" data-parallax="scroll"
-    data-image-src="{{ asset('public') }}/img/carousel-2.jpg">
+    data-image-src="{{ asset('public/img/' . $sponsor->image)}}">
     <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-md-12 wow fadeIn" style="text-align: center;" data-wow-delay="0.1s">
-
-                <h1 class="display-6 text-white mb-3">“The future belongs to those who believe in the beauty of their
-                    dreams.”</h1>
-                <p class="text-white-50 mb-0"> – Eleanor Roosevelt</p>
+                @foreach ($sponsors as $sponsor)
+                @if (!empty($sponsor->title))
+                <h1 class="display-6 text-white mb-3">
+                    {{ $sponsor->title }}
+                </h1>
+                <p class="text-white-50 mb-0"> {{ $sponsor->subtitle }}</p>
+                @break
+                @endif
+                @endforeach
             </div>
-
-
         </div>
     </div>
 </div>
+@break
+@endif
+@endforeach
+
+
 <!-- Donate End -->
 
 {{-- key note speaker --}}
@@ -432,12 +442,105 @@ $count = 0;
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <h1 class="display-6 mb-5">Sponsors</h1>
         </div>
+        <div class="slider">
+            <div class="slide-track">
 
-        <section class='partners'>
-            <div class='partners-img-container'>
-                <div class='partners-img'></div>
+
+                @foreach ($sponsors as $sponsor)
+                @if ($sponsor->id != 1)
+                <div class="slide">
+                    <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{$sponsor->title}}">
+                </div>
+                @endif
+                @endforeach
+
+                @foreach ($sponsors as $sponsor)
+                @if ($sponsor->id != 1)
+                <div class="slide">
+                    <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{$sponsor->title}}">
+                </div>
+                @endif
+                @endforeach
+
+                @foreach ($sponsors as $sponsor)
+                @if ($sponsor->id != 1)
+                <div class="slide">
+                    <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{$sponsor->title}}">
+                </div>
+                @endif
+                @endforeach
+
+                @foreach ($sponsors as $sponsor)
+                @if ($sponsor->id != 1)
+                <div class="slide">
+                    <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{$sponsor->title}}">
+                </div>
+                @endif
+                @endforeach
+
+
+                {{--
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
+                        alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
+                        alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
+                        alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
+                        alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
+                        alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
+                        alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+                </div> --}}
+
+
             </div>
-        </section>
+        </div>
     </div>
 </div>
 

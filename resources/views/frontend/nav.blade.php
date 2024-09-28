@@ -81,7 +81,7 @@
                 
                 
                 
-                <a href="contact.html" class="nav-item nav-link">Registration</a>
+                <a href="{{route('reg')}}" class="nav-item nav-link">Registration</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
 

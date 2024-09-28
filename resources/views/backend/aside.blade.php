@@ -35,7 +35,7 @@ $route = Route::current()->getName();
                 <li class="nav-header">Site Control</li>
 
 
-                <li class="nav-item {{request()->routeIs('kns.view') || request()->routeIs('scopes.view') || request()->routeIs('call_fp.view')||request()->routeIs('about.view') || request()->routeIs('chair.view') || request()->routeIs('main_page.top')||request()->routeIs('slider.view') ? 'menu-open' : '' }}">
+                <li class="nav-item {{request()->routeIs('sponsor.view')||request()->routeIs('kns.view') || request()->routeIs('scopes.view') || request()->routeIs('call_fp.view')||request()->routeIs('about.view') || request()->routeIs('chair.view') || request()->routeIs('main_page.top')||request()->routeIs('slider.view') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link"></i>
                         <p>
                             Main Page
@@ -86,6 +86,13 @@ $route = Route::current()->getName();
                                 class="nav-link {{ request()->routeIs('kns.view') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Keynote Speaker</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('sponsor.view') }}"
+                                class="nav-link {{ request()->routeIs('sponsor.view') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Sponsors</p>
                             </a>
                         </li>
 

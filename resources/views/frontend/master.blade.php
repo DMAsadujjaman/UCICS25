@@ -61,6 +61,35 @@
         }
 
 
+
+        .slider img {
+            width: 100px;
+            height: 100px;
+            animation: scroll 20s linear infinite;
+        }
+
+        .slide-track {
+            width: 100%;
+            display: flex;
+            gap: 2em;
+            overflow: hidden;
+        }
+
+        .slider {
+            padding: 2em 2em;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translatex(-1000%)
+            }
+        }
+
+        /* 
         .partners {
             padding: 10px;
         }
@@ -116,15 +145,7 @@
             cursor: grab;
         }
 
-
-
-
-
-
-
-
-
-        .faq-header {
+        */ .faq-header {
             font-size: 42px;
             border-bottom: 1px dotted #ccc;
             padding: 24px;
