@@ -38,7 +38,7 @@
 
             {!! $submissionGL->text_2 !!}
             @if (!empty($submissionGL->image_3))
-            <div class="w-100" style="height: 400px;">
+            <div class="w-100" style="height: 400px;"  >
                 <img class="w-100" style="height: 400px; object-fit: cover"
                     src="{{ asset('public/img/' . $submissionGL->image_3) }}" alt="Image">
             </div>

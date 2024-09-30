@@ -413,7 +413,7 @@ $count = 0;
                     <div class="card">
                         <div class="front">
                             <div class="overflow-hidden" style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}" width="280px"
+                                <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}" width="280px" height="250px"
                                     alt="">
                             </div>
                             <div class="team-text text-center p-4">
