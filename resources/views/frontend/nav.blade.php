@@ -34,11 +34,13 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Overview</a>
                     <div class="dropdown-menu m-0">
                         <a href="{{route('welcome')}}#scp" class="dropdown-item">Conference Scopes</a>
-                        <a href="#ftr" class="dropdown-item">Conference Venue</a>
+                        
                         <a href="{{route('welcome')}}#cfp" class="dropdown-item">Call for papers</a>
                         <a href="{{route('submissionguide')}}" class="dropdown-item">Submission Guideline</a>
-                        <a href="{{route('committee')}}" class="dropdown-item">Committees</a>
+                        <a href="{{route('submissionguide')}}" class="dropdown-item">Camera Ready Submission Guideline</a>
                         <a href="{{route('welcome')}}#spk" class="dropdown-item">Speakers</a>
+                        <a href="{{route('committee')}}" class="dropdown-item">Committees</a>
+                        <a href="#ftr" class="dropdown-item">Conference Venue</a>
                     </div>
                 </div>
                 <a href="{{route('welcome')}}#spn" class="nav-item nav-link">Sponsors</a>
@@ -66,16 +68,19 @@
                 
                         <!-- Full Paper Template with 2nd level dropdown -->
                         <div class="dropdown-submenu position-relative">
-                            <a href="#" class="dropdown-item dropdown-toggle">Full Paper Template</a>
+                            <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Full Paper Template</a>
                             <div class="dropdown-menu submenu">
                                 <a href="{{ route('download.down_wt') }}" class="dropdown-item">Word Template</a>
                                 <a href="{{ route('download.down_latx') }}" class="dropdown-item">LaTeX Template</a>
                             </div>
                         </div>
                 
-                        <a href="{{ route('download.down_cp') }}" class="dropdown-item">Conference Poster</a>
+                        <a href="{{ route('download.down_cp') }}" class="dropdown-item">Submission Guideline</a>
+                        <a href="{{ route('download.down_cp') }}" class="dropdown-item">Camera Ready Submission Guideline</a>
+                        {{-- <a href="{{ route('download.down_cp') }}" class="dropdown-item">Conference Poster</a> --}}
+                        <a href="{{ route('download.down_dtp') }}" class="dropdown-item">Presentation Guideline</a>
                         <a href="{{ route('download.down_bl') }}" class="dropdown-item">Program Booklet</a>
-                        <a href="{{ route('download.down_dtp') }}" class="dropdown-item">Developing the Presentation</a>
+                        
                     </div>
                 </div>
                 

@@ -99,7 +99,15 @@ class SubmissionGLsController extends Controller
 
 
         });
-        return redirect()->route('submission.view')->with('success', ' Speaker Info Updated Successfully');
+
+        if($id== '1'){
+             return redirect()->route('submission.view')->with('success', ' Speaker Info Updated Successfully');
+        }else{
+            return redirect()->route('award.view')->with('success', ' Speaker Info Updated Successfully');
+            
+        }
+
+
     }
 
     /**
