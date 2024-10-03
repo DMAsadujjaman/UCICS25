@@ -54,7 +54,7 @@
                     <input id="{{$faq->id}}" type="checkbox" class="panel">
                     <div class="plus" style="padding-right: 10px">+</div>
                     <label for="{{$faq->id}}" class="panel-title">{{$faq->qus}}</label>
-                    <div class="panel-content">{{$faq->ans}}</div>
+                    <div class="panel-content">{!! faq->ans !!}</div>
                 </div>
                 @endforeach
 
