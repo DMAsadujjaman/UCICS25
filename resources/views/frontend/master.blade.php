@@ -48,7 +48,7 @@
     <style>
         /* To position the second-level dropdown */
         /* Align the submenu correctly to the right */
-        .dropdown-submenu .submenu {
+        /* .dropdown-submenu .submenu {
             display: none;
             position: absolute;
             top: 0;
@@ -59,8 +59,26 @@
         .dropdown-submenu:hover .submenu {
             display: block;
         }
+ */
+        .dropdown-submenu .submenu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+            z-index: 1000;
+        }
+
+        .dropdown-submenu:hover>.submenu,
+        .dropdown-submenu:focus-within>.submenu {
+            display: block;
+        }
 
 
+        /* Optional: Add transition for a smoother appearance */
+        .dropdown-submenu .submenu {
+            transition: all 0.3s ease-in-out;
+        }
 
         .slider img {
             width: 100px;
@@ -751,6 +769,72 @@
             });
         });
     </script>
+
+    <!-- Other HTML content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all dropdown-submenu elements
+            var dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+    
+            // Function to show the submenu
+            function showSubmenu(submenu) {
+                submenu.style.display = 'block';
+            }
+    
+            // Function to hide the submenu
+            function hideSubmenu(submenu) {
+                submenu.style.display = 'none';
+            }
+    
+            // Delay variable to handle the timeout
+            let hideTimeout;
+    
+            dropdownSubmenus.forEach(function (submenu) {
+                var submenuElement = submenu.querySelector('.submenu');
+    
+                // Show submenu when hovering
+                submenu.addEventListener('mouseenter', function () {
+                    clearTimeout(hideTimeout);
+                    showSubmenu(submenuElement);
+                });
+    
+                // Hide submenu when leaving
+                submenu.addEventListener('mouseleave', function () {
+                    hideTimeout = setTimeout(() => {
+                        hideSubmenu(submenuElement);
+                    }, 200); // Delay before hiding (adjust as needed)
+                });
+    
+                // Handle keyboard accessibility
+                submenu.addEventListener('focusin', function () {
+                    clearTimeout(hideTimeout);
+                    showSubmenu(submenuElement);
+                });
+    
+                submenu.addEventListener('focusout', function () {
+                    hideTimeout = setTimeout(() => {
+                        hideSubmenu(submenuElement);
+                    }, 200); // Delay before hiding (adjust as needed)
+                });
+            });
+    
+            // Ensure that the submenu closes when clicking elsewhere
+            document.addEventListener('click', function (event) {
+                dropdownSubmenus.forEach(function (submenu) {
+                    var submenuElement = submenu.querySelector('.submenu');
+                    if (!submenu.contains(event.target)) {
+                        hideSubmenu(submenuElement);
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+
+</body>
+
+
 
 
 
