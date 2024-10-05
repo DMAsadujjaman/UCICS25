@@ -10,8 +10,10 @@ use App\Http\Controllers\ChairController;
 use App\Http\Controllers\KNSpeakerController;
 use App\Http\Controllers\CommitteesController;
 use App\Http\Controllers\SubmissionGLsController;
+use App\Http\Controllers\CamReadySubsController;
 use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\SponsorsController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,16 +23,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('submission_guideline', [WelcomeController::class, 'submissionGuideline'])->name('submissionguide');
+Route::get('cam_submission_guideline', [WelcomeController::class, 'camsubmissionGuideline'])->name('camsubmissionguide');
 Route::get('faq', [WelcomeController::class, 'faq'])->name('faq');
 Route::get('committee', [WelcomeController::class, 'committee'])->name('committee');
 Route::get('student_award', [WelcomeController::class, 'swaward'])->name('swaward');
 Route::get('registration', [WelcomeController::class, 'registration'])->name('reg');
+Route::get('contact', [WelcomeController::class, 'contact'])->name('contact');
 
 Route::get('/conference_flyers', [DownloadsController::class, 'down_cf'])->name('download.down_cf');
     Route::get('/word_template', [DownloadsController::class, 'down_wt'])->name('download.down_wt');
     Route::get('/latex_template', [DownloadsController::class, 'down_latx'])->name('download.down_latx');
     Route::get('/Conference_Poster', [DownloadsController::class, 'down_cp'])->name('download.down_cp');
     Route::get('/Program_Booklet', [DownloadsController::class, 'down_bl'])->name('download.down_bl');
+    Route::get('/submissionGL', [DownloadsController::class, 'subgl'])->name('download.subGL');
+    Route::get('/Cam_submissionGL', [DownloadsController::class, 'camsubGL'])->name('download.camsubGL');
     Route::get('/Developing_the_Presentation', [DownloadsController::class, 'down_dtp'])->name('download.down_dtp');
     
 
@@ -111,6 +117,12 @@ Route::middleware('auth','verified')->group(function(){
     Route::get('/edit/{id}', [SubmissionGLsController::class, 'edit'])->name('submission.edit');
     Route::patch('/submission/{id}', [SubmissionGLsController::class,'update'])->name('submission.update');
     });
+
+    Route::prefix('cam_submission')->group(function(){
+    Route::get('/view', [CamReadySubsController::class, 'index'])->name('cam_submission.view');
+    Route::get('/edit/{id}', [CamReadySubsController::class, 'edit'])->name('cam_submission.edit');
+    Route::patch('/cam_submission/{id}', [CamReadySubsController::class,'update'])->name('cam_submission.update');
+    });
     Route::prefix('award')->group(function(){
     Route::get('/view', [SubmissionGLsController::class, 'index_spa'])->name('award.view');
     Route::get('/edit/{id}', [SubmissionGLsController::class, 'edit'])->name('award.edit');
@@ -137,6 +149,7 @@ Route::middleware('auth','verified')->group(function(){
         Route::patch('/faq/{id}', [FaqsController::class,'update'])->name('faq.update');
         Route::get('/delete/{id}', [FaqsController::class, 'destroy'])->name('faq.delete');
         });
+        
     Route::prefix('sponsors')->group(function(){
         Route::get('/view', [SponsorsController::class, 'index'])->name('sponsor.view');
         Route::get('/add', [SponsorsController::class, 'create'])->name('sponsor.add');
@@ -144,6 +157,15 @@ Route::middleware('auth','verified')->group(function(){
         Route::get('/edit/{id}', [SponsorsController::class, 'edit'])->name('sponsor.edit');
         Route::patch('/sponsor/{id}', [SponsorsController::class,'update'])->name('sponsor.update');
         Route::get('/delete/{id}', [SponsorsController::class, 'destroy'])->name('sponsor.delete');
+        });
+
+    Route::prefix('contacts')->group(function(){
+        Route::get('/view', [ContactsController::class, 'index'])->name('contact.view');
+        Route::get('/add', [ContactsController::class, 'create'])->name('contact.add');
+        Route::patch('/store', [ContactsController::class, 'store'])->name('contact.store');
+        Route::get('/edit/{id}', [ContactsController::class, 'edit'])->name('contact.edit');
+        Route::patch('/contact/{id}', [ContactsController::class,'update'])->name('contact.update');
+        Route::get('/delete/{id}', [ContactsController::class, 'destroy'])->name('contact.delete');
         });
 
 });

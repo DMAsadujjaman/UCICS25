@@ -27,7 +27,7 @@ $count = 0;
                                 <h4 class=" text-white mb-3 animated slideInDown">{{ $slider->date }}</h4>
                                 <h4 class=" text-white mb-3 animated slideInDown">{{ $slider->location }}</h4>
                                 @if ($count == 0)
-                                <a class="btn btn-primary py-2 px-3 me-3" href="">
+                                <a class="btn btn-primary py-2 px-3 me-3" href="{{ route('download.down_cf') }}">
                                     Call for Paper
                                 </a>
                                 <a class="btn btn-outline-primary py-2 px-3" href="">

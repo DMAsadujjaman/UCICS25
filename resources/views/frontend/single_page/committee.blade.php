@@ -11,7 +11,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-12 pt-5">
                                 <h1 class="display-4 text-white mb-3 animated slideInDown">Committees</h1>
-
                             </div>
                         </div>
                     </div>

@@ -60,6 +60,18 @@ class DownloadsController extends Controller
         // dd(asset('public/file/').$data['editData']->file);
         return response()->download(public_path('file/' . $data['editData']->file));
     }
+    public function subgl()
+    {
+        $data['editData']=Downloads::where('menu','Submission Guideline')->first();
+        // dd(asset('public/file/').$data['editData']->file);
+        return response()->download(public_path('file/' . $data['editData']->file));
+    }
+    public function camsubGL()
+    {
+        $data['editData']=Downloads::where('menu','Camera Ready Submission Guideline')->first();
+        // dd(asset('public/file/').$data['editData']->file);
+        return response()->download(public_path('file/' . $data['editData']->file));
+    }
 
 
     /**
@@ -113,9 +125,7 @@ class DownloadsController extends Controller
     {
         DB::transaction(function () use ($request, $id) {
             $data = Downloads::where('id', $id)->first();
-
             $data->menu = $request->menu;
-
             if ($request->file('file')) {
                 $file = $request->file('file');
 @unlink(public_path('file/' . $data->file));
@@ -123,21 +133,19 @@ class DownloadsController extends Controller
                 $file->move(public_path('file/'), $filename);
                 $data['file'] = $filename;
             }
-
             $data->save();
-
-
         });
-
-
         return redirect()->route('download.view')->with('success', ' chair Info Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Downloads $downloads)
+    public function destroy($id)
     {
-        //
+        $data=Downloads::find($id);
+        
+        $data->delete();
+        return redirect()->route('download.view');
     }
 }

@@ -121,7 +121,13 @@ $route = Route::current()->getName();
                         <li class="nav-item">
                             <a href="{{ route('submission.view') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Submission Guide Line</p>
+                                <p>Submission Guideline</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('cam_submission.view') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Camera Ready Submission Guideline</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -137,7 +143,7 @@ $route = Route::current()->getName();
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/examples/contact-us.html" class="nav-link">
+                            <a href="{{ route('contact.view') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Contact</p>
                             </a>

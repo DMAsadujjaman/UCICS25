@@ -1,29 +1,32 @@
 <!-- Navbar Start -->
 <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
-        <div class="col-lg-6 px-5 text-start">
+        <div class="col-lg-8 px-5 text-start">
             {{-- <small><i class="fa fa-map-marker-alt me-2"></i>Varendra University, Chandrima, Paba,
                 Rajshahi-6204</small> --}}
                 <small>
                     <img src="https://vu.edu.bd/img/ico/favicon.ico" alt="Location Icon" style="width: 16px; height: 16px; margin-right: 8px;">
-                    Varendra University, Chandrima, Paba, Rajshahi-6204
+                    {{$contacts->address}}
                 </small>
 
-            <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@example.com</small>
+            <small class="ms-4"><i class="fa fa-envelope me-2"></i>{{$contacts->email}}</small>
         </div>
-        <div class="col-lg-6 px-5 text-end">
+        <div class="col-lg-4 px-5 text-end">
             <small>Follow us:</small>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-twitter"></i></a>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
-            <a class="text-white-50 ms-3" href=""><i class="fab fa-instagram"></i></a>
+            <a class="text-white-50 ms-3" href="{{$contacts->fb}}"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-white-50 ms-3" href="{{$contacts->insta}}"><i class="fab fa-linkedin-in"></i></a>
+
         </div>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="{{ route('welcome') }}" class="navbar-brand ms-4 ms-lg-0">
+        {{-- <a href="{{ route('welcome') }}" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="fw-bold text-primary m-0">UCICS<span class="text-white">24</span></h1>
+        </a> --}}
+        <a href="{{ route('welcome') }}" class="navbar-brand ms-4 ms-lg-0">
+            <img src="{{ asset('public/img/') . $contacts->logo}}" alt="UCICS24 Logo" class="img-fluid" style="height: 70px;">
         </a>
+        
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +40,7 @@
                         
                         <a href="{{route('welcome')}}#cfp" class="dropdown-item">Call for papers</a>
                         <a href="{{route('submissionguide')}}" class="dropdown-item">Submission Guideline</a>
-                        <a href="{{route('submissionguide')}}" class="dropdown-item">Camera Ready Submission Guideline</a>
+                        <a href="{{route('camsubmissionguide')}}" class="dropdown-item">Camera Ready Submission Guideline</a>
                         <a href="{{route('welcome')}}#spk" class="dropdown-item">Speakers</a>
                         <a href="{{route('committee')}}" class="dropdown-item">Committees</a>
                         <a href="#ftr" class="dropdown-item">Conference Venue</a>
@@ -75,8 +78,8 @@
                             </div>
                         </div>
                 
-                        <a href="{{ route('download.down_cp') }}" class="dropdown-item">Submission Guideline</a>
-                        <a href="{{ route('download.down_cp') }}" class="dropdown-item">Camera Ready Submission Guideline</a>
+                        <a href="{{ route('download.subGL') }}" class="dropdown-item">Submission Guideline</a>
+                        <a href="{{ route('download.camsubGL') }}" class="dropdown-item">Camera Ready Submission Guideline</a>
                         {{-- <a href="{{ route('download.down_cp') }}" class="dropdown-item">Conference Poster</a> --}}
                         <a href="{{ route('download.down_dtp') }}" class="dropdown-item">Presentation Guideline</a>
                         <a href="{{ route('download.down_bl') }}" class="dropdown-item">Program Booklet</a>
@@ -87,7 +90,7 @@
                 
                 
                 <a href="{{route('reg')}}" class="nav-item nav-link">Registration</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
             </div>
 
 

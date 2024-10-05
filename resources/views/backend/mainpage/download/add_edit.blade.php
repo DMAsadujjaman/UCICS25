@@ -60,6 +60,10 @@
                                                 <option value="Conference Flyers" {{ @$editData['menu'] == 'Conference Flyers' ? 'selected' : '' }}>Conference Flyers</option>
                                                 <option value="Word Template" {{ @$editData['menu'] == 'Word Template' ? 'selected' : '' }}>Word Template</option>
                                                 <option value="LaTeX Template" {{ @$editData['menu'] == 'LaTeX Template' ? 'selected' : '' }}>LaTeX Template</option>
+
+                                                <option value="Submission Guideline" {{ @$editData['menu'] == 'Submission Guideline' ? 'selected' : '' }}>Submission Guideline</option>
+                                                <option value="Camera Ready Submission Guideline" {{ @$editData['menu'] == 'Camera Ready Submission Guideline' ? 'selected' : '' }}>Camera Ready Submission Guideline</option>
+
                                                 <option value="Conference Poster" {{ @$editData['menu'] == 'Conference Poster' ? 'selected' : '' }}>Conference Poster</option>
                                                 <option value="Program Booklet" {{ @$editData['menu'] == 'Program Booklet' ? 'selected' : '' }}>Program Booklet</option>
                                                 <option value="Developing the Presentation" {{ @$editData['menu'] == 'Developing the Presentation' ? 'selected' : '' }}>Developing the Presentation</option>
