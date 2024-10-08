@@ -87,7 +87,7 @@ class DownloadsController extends Controller
             if ($request->file('file')) {
                 $file = $request->file('file');
 @unlink(public_path('file/' . $data->file));
-                $filename = "/".date('YmdHi') . $file->getClientOriginalName();
+                $filename = "/". $file->getClientOriginalName();
                 $file->move(public_path('file/'), $filename);
                 $data['file'] = $filename;
             }
@@ -129,7 +129,7 @@ class DownloadsController extends Controller
             if ($request->file('file')) {
                 $file = $request->file('file');
 @unlink(public_path('file/' . $data->file));
-                $filename = "/".date('YmdHi') . $file->getClientOriginalName();
+                $filename = "/". $file->getClientOriginalName();
                 $file->move(public_path('file/'), $filename);
                 $data['file'] = $filename;
             }

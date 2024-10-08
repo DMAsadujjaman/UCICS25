@@ -12,6 +12,7 @@ use App\Models\KNSpeaker;
 use App\Models\Committees;
 use App\Models\SubmissionGLs;
 use App\Models\CamReadySubs;
+use App\Models\Regpages;
 use App\Models\Contacts;
 use App\Models\Faqs;
 use App\Models\Sponsors;
@@ -69,11 +70,8 @@ class WelcomeController extends Controller
     public function registration()
     {
         $data['contacts']=Contacts::first();
-        $data['scopes']=Scopes::all();
-        $data['orgcs']=Committees::where('committee', 'Organizing Committee')->get();
-        $data['advcs']=Committees::where('committee', 'Advisory Committee')->get();
-        $data['teccs']=Committees::where('committee', 'Technical Committee')->get();
-        $data['regcs']=Committees::where('committee', 'Registration Committee')->get();
+       
+        $data['regs']=Regpages::all();
         return view('frontend.single_page.registration',$data);
 
     }

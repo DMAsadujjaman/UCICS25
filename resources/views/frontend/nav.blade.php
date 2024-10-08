@@ -12,7 +12,7 @@
             <small class="ms-4"><i class="fa fa-envelope me-2"></i>{{$contacts->email}}</small>
         </div>
         <div class="col-lg-4 px-5 text-end">
-            <small>Follow us:</small>
+            <small>Stay Connected:</small>
             <a class="text-white-50 ms-3" href="{{$contacts->fb}}"><i class="fab fa-facebook-f"></i></a>
             <a class="text-white-50 ms-3" href="{{$contacts->insta}}"><i class="fab fa-linkedin-in"></i></a>
 
@@ -38,7 +38,7 @@
                     <div class="dropdown-menu m-0">
                         <a href="{{route('welcome')}}#scp" class="dropdown-item">Conference Scopes</a>
                         
-                        <a href="{{route('welcome')}}#cfp" class="dropdown-item">Call for papers</a>
+                        <a href="{{ route('download.down_cf') }}" class="dropdown-item">Call for papers</a>
                         <a href="{{route('submissionguide')}}" class="dropdown-item">Submission Guideline</a>
                         <a href="{{route('camsubmissionguide')}}" class="dropdown-item">Camera Ready Submission Guideline</a>
                         <a href="{{route('welcome')}}#spk" class="dropdown-item">Speakers</a>

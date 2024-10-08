@@ -28,23 +28,19 @@
 
         <div class="row g-4 justify-content-center">
             <h3>Organizing Committee</h3>
-
             <div class="row g-4 justify-content-center">
-
-
                 <table id="rwd-table">
 
                     <thead>
                         <tr>
-                            <td style="color: #FF6F0F; font-weight: 700">Name</td>
-                            <td style="color: #FF6F0F; font-weight: 700">Affiliation</td>
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($orgcs as $orgc)
                         <tr>
-                            <td>{{ $orgc->name }}</td>
-                            <td>{{ $orgc->affil }}</td>
+                            <td>{!! $orgc->name !!}</td>
+                            <td>{!! $orgc->affil !!}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -58,15 +54,14 @@
                 <table id="rwd-table">
                     <thead>
                         <tr>
-                            <td style="color: #FF6F0F; font-weight: 700">Name</td>
-                            <td style="color: #FF6F0F; font-weight: 700">Affiliation</td>
+                           
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($advcs as $advc)
                         <tr>
-                            <td>{{ $advc->name }}</td>
-                            <td>{{ $advc->affil }}</td>
+                            <td>{!! $advc->name !!}</td>
+                            <td>{!! $advc->affil !!}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -80,15 +75,14 @@
                 <table id="rwd-table">
                     <thead>
                         <tr>
-                            <td style="color: #FF6F0F; font-weight: 700">Name</td>
-                            <td style="color: #FF6F0F; font-weight: 700">Affiliation</td>
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($teccs as $teccs)
                         <tr>
-                            <td>{{ $teccs->name }}</td>
-                            <td>{{ $teccs->affil }}</td>
+                            <td>{!! $teccs->name !!}</td>
+                            <td>{!! $teccs->affil !!}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -102,15 +96,14 @@
                 <table id="rwd-table">
                     <thead>
                         <tr>
-                            <td style="color: #FF6F0F; font-weight: 700">Name</td>
-                            <td style="color: #FF6F0F; font-weight: 700">Affiliation</td>
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($regcs as $regc)
                         <tr>
-                            <td>{{ $regc->name }}</td>
-                            <td>{{ $regc->affil }}</td>
+                            <td>{!! $regc->name !!}</td>
+                            <td>{!! $regc->affil !!}</td>
                         </tr>
                         @endforeach
                     </tbody>

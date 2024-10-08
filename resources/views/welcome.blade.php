@@ -99,7 +99,7 @@ $count = 0;
 </div>
 <!-- some speach END-->
 <!-- About Start -->
-<div class="container-xxl py-5" id="ab">
+<div class="container-xxl py-2" id="ab">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -247,15 +247,15 @@ $count = 0;
 
 
 <!-- Causes Start -->
-<div class="container-xxl bg-light my-5 py-5" id="cfp">
+<div class="container-xxl bg-light my-5" id="cfp">
     <div class="container py-5">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        {{-- <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
 
             <h1 class="display-6 mb-5">{{ $call_fps->title }}</h1>
-        </div>
+        </div> --}}
         <div class="row g-4 justify-content-center">
 
-            <p class="mb-3" style="text-align: justify;">{!! $call_fps->about !!}</p>
+            {{-- <p class="mb-3" style="text-align: justify;">{!! $call_fps->about !!}</p> --}}
             <div class="wrapper">
                 <div class="">
                     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
