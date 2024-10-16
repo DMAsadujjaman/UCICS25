@@ -111,6 +111,13 @@ $route = Route::current()->getName();
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="{{ route('register.view') }}"
+                                class="nav-link {{ request()->routeIs('register.view') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registration</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('committees.view') }}"
                                 class="nav-link {{ request()->routeIs('committees.view') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>

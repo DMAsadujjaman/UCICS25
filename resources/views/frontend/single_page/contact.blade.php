@@ -28,11 +28,17 @@
 
         <div class="row g-4 justify-content-center">
             <h3 style="margin-top: 5px">Contacts</h3>
-            <p style="text-align: justify;">
-                Contact:{!! $contacts->contact_name !!} </br>
+            <p style="text-align: justify; color: black;">
+                {!! $contacts->contact_name !!} </br>
                 {!! $contacts->cdept !!}</br>
                 Tel: {!! $contacts->ctel !!}</br>
                 Email: {!! $contacts->cmail !!}</br>
+            </p>
+            <p style="text-align: justify; color: black;">
+                {!! $contacts->contact_name1 !!} </br>
+                {!! $contacts->cdept1 !!}</br>
+                Tel: {!! $contacts->ctel1 !!}</br>
+                Email: {!! $contacts->cmail1 !!}</br>
             </p>
 
         </div>

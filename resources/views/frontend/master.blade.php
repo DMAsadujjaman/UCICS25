@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>UCICS24</title>
+    <title>UCICS 2025</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -315,6 +315,7 @@
             position: absolute;
             backface-visibility: hidden;
         }
+        
 
 
 
@@ -829,6 +830,132 @@
             });
         });
     </script>
+    <script>
+        function toggleStudentFields() {
+            var studentYes = document.getElementById('student_yes').checked;
+            
+            // Student ID, Semester, and Picture fields
+            var idField = document.getElementById('student_id_field');
+            var semesterField = document.getElementById('semester_field');
+            var photoField = document.getElementById('photo_field');
+    
+            if (studentYes) {
+                // Show the fields if "Yes" is selected
+                idField.style.display = 'block';
+                semesterField.style.display = 'block';
+                photoField.style.display = 'block';
+            } else {
+                // Hide the fields if "No" is selected
+                idField.style.display = 'none';
+                semesterField.style.display = 'none';
+                photoField.style.display = 'none';
+            }
+        }
+    </script>
+    
+        <script>
+        function toggleAuthorFields() {
+            var authorYes = document.getElementById('author_yes').checked;
+            
+            // Student ID, Semester, and Picture fields
+            var pidField = document.getElementById('author_pid_field');
+            var scopeField = document.getElementById('author_scope_field');
+        
+    
+            if (authorYes) {
+                // Show the fields if "Yes" is selected
+                pidField.style.display = 'block';
+                scopeField.style.display = 'block';
+               
+            } else {
+                // Hide the fields if "No" is selected
+                pidField.style.display = 'none';
+                scopeField.style.display = 'none';
+               
+            }
+        }
+    </script>
+
+    <script>
+        function submitStudentData() {
+            // Gather form data
+            var name = document.getElementById('name').value;
+            var student = document.querySelector('input[name="student"]:checked').value;
+            var uid = document.getElementById('uid').value;
+            var semester = document.getElementById('semester').value;
+            var photo = document.getElementById('photo').files[0];
+    
+            // Create FormData to handle file upload
+            var formData = new FormData();
+            formData.append('name', name);
+            formData.append('student', student);
+            formData.append('uid', uid);
+            formData.append('semester', semester);
+            if (photo) {
+                formData.append('photo', photo);
+            }
+    
+            // Send AJAX request
+            fetch('{{ route('reg.store') }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Laravel CSRF protection
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);  // Show success message
+                } else {
+                    alert('Something went wrong.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+    
+    
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const nationalityInputs = document.querySelectorAll('input[name="nationality"]');
+    const pacSelect = document.getElementById('pac');
+    
+    // Disable the payment dropdown until nationality is selected
+    pacSelect.disabled = true;
+
+    nationalityInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            // Enable the payment category dropdown
+            pacSelect.disabled = false;
+            updatePacOptions(this.value);
+        });
+    });
+
+    pacSelect.addEventListener('focus', function() {
+        // Check if nationality is selected when user tries to interact with the dropdown
+        const selectedNationality = document.querySelector('input[name="nationality"]:checked');
+        if (!selectedNationality) {
+            alert("Please select nationality first.");
+            pacSelect.blur();  // Remove focus from the dropdown
+        }
+    });
+
+    function updatePacOptions(nationality) {
+        const options = pacSelect.querySelectorAll('option');
+        
+        options.forEach(option => {
+            if (option.value !== "") { // Skip the default "Select Payment" option
+                if (nationality == '1') {
+                    option.textContent = `${option.value} ${option.dataset.bangladesh}`;
+                } else {
+                    option.textContent = `${option.value} ${option.dataset.outside}`;
+                }
+            }
+        });
+    }
+});
+</script>
     
     
 

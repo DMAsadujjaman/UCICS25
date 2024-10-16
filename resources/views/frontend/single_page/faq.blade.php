@@ -52,9 +52,9 @@
                 @foreach ($faqs as $faq)
                 <div class="faq-question">
                     <input id="{{$faq->id}}" type="checkbox" class="panel">
-                    <div class="plus" style="padding-right: 10px">+</div>
-                    <label for="{{$faq->id}}" class="panel-title">{{$faq->qus}}</label>
-                    <div class="panel-content">{!! $faq->ans !!}</div>
+                    <div class="plus" style="padding-right: 10px; color:black;">+</div>
+                    <label for="{{$faq->id}}" class="panel-title" style="color:black; font-size:20px;">{{$faq->qus}}</label>
+                    <div class="panel-content" style="color:black;  font-size:20px;">{!! $faq->ans !!}</div>
                 </div>
                 @endforeach
 

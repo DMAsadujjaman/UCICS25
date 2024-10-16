@@ -12,7 +12,7 @@ $count = 0;
                 {{-- <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image"> --}}
 
                 <img class="w-100" src="{{ asset('public/img/') . $slider->image }}" alt="Image">
-                <div class="carousel-caption">
+                <div class="carousel-caption" >
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 pt-5">
@@ -89,7 +89,7 @@ $count = 0;
                             <span class="text-primary text-center">{!! $chair->dept !!}</span>
 
                             <span class="text-primary text-center">{!! $chair->address !!}</span>
-                            <span class="text-primary text-center">{!! $chair->email !!}</span>
+                            <!--<span class="text-primary text-center">{!! $chair->email !!}</span>-->
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ $count = 0;
 </div>
 <!-- some speach END-->
 <!-- About Start -->
-<div class="container-xxl py-5" id="ab">
+<div class="container-xxl py-2" id="ab">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -113,7 +113,7 @@ $count = 0;
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="h-100">
 
-                    <h1 class="display-6 mb-5">Important Dates</h1>
+                    <h1 class="display-6 mb-5">Important Deadlines</h1>
                     <div class="mt-5">
 
                         <div class="row align-items-center" style="background-color: #f8f9fa; padding: 10px 0;">
@@ -247,11 +247,10 @@ $count = 0;
 
 
 <!-- Causes Start -->
-<div class="container-xxl bg-light my-5 py-5" id="cfp">
+<div class="container-xxl bg-light my-5" id="cfp">
     <div class="container py-5">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-
-            <h1 class="display-6 mb-5">{{ $call_fps->title }}</h1>
+         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h1 class="display-12 mb-5">{!! $call_fps->title !!}</h1>
         </div>
         <div class="row g-4 justify-content-center">
 

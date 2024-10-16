@@ -10,8 +10,14 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 pt-5">
-                                <h1 class="display-4 text-white mb-3 animated slideInDown">Committees</h1>
-
+                                @foreach($regs as $reg)
+                                @if(!empty($reg->title))
+                                <h1 class="display-4 text-white mb-3 animated slideInDown">{!! $reg->title !!}</h1>
+                                @break
+                                @else
+                                <h3>Registration</h3>
+                                @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -28,26 +34,52 @@
     <div class="container">
 
         <div class="row g-4 justify-content-center">
+            @foreach($regs as $reg)
+            @if(!empty($reg->title))
+            <h3>{!! $reg->title !!}</h3>
+
+            {!! $reg->text1 !!} <br>
+            {!! $reg->table_title !!} <br>
+            @break
+            @else
             <h3>Registration</h3>
-            <div class="row g-4 justify-content-center">
-                <table id="rwd-table">
+            @endif
+            @endforeach
+            <div class="row g-4 ">
+                <table id="rwd-table" style="width: 80%">
                     <thead>
                         <tr>
-                            <td style="color: #FF6F0F; font-weight: 700">Name</td>
-                            <td style="color: #FF6F0F; font-weight: 700">Affiliation</td>
+                            <td style="color: #FF6F0F; font-weight: 700;">Category</td>
+                            <td style="color: #FF6F0F; font-weight: 700">International</td>
+                            <td style="color: #FF6F0F; font-weight: 700">Local</td>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($orgcs as $orgc)
+                        @foreach ($regs as $reg)
                         <tr>
-                            <td>{{ $orgc->name }}</td>
-                            <td>{{ $orgc->affil }}</td>
+                            <td style=" color: black;">{!! $reg->cat !!}</td>
+                            <td style=" color: black;">{!! $reg->int !!}</td>
+                            <td style=" color: black;">{!! $reg->nat !!}</td>
                         </tr>
                         @endforeach
                     </tbody>
-                    
+
                 </table>
+
+
             </div>
+            @foreach($regs as $reg)
+            @if(!empty($reg->note))
+            {!! $reg->note !!}
+            {!! $reg->text2 !!}
+            {!! $reg->img1 !!}
+            {!! $reg->text3 !!}
+            {!! $reg->img2 !!}
+            {!! $reg->text4 !!}
+            {!! $reg->link !!}
+            @break
+            @endif
+            @endforeach
         </div>
     </div>
 </div>
