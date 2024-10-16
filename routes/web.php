@@ -27,6 +27,8 @@ Route::get('committee', [WelcomeController::class, 'committee'])->name('committe
 Route::get('student_award', [WelcomeController::class, 'swaward'])->name('swaward');
 Route::get('registration', [WelcomeController::class, 'registration'])->name('reg');
 Route::get('contact', [WelcomeController::class, 'contact'])->name('contact');
+Route::get('reg_form', [WelcomeController::class, 'reg_form'])->name('reg_form');
+Route::patch('reg-store', [WelcomeController::class, 'reg_store'])->name('reg.store');
 
 Route::get('/conference_flyers', [DownloadsController::class, 'down_cf'])->name('download.down_cf');
     Route::get('/word_template', [DownloadsController::class, 'down_wt'])->name('download.down_wt');

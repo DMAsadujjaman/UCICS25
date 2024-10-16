@@ -27,6 +27,10 @@ return new class extends Migration
             $table->text('cdept')->nullable();
             $table->text('ctel')->nullable();
             $table->text('cmail')->nullable();
+            $table->string('contact_name1')->nullable();
+            $table->text('cdept1')->nullable();
+            $table->text('ctel1')->nullable();
+            $table->text('cmail1')->nullable();
             $table->timestamps();
         });
     }

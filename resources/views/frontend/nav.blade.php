@@ -24,7 +24,7 @@
             <h1 class="fw-bold text-primary m-0">UCICS<span class="text-white">24</span></h1>
         </a> --}}
         <a href="{{ route('welcome') }}" class="navbar-brand ms-4 ms-lg-0">
-            <img src="{{ asset('public/img/') . $contacts->logo}}" alt="UCICS24 Logo" class="img-fluid" style="height: 70px;">
+            <img src="{{ asset('public/img/') . $contacts->logo}}" alt="UCICS25 Logo" class="img-fluid" style="height: 70px;">
         </a>
         
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

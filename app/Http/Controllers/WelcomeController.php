@@ -12,9 +12,10 @@ use App\Models\KNSpeaker;
 use App\Models\Committees;
 use App\Models\SubmissionGLs;
 use App\Models\CamReadySubs;
-use App\Models\Regpages;
+use App\Models\RegPages;
 use App\Models\Contacts;
 use App\Models\Faqs;
+use App\Models\RegForms;
 use App\Models\Sponsors;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User as AuthUser;
@@ -71,8 +72,66 @@ class WelcomeController extends Controller
     {
         $data['contacts']=Contacts::first();
        
-        $data['regs']=Regpages::all();
+        $data['regs']=RegPages::all();
         return view('frontend.single_page.registration',$data);
+
+    }
+    public function reg_form()
+    {
+        $data['contacts']=Contacts::first();
+       
+        $data['regs']=RegForms::all();
+        return view('frontend.single_page.reg_form',$data);
+
+    }
+    public function reg_store(Request $request)
+    {
+        $data['contacts']=Contacts::first();
+       
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'university' => 'required|string',
+            'student' => 'required|boolean',
+            'uid' => 'nullable|string|required_if:student,1',
+            'semester' => 'nullable|string|required_if:student,1',
+            'photo' => 'nullable|file|image|required_if:student,1|max:2048',
+            'email' => 'required|email',
+            'mobile' => 'required|string',
+            'address' => 'nullable|string',
+            'country' => 'nullable|string',
+            'paper_id' => 'required|string',
+            'paper_title' => 'required|string',
+            'scope' => 'required|string',
+            'payment_category' => 'required|string',
+        ]);
+    
+        // Save the data (example with Student model)
+        $student = new RegForms();
+        $student->name = $validated['name'];
+        $student->university = $validated['university'];
+        $student->student = $validated['student'];
+        $student->uid = $validated['uid'];
+        $student->semester = $validated['semester'];
+        $student->email = $validated['email'];
+        $student->mobile = $validated['mobile'];
+        $student->address = $validated['address'];
+        $student->country = $validated['country'];
+        $student->paper_id = $validated['paper_id'];
+        $student->paper_title = $validated['paper_title'];
+        $student->scope = $validated['scope'];
+        $student->payment_category = $validated['payment_category'];
+    
+        // Handle photo upload if present
+        if ($request->hasFile('photo')) {
+            $filePath = $request->file('photo')->store('photos', 'public');
+            $student->photo = $filePath;
+        }
+    
+        $student->save();
+    
+        return response()->json(['success' => true, 'message' => 'Data saved successfully!']);
+    
+        // return view('frontend.single_page.reg_form',$data);
 
     }
     public function swaward()
