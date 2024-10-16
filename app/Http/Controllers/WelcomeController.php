@@ -79,9 +79,10 @@ class WelcomeController extends Controller
     public function reg_form()
     {
         $data['contacts']=Contacts::first();
-       $data['scopes']=Scopes::all();
+        $data['scopes']=Scopes::all();
         $data['regs']=RegForms::all();
         $data['regps']=RegPages::all();
+        $data['regs']=RegForms::all();
         return view('frontend.single_page.reg_form',$data);
 
     }
