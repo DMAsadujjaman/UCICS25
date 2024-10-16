@@ -45,11 +45,19 @@
             <h3>Registration</h3>
             @endif
             @endforeach
+<<<<<<< HEAD
             <div class="row g-4 ">
                 <table id="rwd-table" style="width: 80%">
                     <thead>
                         <tr>
                             <td style="color: #FF6F0F; font-weight: 700;">Category</td>
+=======
+            <div class="row g-4 justify-content-center">
+                <table id="rwd-table">
+                    <thead>
+                        <tr>
+                            <td style="color: #FF6F0F; font-weight: 700">Category</td>
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
                             <td style="color: #FF6F0F; font-weight: 700">International</td>
                             <td style="color: #FF6F0F; font-weight: 700">Local</td>
                         </tr>
@@ -57,9 +65,15 @@
                     <tbody>
                         @foreach ($regs as $reg)
                         <tr>
+<<<<<<< HEAD
                             <td style=" color: black;">{!! $reg->cat !!}</td>
                             <td style=" color: black;">{!! $reg->int !!}</td>
                             <td style=" color: black;">{!! $reg->nat !!}</td>
+=======
+                            <td>{!! $reg->cat !!}</td>
+                            <td>{!! $reg->int !!}</td>
+                            <td>{!! $reg->nat !!}</td>
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
                         </tr>
                         @endforeach
                     </tbody>

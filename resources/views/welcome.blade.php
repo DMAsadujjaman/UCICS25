@@ -249,12 +249,19 @@ $count = 0;
 <!-- Causes Start -->
 <div class="container-xxl bg-light my-5" id="cfp">
     <div class="container py-5">
+<<<<<<< HEAD
          <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
             <h1 class="display-12 mb-5">{!! $call_fps->title !!}</h1>
         </div>
+=======
+        {{-- <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+
+            <h1 class="display-6 mb-5">{{ $call_fps->title }}</h1>
+        </div> --}}
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
         <div class="row g-4 justify-content-center">
 
-            <p class="mb-3" style="text-align: justify;">{!! $call_fps->about !!}</p>
+            {{-- <p class="mb-3" style="text-align: justify;">{!! $call_fps->about !!}</p> --}}
             <div class="wrapper">
                 <div class="">
                     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">

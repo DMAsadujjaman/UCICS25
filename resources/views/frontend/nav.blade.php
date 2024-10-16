@@ -36,7 +36,15 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Important Info </a>
                     <div class="dropdown-menu m-0">
+<<<<<<< HEAD
                         <!--<a href="{{ route('download.down_cf') }}" class="dropdown-item">Call for papers</a>-->
+=======
+                        <a href="{{route('welcome')}}#scp" class="dropdown-item">Conference Scopes</a>
+                        
+                        <a href="{{ route('download.down_cf') }}" class="dropdown-item">Call for papers</a>
+                        <a href="{{route('submissionguide')}}" class="dropdown-item">Submission Guideline</a>
+                        <a href="{{route('camsubmissionguide')}}" class="dropdown-item">Camera Ready Submission Guideline</a>
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
                         <a href="{{route('welcome')}}#spk" class="dropdown-item">Speakers</a>
                         <a href="{{route('committee')}}" class="dropdown-item">Committees</a>
                         <a href="#ftr" class="dropdown-item">Conference Venue</a>

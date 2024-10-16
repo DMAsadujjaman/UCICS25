@@ -112,6 +112,7 @@
 
 
             <h3>Paper information</h3>
+<<<<<<< HEAD
             
             <div class="form-group col-md-12">
                 <label>Are you an author?<font style="color: red;">*</font></label><br>
@@ -142,6 +143,9 @@
             <!--</div>-->
             
             <div class="form-group col-md-6" id="author_pid_field" style="display: none;">
+=======
+            <div class="form-group col-md-12">
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
                 <label for="name">Paper Id<font style="color: red;">*</font></label>
                 <input type="text" class="form-control form-control-sm" name="paper_id"
                     value="{{ @$editData['paper_id'] }}" placeholder="Enter paper id">
@@ -149,6 +153,7 @@
             </div>
 
 
+<<<<<<< HEAD
             <div class="form-group col-md-6" id="author_scope_field" style="display: none;">
                 <label for="committee">Socpe<font style="color: red;">*</font></label>
                 <select class="form-control form-control-sm" name="scope" id="scope" required>
@@ -224,6 +229,52 @@
         @endforeach
     </select>
 </div>
+=======
+            <div class="form-group col-md-12">
+                <label for="committee">Socpe<font style="color: red;">*</font></label>
+                <select class="form-control form-control-sm" name="committee" id="committee" required>
+                    <option value="">Select Scope</option>
+                    <option value="Organizing Committee" {{ @$editData['committee']=='Organizing Committee' ? 'selected'
+                        : '' }}>Organizing Committee</option>
+                    <option value="Advisory Committee" {{ @$editData['committee']=='Advisory Committee' ? 'selected'
+                        : '' }}>
+                        Advisory Committee</option>
+                    <option value="Technical Committee" {{ @$editData['committee']=='Technical Committee' ? 'selected'
+                        : '' }}>
+                        Technical Committee</option>
+                    <option value="Registration Committee" {{ @$editData['committee']=='Registration Committee'
+                        ? 'selected' : '' }}>Registration Committee</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Nationality</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="nationality" id="ban" value="1">
+                    <label class="form-check-label" for="ban">Bangladesh</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="nationality" id="oban" value="0">
+                    <label class="form-check-label" for="oban">Outside of Bangladesh</label>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="committee">Payment Category<font style="color: red;">*</font></label>
+                <select class="form-control form-control-sm" name="committee" id="committee" required>
+                    <option value="">Select Category</option>
+                    <option value="Organizing Committee" {{ @$editData['committee']=='Organizing Committee' ? 'selected'
+                        : '' }}>Organizing Committee</option>
+                    <option value="Advisory Committee" {{ @$editData['committee']=='Advisory Committee' ? 'selected'
+                        : '' }}>
+                        Advisory Committee</option>
+                    <option value="Technical Committee" {{ @$editData['committee']=='Technical Committee' ? 'selected'
+                        : '' }}>
+                        Technical Committee</option>
+                    <option value="Registration Committee" {{ @$editData['committee']=='Registration Committee'
+                        ? 'selected' : '' }}>Registration Committee</option>
+                </select>
+            </div>
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
 
 
             <div style="text-align: right;">

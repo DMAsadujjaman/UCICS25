@@ -852,6 +852,7 @@
             }
         }
     </script>
+<<<<<<< HEAD
     
         <script>
         function toggleAuthorFields() {
@@ -875,6 +876,8 @@
             }
         }
     </script>
+=======
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
 
     <script>
         function submitStudentData() {
@@ -914,6 +917,7 @@
             .catch(error => console.error('Error:', error));
         }
     </script>
+<<<<<<< HEAD
     
     
 <script>
@@ -956,6 +960,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+=======
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
     
     
 

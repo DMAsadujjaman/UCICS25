@@ -71,7 +71,11 @@ class WelcomeController extends Controller
     public function registration()
     {
         $data['contacts']=Contacts::first();
+<<<<<<< HEAD
         $data['scopes']=Scopes::all();
+=======
+       
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
         $data['regs']=RegPages::all();
         return view('frontend.single_page.registration',$data);
 
@@ -79,9 +83,14 @@ class WelcomeController extends Controller
     public function reg_form()
     {
         $data['contacts']=Contacts::first();
+<<<<<<< HEAD
        $data['scopes']=Scopes::all();
         $data['regs']=RegForms::all();
         $data['regps']=RegPages::all();
+=======
+       
+        $data['regs']=RegForms::all();
+>>>>>>> 817ca8d074ef94bfbb53b5dee4f7b81c410102c7
         return view('frontend.single_page.reg_form',$data);
 
     }
