@@ -8,6 +8,8 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://vu.edu.bd/img/ico/favicon.ico">
 
@@ -45,21 +47,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 
+    
     <style>
-        /* To position the second-level dropdown */
-        /* Align the submenu correctly to the right */
-        /* .dropdown-submenu .submenu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            margin-top: -1px;
-        }
-
-        .dropdown-submenu:hover .submenu {
-            display: block;
-        }
- */
         .dropdown-submenu .submenu {
             display: none;
             position: absolute;
@@ -107,40 +96,6 @@
             }
         }
 
-        /* 
-        .partners {
-            padding: 10px;
-        }
-
-        @-webkit-keyframes slideleft {
-            0% {
-                background-position: 385000px;
-            }
-
-            100% {
-                background-position: 0;
-            }
-        }
-
-        @keyframes slideleft {
-            0% {
-                background-position: 385000px;
-            }
-
-            100% {
-                background-position: 0;
-            }
-        }
-
-        .partners-img-container {
-            height: 100px;
-            width: 100%;
-            overflow: auto;
-        }
-
-        .partners-img-container::-webkit-scrollbar {
-            width: 0 !important;
-        }
 
         /* hide scrollbar in Chrome */
         .partners-img-container {
@@ -284,7 +239,7 @@
             /* Add margin to the bottom */
         }
 
-        .cardcontainer {
+        /* .cardcontainer {
             width: 280px;
             height: 422px;
             display: flexbox;
@@ -331,6 +286,81 @@
 
         .back p {
             margin-top: 1px;
+            text-align: justify;
+        } */
+
+        .cards-wrapper {
+            display: flex;
+            justify-content: center;
+            /* Evenly space the cards */
+            flex-wrap: wrap;
+            /* Allows wrapping to the next line if there are many cards */
+            gap: 20px;
+            /* Adjust the gap between cards */
+            padding: 10px;
+            /* Optional padding around the container */
+        }
+
+        .cardcontainer {
+            width: 280px;
+            /* initial width */
+            height: 422px;
+            perspective: 1000px;
+            /* perspective for a smooth 3D effect */
+            position: relative;
+        }
+
+        .cardcontainer:hover>.card {
+            cursor: pointer;
+            transform: rotateY(180deg);
+            /* flip on the Y-axis */
+            width: 380px;
+            /* expand width smoothly */
+        }
+
+        .card {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            transition: transform 1.5s ease, width 1.5s ease;
+            /* smooth flip and width expansion */
+            transform-style: preserve-3d;
+            transform-origin: center;
+            /* flip from the center of the card */
+            border: none;
+        }
+
+        .front,
+        .back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border-radius: 13px;
+            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+            backface-visibility: hidden;
+        }
+
+        .front {
+            z-index: 2;
+            /* Ensure front stays on top until flipped */
+        }
+
+        .back {
+            background-color: whitesmoke;
+            transform: rotateY(180deg);
+            /* initially facing away */
+            z-index: 1;
+            /* Hidden before flip */
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            padding: 16px;
+            gap: 2rem;
+        }
+
+        .back p {
+            margin-top: 1px;
+            font-size: 12px;
             text-align: justify;
         }
     </style>
@@ -852,8 +882,8 @@
             }
         }
     </script>
-    
-        <script>
+
+    <script>
         function toggleAuthorFields() {
             var authorYes = document.getElementById('author_yes').checked;
             
@@ -914,10 +944,10 @@
             .catch(error => console.error('Error:', error));
         }
     </script>
-    
-    
-<script>
-document.addEventListener('DOMContentLoaded', function() {
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
     const nationalityInputs = document.querySelectorAll('input[name="nationality"]');
     const pacSelect = document.getElementById('pac');
     
@@ -955,9 +985,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-</script>
-    
-    
+    </script>
+
+
 
 </body>
 

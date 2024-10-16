@@ -88,7 +88,28 @@
                     </tbody>
                 </table>
             </div>
-            <h3>Registration Committee</h3>
+            <h3>Publication Committee: </h3>
+
+            <div class="row g-4 justify-content-center">
+
+
+                <table id="rwd-table">
+                    <thead>
+                        <tr>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($regcs as $regc)
+                        <tr>
+                            <td>{!! $regc->name !!}</td>
+                            <td>{!! $regc->affil !!}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <h3>Registration Committee: </h3>
 
             <div class="row g-4 justify-content-center">
 

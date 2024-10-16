@@ -33,7 +33,7 @@ class WelcomeController extends Controller
         $data['kns']=KNSpeaker::all();
         $data['sponsors']=Sponsors::all();
         $data['contacts']=Contacts::first();
-        
+        $data['submissionGL']=SubmissionGLs::where('page','SPA')->first();
         return view('welcome',$data);
     }
     public function submissionGuideline()

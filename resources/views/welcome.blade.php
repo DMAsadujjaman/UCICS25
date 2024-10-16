@@ -12,7 +12,7 @@ $count = 0;
                 {{-- <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image"> --}}
 
                 <img class="w-100" src="{{ asset('public/img/') . $slider->image }}" alt="Image">
-                <div class="carousel-caption" >
+                <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 pt-5">
@@ -244,12 +244,36 @@ $count = 0;
     </div>
 </div>
 <!-- About End -->
+<!-- some speach -->
 
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            {{-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
+                        <img class="position-absolute w-100 h-100 pt-5 pe-5" src="public\img\vu5.jpg" alt=""
+                            style="object-fit: cover;">
+                        <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="public\img\team-1.jpg"
+                            alt="" style="width: 200px; height: 200px;">
+                    </div>
+                </div> --}}
+            <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="h-100">
+                    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                        <h1 class="display-6">{!! $submissionGL->title !!}</h1>
+                    </div>
+                    <p class="text-dark mb-2" style="text-align: justify;">{!! $submissionGL->text_1 !!}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- some speach END-->
 
 <!-- Causes Start -->
 <div class="container-xxl bg-light my-5" id="cfp">
     <div class="container py-5">
-         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
             <h1 class="display-12 mb-5">{!! $call_fps->title !!}</h1>
         </div>
         <div class="row g-4 justify-content-center">
@@ -323,13 +347,6 @@ $count = 0;
                     @endforeach
                 </tbody>
             </table>
-
-
-
-
-
-
-
         </div>
     </div>
 </div>
@@ -407,32 +424,56 @@ $count = 0;
         <!-- Static grid for 4 or fewer speakers -->
         <div class="row g-4">
             @foreach ($kns as $keynote)
-            <div class="col-md-6 col-lg-3">
-                <div class="cardcontainer">
+            <div class="col-md-6 col-lg-4">
+                {{-- <div class="cardcontainer">
                     <div class="card">
                         <div class="front">
                             <div class="overflow-hidden" style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}" width="280px" height="250px"
-                                    alt="">
-                            </div>
-                            <div class="team-text text-center p-4">
-                                <h5>{{ $keynote->name }}</h5>
-                                <p class="text-primary">{{ $keynote->designation }}</p>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="team-text text-center">
-                                <h5>{{ $keynote->name }}</h5>
-                                <p>{{ $keynote->about }}</p>
-                            </div>
-                        </div>
-                    </div>
+                                <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}" width="280px"
+                height="250px"
+                alt="">
+            </div>
+            <div class="team-text text-center p-4">
+                <h5>{{ $keynote->name }}</h5>
+                <p class="text-primary">{{ $keynote->designation }}</p>
+            </div>
+        </div>
+        <div class="back">
+            <div class="team-text text-center">
+                <h5>{{ $keynote->name }}</h5>
+                <p>{{ $keynote->about }}</p>
+            </div>
+        </div>
+    </div>
+</div> --}}
+<div class="cards-wrapper">
+    <div class="cardcontainer">
+        <div class="card">
+            <div class="front">
+                <div class="overflow-hidden" style="object-fit: cover; border-radius: 13px 13px 0px 0px">
+                    <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}" alt="">
+                </div>
+                <div class="team-text text-center p-4">
+                    <h5>{{ $keynote->name }}</h5>
+                    <p class="text-primary">{{ $keynote->designation }}</p>
                 </div>
             </div>
-            @endforeach
+            <div class="back">
+                <div class="team-text text-center">
+                    <h5>{{ $keynote->name }}</h5>
+                    <p>{{ $keynote->about }}</p>
+                </div>
+            </div>
         </div>
-        @endif
     </div>
+</div>
+
+
+</div>
+@endforeach
+</div>
+@endif
+</div>
 </div>
 
 {{-- sponsors --}}

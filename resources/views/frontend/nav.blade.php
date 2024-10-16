@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <a href="{{route('welcome')}}#spn" class="nav-item nav-link">Sponsors</a>
-                <a href="{{route('swaward')}}" class="nav-item nav-link">Student Paper Award</a>
+                {{-- <a href="{{route('swaward')}}" class="nav-item nav-link">Student Paper Award</a> --}}
                 <a href="{{route('welcome')}}#ab" class="nav-item nav-link">Important Deadlines</a>
                 {{--  <a href="#cfp" class="nav-item nav-link">Call for Paper</a>  --}}
                 {{-- <div class="nav-item dropdown">
