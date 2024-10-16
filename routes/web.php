@@ -15,11 +15,9 @@ use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\SponsorsController;
+use App\Http\Controllers\RegPagesController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('submission_guideline', [WelcomeController::class, 'submissionGuideline'])->name('submissionguide');
@@ -29,6 +27,8 @@ Route::get('committee', [WelcomeController::class, 'committee'])->name('committe
 Route::get('student_award', [WelcomeController::class, 'swaward'])->name('swaward');
 Route::get('registration', [WelcomeController::class, 'registration'])->name('reg');
 Route::get('contact', [WelcomeController::class, 'contact'])->name('contact');
+Route::get('reg_form', [WelcomeController::class, 'reg_form'])->name('reg_form');
+Route::patch('reg-store', [WelcomeController::class, 'reg_store'])->name('reg.store');
 
 Route::get('/conference_flyers', [DownloadsController::class, 'down_cf'])->name('download.down_cf');
     Route::get('/word_template', [DownloadsController::class, 'down_wt'])->name('download.down_wt');
@@ -40,9 +40,7 @@ Route::get('/conference_flyers', [DownloadsController::class, 'down_cf'])->name(
     Route::get('/Developing_the_Presentation', [DownloadsController::class, 'down_dtp'])->name('download.down_dtp');
     
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth','verified')->group(function(){
     Route::get('/dashboard',[MainPageController::class,'index'])->name('dashboard');
@@ -166,6 +164,15 @@ Route::middleware('auth','verified')->group(function(){
         Route::get('/edit/{id}', [ContactsController::class, 'edit'])->name('contact.edit');
         Route::patch('/contact/{id}', [ContactsController::class,'update'])->name('contact.update');
         Route::get('/delete/{id}', [ContactsController::class, 'destroy'])->name('contact.delete');
+        });
+
+    Route::prefix('register')->group(function(){
+        Route::get('/view', [RegPagesController::class, 'index'])->name('register.view');
+        Route::get('/add', [RegPagesController::class, 'create'])->name('register.add');
+        Route::patch('/store', [RegPagesController::class, 'store'])->name('register.store');
+        Route::get('/edit/{id}', [RegPagesController::class, 'edit'])->name('register.edit');
+        Route::patch('/reg/{id}', [RegPagesController::class,'update'])->name('register.update');
+        Route::get('/delete/{id}', [RegPagesController::class, 'destroy'])->name('register.delete');
         });
 
 });
