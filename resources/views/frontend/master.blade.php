@@ -8,7 +8,7 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    
+
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://vu.edu.bd/img/ico/favicon.ico">
@@ -47,8 +47,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 
-    
+
     <style>
+        .carousel-without-caption {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .carousel-without-caption {
+            position: absolute;
+
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+            color: #fff;
+
+        }
+
         .dropdown-submenu .submenu {
             display: none;
             position: absolute;
@@ -70,7 +91,7 @@
         }
 
         .slider img {
-            width: 100px;
+            min-width: 100px;
             height: 100px;
             animation: scroll 20s linear infinite;
         }
@@ -234,14 +255,14 @@
         .owl-carousel .item {
             width: 100%;
             margin-top: 20px;
-            /* Add margin to the top */
             margin-bottom: 20px;
+
             /* Add margin to the bottom */
         }
 
-        /* .cardcontainer {
-            width: 280px;
-            height: 422px;
+        .cardcontainer {
+            width: 350px;
+            height: 460px;
             display: flexbox;
             flex-direction: row;
             perspective: 800px;
@@ -270,7 +291,7 @@
             position: absolute;
             backface-visibility: hidden;
         }
-        
+
 
 
 
@@ -287,81 +308,20 @@
         .back p {
             margin-top: 1px;
             text-align: justify;
-        } */
+        }
+
+        .scrollable-text {
+            max-height: 350px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
 
         .cards-wrapper {
             display: flex;
             justify-content: center;
-            /* Evenly space the cards */
             flex-wrap: wrap;
-            /* Allows wrapping to the next line if there are many cards */
             gap: 20px;
-            /* Adjust the gap between cards */
             padding: 10px;
-            /* Optional padding around the container */
-        }
-
-        .cardcontainer {
-            width: 280px;
-            /* initial width */
-            height: 422px;
-            perspective: 1000px;
-            /* perspective for a smooth 3D effect */
-            position: relative;
-        }
-
-        .cardcontainer:hover>.card {
-            cursor: pointer;
-            transform: rotateY(180deg);
-            /* flip on the Y-axis */
-            width: 380px;
-            /* expand width smoothly */
-        }
-
-        .card {
-            height: 100%;
-            width: 100%;
-            position: relative;
-            transition: transform 1.5s ease, width 1.5s ease;
-            /* smooth flip and width expansion */
-            transform-style: preserve-3d;
-            transform-origin: center;
-            /* flip from the center of the card */
-            border: none;
-        }
-
-        .front,
-        .back {
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            border-radius: 13px;
-            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
-            backface-visibility: hidden;
-        }
-
-        .front {
-            z-index: 2;
-            /* Ensure front stays on top until flipped */
-        }
-
-        .back {
-            background-color: whitesmoke;
-            transform: rotateY(180deg);
-            /* initially facing away */
-            z-index: 1;
-            /* Hidden before flip */
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            padding: 16px;
-            gap: 2rem;
-        }
-
-        .back p {
-            margin-top: 1px;
-            font-size: 12px;
-            text-align: justify;
         }
     </style>
 
@@ -790,7 +750,7 @@
                         items: 2
                     },
                     1000: {
-                        items: 4
+                        items: 3
                     }
                 },
                 slideBy: 1, // Slide one card at a time
@@ -803,55 +763,55 @@
 
     <!-- Other HTML content -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Get all dropdown-submenu elements
             var dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
-    
+
             // Function to show the submenu
             function showSubmenu(submenu) {
                 submenu.style.display = 'block';
             }
-    
+
             // Function to hide the submenu
             function hideSubmenu(submenu) {
                 submenu.style.display = 'none';
             }
-    
+
             // Delay variable to handle the timeout
             let hideTimeout;
-    
-            dropdownSubmenus.forEach(function (submenu) {
+
+            dropdownSubmenus.forEach(function(submenu) {
                 var submenuElement = submenu.querySelector('.submenu');
-    
+
                 // Show submenu when hovering
-                submenu.addEventListener('mouseenter', function () {
+                submenu.addEventListener('mouseenter', function() {
                     clearTimeout(hideTimeout);
                     showSubmenu(submenuElement);
                 });
-    
+
                 // Hide submenu when leaving
-                submenu.addEventListener('mouseleave', function () {
+                submenu.addEventListener('mouseleave', function() {
                     hideTimeout = setTimeout(() => {
                         hideSubmenu(submenuElement);
                     }, 200); // Delay before hiding (adjust as needed)
                 });
-    
+
                 // Handle keyboard accessibility
-                submenu.addEventListener('focusin', function () {
+                submenu.addEventListener('focusin', function() {
                     clearTimeout(hideTimeout);
                     showSubmenu(submenuElement);
                 });
-    
-                submenu.addEventListener('focusout', function () {
+
+                submenu.addEventListener('focusout', function() {
                     hideTimeout = setTimeout(() => {
                         hideSubmenu(submenuElement);
                     }, 200); // Delay before hiding (adjust as needed)
                 });
             });
-    
+
             // Ensure that the submenu closes when clicking elsewhere
-            document.addEventListener('click', function (event) {
-                dropdownSubmenus.forEach(function (submenu) {
+            document.addEventListener('click', function(event) {
+                dropdownSubmenus.forEach(function(submenu) {
                     var submenuElement = submenu.querySelector('.submenu');
                     if (!submenu.contains(event.target)) {
                         hideSubmenu(submenuElement);
@@ -863,12 +823,12 @@
     <script>
         function toggleStudentFields() {
             var studentYes = document.getElementById('student_yes').checked;
-            
+
             // Student ID, Semester, and Picture fields
             var idField = document.getElementById('student_id_field');
             var semesterField = document.getElementById('semester_field');
             var photoField = document.getElementById('photo_field');
-    
+
             if (studentYes) {
                 // Show the fields if "Yes" is selected
                 idField.style.display = 'block';
@@ -886,22 +846,22 @@
     <script>
         function toggleAuthorFields() {
             var authorYes = document.getElementById('author_yes').checked;
-            
+
             // Student ID, Semester, and Picture fields
             var pidField = document.getElementById('author_pid_field');
             var scopeField = document.getElementById('author_scope_field');
-        
-    
+
+
             if (authorYes) {
                 // Show the fields if "Yes" is selected
                 pidField.style.display = 'block';
                 scopeField.style.display = 'block';
-               
+
             } else {
                 // Hide the fields if "No" is selected
                 pidField.style.display = 'none';
                 scopeField.style.display = 'none';
-               
+
             }
         }
     </script>
@@ -914,7 +874,7 @@
             var uid = document.getElementById('uid').value;
             var semester = document.getElementById('semester').value;
             var photo = document.getElementById('photo').files[0];
-    
+
             // Create FormData to handle file upload
             var formData = new FormData();
             formData.append('name', name);
@@ -924,67 +884,67 @@
             if (photo) {
                 formData.append('photo', photo);
             }
-    
+
             // Send AJAX request
             fetch('{{ route('reg.store') }}', {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Laravel CSRF protection
-                },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(data.message);  // Show success message
-                } else {
-                    alert('Something went wrong.');
-                }
-            })
-            .catch(error => console.error('Error:', error));
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}', // Laravel CSRF protection
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message); // Show success message
+                    } else {
+                        alert('Something went wrong.');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
         }
     </script>
 
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    const nationalityInputs = document.querySelectorAll('input[name="nationality"]');
-    const pacSelect = document.getElementById('pac');
-    
-    // Disable the payment dropdown until nationality is selected
-    pacSelect.disabled = true;
+            const nationalityInputs = document.querySelectorAll('input[name="nationality"]');
+            const pacSelect = document.getElementById('pac');
 
-    nationalityInputs.forEach(input => {
-        input.addEventListener('change', function() {
-            // Enable the payment category dropdown
-            pacSelect.disabled = false;
-            updatePacOptions(this.value);
-        });
-    });
+            // Disable the payment dropdown until nationality is selected
+            pacSelect.disabled = true;
 
-    pacSelect.addEventListener('focus', function() {
-        // Check if nationality is selected when user tries to interact with the dropdown
-        const selectedNationality = document.querySelector('input[name="nationality"]:checked');
-        if (!selectedNationality) {
-            alert("Please select nationality first.");
-            pacSelect.blur();  // Remove focus from the dropdown
-        }
-    });
+            nationalityInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    // Enable the payment category dropdown
+                    pacSelect.disabled = false;
+                    updatePacOptions(this.value);
+                });
+            });
 
-    function updatePacOptions(nationality) {
-        const options = pacSelect.querySelectorAll('option');
-        
-        options.forEach(option => {
-            if (option.value !== "") { // Skip the default "Select Payment" option
-                if (nationality == '1') {
-                    option.textContent = `${option.value} ${option.dataset.bangladesh}`;
-                } else {
-                    option.textContent = `${option.value} ${option.dataset.outside}`;
+            pacSelect.addEventListener('focus', function() {
+                // Check if nationality is selected when user tries to interact with the dropdown
+                const selectedNationality = document.querySelector('input[name="nationality"]:checked');
+                if (!selectedNationality) {
+                    alert("Please select nationality first.");
+                    pacSelect.blur(); // Remove focus from the dropdown
                 }
+            });
+
+            function updatePacOptions(nationality) {
+                const options = pacSelect.querySelectorAll('option');
+
+                options.forEach(option => {
+                    if (option.value !== "") { // Skip the default "Select Payment" option
+                        if (nationality == '1') {
+                            option.textContent = `${option.value} ${option.dataset.bangladesh}`;
+                        } else {
+                            option.textContent = `${option.value} ${option.dataset.outside}`;
+                        }
+                    }
+                });
             }
         });
-    }
-});
     </script>
 
 

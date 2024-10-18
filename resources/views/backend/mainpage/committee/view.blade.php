@@ -39,9 +39,10 @@
 
                 <tr>
                   <th>Sl</th>
+                  <th>Priority</th>
                   <th>Title</th>
-                  <th>Name</th>
-                  <th>Affiliation</th>
+                  <th>Column Left</th>
+                  <th>Column Right</th>
                   <th>Committee</th>
                   <th>Action</th>
                 </tr>
@@ -51,6 +52,7 @@
                 @foreach($committee as $key => $committ)
                 <tr>
                   <td>{{$key+1}}</td>
+                  <td>{{$committ->priority}}</td>
                   <td>{{$committ->title}}</td>
                   <td>{{$committ->name}}</td>
                   <td>{{$committ->affil}}</td>

@@ -20,11 +20,11 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-light mb-4">Map</h5>
-                {{-- <iframe
+                <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d512.5297449558728!2d88.64515338963808!3d24.399450107472113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbefb6afccfcd5%3A0x39656bbb38ffc96a!2sDepartment%20of%20CSE%2C%20Varendra%20University!5e1!3m2!1sen!2sbd!4v1727446687906!5m2!1sen!2sbd"
                     width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
-                    {!! $contacts->map !!}
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    {{--  {!! $contacts->map !!}  --}}
             </div>
         </div>
     </div>

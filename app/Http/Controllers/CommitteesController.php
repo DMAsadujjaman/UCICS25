@@ -13,7 +13,7 @@ class CommitteesController extends Controller
      */
     public function index()
     {
-        $data['committee']=Committees::all();
+        $data['committee']=Committees::get();
         //dd($data);
         return view('backend.mainpage.committee.view',$data);
     }
@@ -37,6 +37,7 @@ class CommitteesController extends Controller
             $data->name = $request->name;
             $data->affil = $request->affiliation;
             $data->committee = $request->committee;
+            $data->priority = $request->priority;
             $data->save();
         });
 
@@ -72,6 +73,7 @@ class CommitteesController extends Controller
             $data->name = $request->name;
             $data->affil = $request->affiliation;
             $data->committee = $request->committee;
+            $data->priority = $request->priority;
             $data->save();
         });
 

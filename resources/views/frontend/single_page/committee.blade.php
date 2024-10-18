@@ -44,7 +44,7 @@
                         </tr>
                         @endforeach
                     </tbody>
-                    
+
                 </table>
             </div>
             <h3>Advisory Committee</h3>
@@ -54,7 +54,7 @@
                 <table id="rwd-table">
                     <thead>
                         <tr>
-                           
+
                         </tr>
                     </thead>
                     <tbody>
@@ -100,10 +100,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($regcs as $regc)
+                        @foreach ($publs as $publ)
                         <tr>
-                            <td>{!! $regc->name !!}</td>
-                            <td>{!! $regc->affil !!}</td>
+                            <td>{!! $publ->name !!}</td>
+                            <td>{!! $publ->affil !!}</td>
                         </tr>
                         @endforeach
                     </tbody>

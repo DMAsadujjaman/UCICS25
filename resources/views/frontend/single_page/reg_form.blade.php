@@ -39,7 +39,7 @@
 
         <div class="row g-4 justify-content-center">
 
-            <form method="POST" action="" id="myForm" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('reg.store') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <h3>Personal Info</h3>
@@ -194,7 +194,7 @@
 
 
                 <div style="text-align: right;">
-                    <button onclick="submitStudentData()" type="submit" class="btn btn-primary">Make Payment</button>
+                    <button type="submit" class="btn btn-primary">Make Payment</button>
                 </div>
 
             </form>

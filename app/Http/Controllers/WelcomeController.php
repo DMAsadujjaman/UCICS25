@@ -61,10 +61,11 @@ class WelcomeController extends Controller
     {
         $data['contacts']=Contacts::first();
         $data['scopes']=Scopes::all();
-        $data['orgcs']=Committees::where('committee', 'Organizing Committee')->get();
-        $data['advcs']=Committees::where('committee', 'Advisory Committee')->get();
-        $data['teccs']=Committees::where('committee', 'Technical Committee')->get();
-        $data['regcs']=Committees::where('committee', 'Registration Committee')->get();
+        $data['orgcs']=Committees::where('committee', 'Organizing Committee')->orderBy('priority', 'asc')->get();
+        $data['advcs']=Committees::where('committee', 'Advisory Committee')->orderBy('priority', 'asc')->get();
+        $data['teccs']=Committees::where('committee', 'Technical Committee')->orderBy('priority', 'asc')->get();
+        $data['publs']=Committees::where('committee', 'Publication Committee')->orderBy('priority', 'asc')->get();
+        $data['regcs']=Committees::where('committee', 'Registration Committee')->orderBy('priority', 'asc')->get();
         return view('frontend.single_page.committee',$data);
 
     }
@@ -88,8 +89,9 @@ class WelcomeController extends Controller
     }
     public function reg_store(Request $request)
     {
+        
         $data['contacts']=Contacts::first();
-       
+
         $validated = $request->validate([
             'name' => 'required|string',
             'university' => 'required|string',
@@ -106,7 +108,7 @@ class WelcomeController extends Controller
             'scope' => 'required|string',
             'payment_category' => 'required|string',
         ]);
-    
+
         // Save the data (example with Student model)
         $student = new RegForms();
         $student->name = $validated['name'];
@@ -122,17 +124,17 @@ class WelcomeController extends Controller
         $student->paper_title = $validated['paper_title'];
         $student->scope = $validated['scope'];
         $student->payment_category = $validated['payment_category'];
-    
+
         // Handle photo upload if present
         if ($request->hasFile('photo')) {
             $filePath = $request->file('photo')->store('photos', 'public');
             $student->photo = $filePath;
         }
-    
+
         $student->save();
-    
+
         return response()->json(['success' => true, 'message' => 'Data saved successfully!']);
-    
+
         // return view('frontend.single_page.reg_form',$data);
 
     }
