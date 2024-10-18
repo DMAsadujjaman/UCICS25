@@ -92,46 +92,35 @@ class WelcomeController extends Controller
         
         $data['contacts']=Contacts::first();
 
-        $validated = $request->validate([
-            'name' => 'required|string',
-            'university' => 'required|string',
-            'student' => 'required|boolean',
-            'uid' => 'nullable|string|required_if:student,1',
-            'semester' => 'nullable|string|required_if:student,1',
-            'photo' => 'nullable|file|image|required_if:student,1|max:2048',
-            'email' => 'required|email',
-            'mobile' => 'required|string',
-            'address' => 'nullable|string',
-            'country' => 'nullable|string',
-            'paper_id' => 'required|string',
-            'paper_title' => 'required|string',
-            'scope' => 'required|string',
-            'payment_category' => 'required|string',
-        ]);
-
+        
         // Save the data (example with Student model)
-        $student = new RegForms();
-        $student->name = $validated['name'];
-        $student->university = $validated['university'];
-        $student->student = $validated['student'];
-        $student->uid = $validated['uid'];
-        $student->semester = $validated['semester'];
-        $student->email = $validated['email'];
-        $student->mobile = $validated['mobile'];
-        $student->address = $validated['address'];
-        $student->country = $validated['country'];
-        $student->paper_id = $validated['paper_id'];
-        $student->paper_title = $validated['paper_title'];
-        $student->scope = $validated['scope'];
-        $student->payment_category = $validated['payment_category'];
+        $data = new RegForms();
+        $data->name = $request->name;
+        $data->university = $request->university;
+        $data->student = $request->student;
+        $data->uid = $request->uid;
+        $data->semester = $request->semester;
+        $data->email1 = $request->email;
+        $data->phone1 = $request->mobile;
+        $data->email2 = $request->email1;
+        $data->phone2 = $request->mobile1;
+        $data->address = $request->address;
+        $data->country = $request->nationality;
+        $data->paper_id = $request->paper_id;
+        $data->paper_title = $request->paper_title;
+        $data->scope = $request->scope;
+        $data->payment_category = $request->pac;
 
         // Handle photo upload if present
-        if ($request->hasFile('photo')) {
-            $filePath = $request->file('photo')->store('photos', 'public');
-            $student->photo = $filePath;
+        if ($request->file('image')) {
+            $file = $request->file('image');
+@unlink(public_path('img/' . $data->image));
+            $filename = "/".date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('img/'), $filename);
+            $data['image'] = $filename;
         }
 
-        $student->save();
+        $data->save();
 
         return response()->json(['success' => true, 'message' => 'Data saved successfully!']);
 

@@ -849,17 +849,20 @@
 
             // Student ID, Semester, and Picture fields
             var pidField = document.getElementById('author_pid_field');
+            var ptitleField = document.getElementById('author_ptitle_field');
             var scopeField = document.getElementById('author_scope_field');
 
 
             if (authorYes) {
                 // Show the fields if "Yes" is selected
                 pidField.style.display = 'block';
+                ptitleField.style.display = 'block';
                 scopeField.style.display = 'block';
 
             } else {
                 // Hide the fields if "No" is selected
                 pidField.style.display = 'none';
+                ptitleField.style.display = 'none';
                 scopeField.style.display = 'none';
 
             }
@@ -946,6 +949,7 @@
             }
         });
     </script>
+
 
 
 

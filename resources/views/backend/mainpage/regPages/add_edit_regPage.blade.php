@@ -166,7 +166,7 @@
                                         <div class="form-group col-md-4">
                                             <label for="name">link</label>
                                             <input type="text" class="form-control form-control-sm" name="link"
-                                                value="{{ @$editData['link'] }}" placeholder="Enter link">
+                                                value="{{ @$editData['link'] }}" placeholder="reg_form">
                                             {{ $errors->has('link') ? $errors->first('link') : '' }}
                                         </div>
                               

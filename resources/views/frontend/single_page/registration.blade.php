@@ -71,14 +71,44 @@
             @foreach($regs as $reg)
             @if(!empty($reg->note))
             {!! $reg->note !!}
+            
+            @endif
+            @if(!empty($reg->text2))
             {!! $reg->text2 !!}
+            
+            @endif
+            @if(!empty($reg->img1))
+            {!! $reg->img1 !!}
+            
+            @endif
+            @if(!empty($reg->text3))
+            {!! $reg->text3 !!}
+            
+            @endif
+            @if(!empty($reg->img2))
+            {!! $reg->img2 !!}
+            
+            @endif
+            @if(!empty($reg->text4))
+            {!! $reg->text4 !!}
+            
+            @endif
+
+            <h5>Registration Link:
+            @if(!empty($reg->link))
+             <a href="{{ route($reg->link) }}">Registration</a>
+            
+            @else
+            <span style="color: #FF6F0F"> Registration</span>
+            @endif
+</h5>
+            {{-- {!! $reg->text2 !!}
             {!! $reg->img1 !!}
             {!! $reg->text3 !!}
             {!! $reg->img2 !!}
             {!! $reg->text4 !!}
-            {!! $reg->link !!}
-            @break
-            @endif
+            {!! $reg->link !!} --}}
+@break
             @endforeach
         </div>
     </div>

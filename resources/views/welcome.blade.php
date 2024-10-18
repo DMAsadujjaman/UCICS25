@@ -1,66 +1,64 @@
 @extends('frontend.master')
 @section('content')
-    @php
-        $count = 0;
-    @endphp
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
-        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                @foreach ($sliders as $slider)
-                    <div class="carousel-item @if ($count == 0) { active } @endif">
-                        {{-- <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image"> --}}
+@php
+$count = 0;
+@endphp
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach ($sliders as $slider)
+            <div class="carousel-item @if ($count == 0) { active } @endif">
+                {{-- <img class="w-100" src="{{ asset('public') }}/img/carousel-1.jpg" alt="Image"> --}}
 
-                        <img class="w-100" height="" src="{{ asset('public/img/') . $slider->image }}" alt="Image">
-                        @if ($count == 0)
-                            <div class="carousel-caption">
-                            @else
-                                <div class="carousel-without-caption ">
+                <img class="w-100" height="" src="{{ asset('public/img/') . $slider->image }}" alt="Image">
+                @if ($count == 0)
+                <div class="carousel-caption">
+                    @else
+                    <div class="carousel-without-caption ">
                         @endif
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 pt-5">
-                                    {{-- <h1 class="display-4 text-white mb-3 animated slideInDown">Undergraduate Conference
-                                        on Intelligent Computing and Systems(UCICS 2024)</h1>  --}}
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">{{ $slider->title }}
-                                    </h1>
+                                    @if ($count == 0)
+                                    <h1 class="display-4 text-white mb-3 animated slideInDown">{{ $slider->title }}</h1>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">{{ $slider->subTitle }}</p>
-
-                                    {{-- <p class="fs-5 text-white-50 mb-3 animated slideInDown">24 July, 2024</p>
-                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">Varendra University, Rajshahi, Bangladesh</p>  --}}
+                                    @endif
                                     <h4 class=" text-white mb-3 animated slideInDown">{{ $slider->date }}</h4>
                                     <h4 class=" text-white mb-3 animated slideInDown">{{ $slider->location }}</h4>
                                     @if ($count == 0)
-                                        <a class="btn btn-primary py-2 px-3 me-3" href="{{ route('download.down_cf') }}">
-                                            Call for Paper
-                                        </a>
-                                        <a class="btn btn-outline-primary py-2 px-3" href="">
-                                            Submit Paper
-                                        </a>
+                                    <a class="btn btn-primary py-2 px-3 me-3" href="{{ route('download.down_cf') }}">
+                                        Call for Paper
+                                    </a>
+                                    <a class="btn btn-outline-primary py-2 px-3" href="">
+                                        Submit Paper
+                                    </a>
                                     @endif
                                 </div>
                             </div>
                         </div>
                     </div>
-            </div>
-            @php
+                </div>
+                @php
                 $count++;
-            @endphp
-            @endforeach
+                @endphp
+                @endforeach
 
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+                <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
 
         </div>
-
-    </div>
     </div>
     <!-- Carousel End -->
     <!-- some speach -->
@@ -78,7 +76,8 @@
                 </div> --}}
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
-                        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+                            style="max-width: 500px;">
                             <h1 class="display-6">{!! $chair->title !!}</h1>
                             <p class="fs-5 text-dark-50 mb-5">{!! $chair->subtitle !!}</p>
                         </div>
@@ -126,12 +125,12 @@
                                     <span style="position: relative; display: inline-block;">
                                         <!-- Conditionally apply strikethrough -->
                                         @if ($abouts->submission_date_final)
-                                            <span
-                                                style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
-                                                {{ $abouts->submission_date }}
-                                            </span>
-                                        @else
+                                        <span
+                                            style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
                                             {{ $abouts->submission_date }}
+                                        </span>
+                                        @else
+                                        {{ $abouts->submission_date }}
                                         @endif
                                     </span>
                                 </div>
@@ -147,12 +146,12 @@
                                     <span style="position: relative; display: inline-block;">
                                         <!-- Conditionally apply strikethrough -->
                                         @if ($abouts->acceptance_date_final)
-                                            <span
-                                                style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
-                                                {{ $abouts->acceptance_date }}
-                                            </span>
-                                        @else
+                                        <span
+                                            style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
                                             {{ $abouts->acceptance_date }}
+                                        </span>
+                                        @else
+                                        {{ $abouts->acceptance_date }}
                                         @endif
                                     </span>
                                 </div>
@@ -168,12 +167,12 @@
                                     <span style="position: relative; display: inline-block;">
                                         <!-- Conditionally apply strikethrough -->
                                         @if ($abouts->cam_submission_date_final)
-                                            <span
-                                                style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
-                                                {{ $abouts->cam_submission_date }}
-                                            </span>
-                                        @else
+                                        <span
+                                            style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
                                             {{ $abouts->cam_submission_date }}
+                                        </span>
+                                        @else
+                                        {{ $abouts->cam_submission_date }}
                                         @endif
                                     </span>
                                 </div>
@@ -190,12 +189,12 @@
                                     <span style="position: relative; display: inline-block;">
                                         <!-- Conditionally apply strikethrough -->
                                         @if ($abouts->registration_date_final)
-                                            <span
-                                                style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
-                                                {{ $abouts->registration_date }}
-                                            </span>
-                                        @else
+                                        <span
+                                            style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
                                             {{ $abouts->registration_date }}
+                                        </span>
+                                        @else
+                                        {{ $abouts->registration_date }}
                                         @endif
                                     </span>
                                 </div>
@@ -215,12 +214,12 @@
                                     <span style="position: relative; display: inline-block;">
                                         <!-- Conditionally apply strikethrough -->
                                         @if ($abouts->conference_date_final)
-                                            <span
-                                                style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
-                                                {{ $abouts->conference_date }}
-                                            </span>
-                                        @else
+                                        <span
+                                            style="color: red; text-decoration: line-through; text-decoration-thickness: 2px;">
                                             {{ $abouts->conference_date }}
+                                        </span>
+                                        @else
+                                        {{ $abouts->conference_date }}
                                         @endif
                                     </span>
                                 </div>
@@ -323,84 +322,118 @@
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 @foreach ($scopes as $scope)
-                    @if (!empty($scope->title))
-                        <h1 class="display-6 mb-5">{{ $scope->title }}</h1>
-                    @break
+                @if (!empty($scope->title))
+                <h1 class="display-6 mb-5">{{ $scope->title }}</h1>
+                @break
                 @endif
-            @endforeach
-        </div>
-        <p class="mb-5" style="text-align: justify;">The papers are invited on, but not limited to, the following
-            topics:</p>
-        <div class="row g-4 justify-content-center">
+                @endforeach
+            </div>
+            <p class="mb-5" style="text-align: justify;">The papers are invited on, but not limited to, the following
+                topics:</p>
+            <div class="row g-4 justify-content-center">
 
 
-            <table id="rwd-table">
+                <table id="rwd-table">
 
-                <tbody>
-                    @foreach ($scopes as $scope)
+                    <tbody>
+                        @foreach ($scopes as $scope)
                         <tr>
                             <td>{{ $scope->col_1 }}</td>
                             <td>{{ $scope->col_2 }}</td>
                             <td>{{ $scope->col_3 }}</td>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Service End -->
-<!-- Donate Start -->
-@foreach ($sponsors as $sponsor)
+    <!-- Service End -->
+    <!-- Donate Start -->
+    @foreach ($sponsors as $sponsor)
     @if (!empty($sponsor->title))
-        <div class="container-fluid donate my-5 py-5" data-parallax="scroll"
-            data-image-src="{{ asset('public/img/' . $sponsor->image) }}">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-md-12 wow fadeIn" style="text-align: center;" data-wow-delay="0.1s">
-                        @foreach ($sponsors as $sponsor)
-                            @if (!empty($sponsor->title))
-                                <h1 class="display-6 text-white mb-3">
-                                    {{ $sponsor->title }}
-                                </h1>
-                                <p class="text-white-50 mb-0"> {{ $sponsor->subtitle }}</p>
-                            @break
-                        @endif
+    <div class="container-fluid donate my-5 py-5" data-parallax="scroll"
+        data-image-src="{{ asset('public/img/' . $sponsor->image) }}">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-12 wow fadeIn" style="text-align: center;" data-wow-delay="0.1s">
+                    @foreach ($sponsors as $sponsor)
+                    @if (!empty($sponsor->title))
+                    <h1 class="display-6 text-white mb-3">
+                        {{ $sponsor->title }}
+                    </h1>
+                    <p class="text-white-50 mb-0"> {{ $sponsor->subtitle }}</p>
+                    @break
+                    @endif
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
-@break
+    @break
 
-@endif
-@endforeach
+    @endif
+    @endforeach
 
 
-<!-- Donate End -->
+    <!-- Donate End -->
 
-{{-- key note speaker --}}
-<div class="container-xxl py-5" id="spk">
-<div class="">
-<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-    <h1 class="display-6 mb-5">Keynote Speakers</h1>
-</div>
+    {{-- key note speaker --}}
+    <div class="container-xxl py-5" id="spk">
+        <div class="">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6 mb-5">Keynote Speakers</h1>
+            </div>
 
-@if (count($kns) > 3)
-    <!-- Owl Carousel Start -->
-    <div class="container-fluid-carousel d-flex justify-content-center">
-        <div class="owl-carousel owl-theme">
-            @foreach ($kns as $keynote)
-                <div class="item d-flex justify-content-center">
+            @if (count($kns) > 3)
+            <!-- Owl Carousel Start -->
+            <div class="container-fluid-carousel d-flex justify-content-center">
+                <div class="owl-carousel owl-theme">
+                    @foreach ($kns as $keynote)
+                    <div class="item d-flex justify-content-center">
+                        <div class="cards-wrapper">
+                            <div class="cardcontainer">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="overflow-hidden"
+                                            style="object-fit: cover; border-radius: 13px 13px 0px 0px">
+                                            <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}"
+                                                alt="">
+                                        </div>
+                                        <div class="team-text text-center p-4">
+                                            <h5>{{ $keynote->name }}</h5>
+                                            <p class="text-primary">{{ $keynote->designation }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="back">
+                                        <div class="team-text text-center">
+                                            <h5>{{ $keynote->name }}</h5>
+                                            <p class="scrollable-text">{{ $keynote->about }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Owl Carousel End -->
+            @else
+            <!-- Static grid for 4 or fewer speakers -->
+            <div class="row g-4">
+                @foreach ($kns as $keynote)
+                <div class="col-md-6 col-lg-4">
+
                     <div class="cards-wrapper">
                         <div class="cardcontainer">
                             <div class="card">
                                 <div class="front">
                                     <div class="overflow-hidden"
                                         style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                        <img class="img-fluid"
-                                            src="{{ asset('public/img/' . $keynote->image) }}"
+                                        <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}"
                                             alt="">
                                     </div>
                                     <div class="team-text text-center p-4">
@@ -417,96 +450,61 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
-            @endforeach
+                @endforeach
+            </div>
+            @endif
         </div>
     </div>
 
-    <!-- Owl Carousel End -->
-@else
-    <!-- Static grid for 4 or fewer speakers -->
-    <div class="row g-4">
-        @foreach ($kns as $keynote)
-            <div class="col-md-6 col-lg-4">
-
-                <div class="cards-wrapper">
-                    <div class="cardcontainer">
-                        <div class="card">
-                            <div class="front">
-                                <div class="overflow-hidden"
-                                    style="object-fit: cover; border-radius: 13px 13px 0px 0px">
-                                    <img class="img-fluid" src="{{ asset('public/img/' . $keynote->image) }}"
-                                        alt="">
-                                </div>
-                                <div class="team-text text-center p-4">
-                                    <h5>{{ $keynote->name }}</h5>
-                                    <p class="text-primary">{{ $keynote->designation }}</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="team-text text-center">
-                                    <h5>{{ $keynote->name }}</h5>
-                                    <p class="scrollable-text">{{ $keynote->about }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+    {{-- sponsors --}}
+    <div class="container-xxl py-5" id="spn">
+        <div class="">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6 mb-5">Sponsors</h1>
             </div>
-        @endforeach
+            <div class="slider">
+                <div class="slide-track">
+
+                    @foreach ($sponsors as $sponsor)
+                    @if ($sponsor->id != 1)
+                    <div class="slide">
+                        <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{ $sponsor->title }}">
+                    </div>
+                    @endif
+                    @endforeach
+
+                    @foreach ($sponsors as $sponsor)
+                    @if ($sponsor->id != 1)
+                    <div class="slide">
+                        <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{ $sponsor->title }}">
+                    </div>
+                    @endif
+                    @endforeach
+
+                    @foreach ($sponsors as $sponsor)
+                    @if ($sponsor->id != 1)
+                    <div class="slide">
+                        <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{ $sponsor->title }}">
+                    </div>
+                    @endif
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
     </div>
-@endif
-</div>
-</div>
-
-{{-- sponsors --}}
-<div class="container-xxl py-5" id="spn">
-<div class="">
-<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-    <h1 class="display-6 mb-5">Sponsors</h1>
-</div>
-<div class="slider">
-    <div class="slide-track">
-
-        @foreach ($sponsors as $sponsor)
-            @if ($sponsor->id != 1)
-                <div class="slide">
-                    <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{ $sponsor->title }}">
-                </div>
-            @endif
-        @endforeach
-
-        @foreach ($sponsors as $sponsor)
-            @if ($sponsor->id != 1)
-                <div class="slide">
-                    <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{ $sponsor->title }}">
-                </div>
-            @endif
-        @endforeach
-
-        @foreach ($sponsors as $sponsor)
-            @if ($sponsor->id != 1)
-                <div class="slide">
-                    <img src="{{ asset('public/img/' . $sponsor->image) }}" alt="{{ $sponsor->title }}">
-                </div>
-            @endif
-        @endforeach
-
-    </div>
-</div>
-</div>
-</div>
 
 
 
 
 
-@endsection
+    @endsection
 
-@php
+    @php
     // {$futureDate = $abouts->submission_date;}
     $abouts->submission_date_final ? $abouts->submission_date_final : $abouts->submission_date;
     $futureDate = !empty($abouts->submission_date_final) ? $abouts->submission_date_final : $abouts->submission_date;
-@endphp
+    @endphp
